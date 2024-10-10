@@ -61,8 +61,8 @@ class Sel(unittest.TestCase):
                 prevYOffset = yOffset
                 time.sleep(3)
             html_source = driver.page_source
-            filename = f"{OUT}/result{score.split(',')[0]}.html"
-            with open(filename, "w") as f:
+            filepath = f"{OUT}/result{score.split(',')[0]}.html"
+            with open(filepath, "w") as f:
                 f.write(html_source)
                 print(f"Saved to \"{f"{OUT}/result{score.split(',')[0]}.html"}\"")
 
