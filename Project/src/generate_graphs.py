@@ -274,6 +274,34 @@ def plot_avg_score_top_20_reviewers():
 
 safe_plot(plot_avg_score_top_20_reviewers, 'avg_score_top_20_reviewers_improved')
 
+def plot_grouped_score_distribution():
+    bins = [0, 2, 4, 6, 8, 10]
+    labels = ['1-2', '3-4', '5-6', '7-8', '9-10']
+
+    # Agrupar os dados e contar as reviews em cada intervalo
+    df['Score Group'] = pd.cut(df['Score'], bins=bins, labels=labels)
+    score_group_counts = df['Score Group'].value_counts().sort_index()
+
+    # Plot
+    plt.figure(figsize=(12, 6))
+    bars = plt.bar(score_group_counts.index, score_group_counts.values)  
+    plt.title('Grouped Distribution of Review Scores')
+    plt.xlabel('Score Groups')
+    plt.ylabel('Number of Reviews')
+
+    # Adicionar etiquetas de valor no topo de cada barra
+    for bar in bars:
+        height = bar.get_height()
+        plt.annotate(f'{int(height)}',
+                     xy=(bar.get_x() + bar.get_width() / 2, height),
+                     xytext=(0, 3),  
+                     textcoords="offset points",
+                     ha='center', va='bottom')
+
+    plt.tight_layout()
+
+safe_plot(plot_grouped_score_distribution, 'grouped_score_distribution')
+
 print("Script execution completed.")
 
 # PARA RODAR python generate_graphs.py
