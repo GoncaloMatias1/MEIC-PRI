@@ -20,15 +20,6 @@ def safe_plot(plot_func, filename):
     finally:
         plt.close()
 
-# 1. Score Distribution
-def plot_score_distribution():
-    plt.figure(figsize=(10, 6))
-    sns.histplot(df['Score'], bins=20, kde=True)
-    plt.title('Distribution of Game Scores')
-    plt.xlabel('Score')
-    plt.ylabel('Frequency')
-
-safe_plot(plot_score_distribution, 'score_distribution')
 
 # 2. Content Length vs Score
 def plot_content_length_vs_score():
@@ -41,103 +32,6 @@ def plot_content_length_vs_score():
 
 safe_plot(plot_content_length_vs_score, 'content_length_vs_score')
 
-# 3. Top 10 Highest Scored Games
-def plot_top_10_games():
-    top_10 = df.nlargest(10, 'Score')
-    plt.figure(figsize=(12, 6))
-    sns.barplot(x='Score', y='Title', data=top_10)
-    plt.title('Top 10 Highest Scored Games')
-    plt.xlabel('Score')
-    plt.ylabel('Game Title')
-    plt.xticks(rotation=45, ha='right')
-    plt.tight_layout()
-
-safe_plot(plot_top_10_games, 'top_10_games')
-
-# 4. Distribution of Subtitle Lengths
-def plot_subtitle_length_distribution():
-    df['Subtitle Length'] = df['Subtitle'].str.len()
-    plt.figure(figsize=(10, 6))
-    sns.histplot(df['Subtitle Length'], bins=20, kde=True)
-    plt.title('Distribution of Subtitle Lengths')
-    plt.xlabel('Subtitle Length (characters)')
-    plt.ylabel('Frequency')
-
-safe_plot(plot_subtitle_length_distribution, 'subtitle_length_distribution')
-
-# 5. Subheader Word Count vs Score
-def plot_subheader_wordcount_vs_score():
-    df['Subheader Word Count'] = df['Subheader'].str.split().str.len()
-    plt.figure(figsize=(10, 6))
-    sns.scatterplot(x='Subheader Word Count', y='Score', data=df)
-    plt.title('Subheader Word Count vs Score')
-    plt.xlabel('Subheader Word Count')
-    plt.ylabel('Score')
-
-safe_plot(plot_subheader_wordcount_vs_score, 'subheader_wordcount_vs_score')
-
-# 6. Score distribution by title word count
-def plot_score_by_title_length():
-    df['Title Word Count'] = df['Title'].str.split().str.len()
-    plt.figure(figsize=(12, 6))
-    sns.boxplot(x='Title Word Count', y='Score', data=df)
-    plt.title('Score Distribution by Title Word Count')
-    plt.xlabel('Number of Words in Title')
-    plt.ylabel('Score')
-
-safe_plot(plot_score_by_title_length, 'score_by_title_length')
-
-# 7. Review month analysis
-def plot_score_by_month():
-    def extract_date(date_string):
-        try:
-            return datetime.strptime(date_string, "%b %d, %Y").month
-        except ValueError:
-            return None
-
-    df['Review Month'] = df['Subheader'].apply(extract_date)
-    monthly_scores = df.groupby('Review Month')['Score'].mean()
-    
-    if not monthly_scores.empty:
-        plt.figure(figsize=(12, 6))
-        monthly_scores.plot(kind='bar')
-        plt.title('Average Score by Month')
-        plt.xlabel('Month')
-        plt.ylabel('Average Score')
-        plt.xticks(range(12), ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
-    else:
-        raise ValueError("No monthly score data available")
-
-safe_plot(plot_score_by_month, 'score_by_month')
-
-# 8. Simple sentiment analysis
-def plot_sentiment_vs_score():
-    def simple_sentiment(text):
-        positive = len(re.findall(r'\b(good|great|excellent|amazing|fantastic|brilliant)\b', str(text), re.I))
-        negative = len(re.findall(r'\b(bad|poor|terrible|awful|disappointing)\b', str(text), re.I))
-        return positive - negative
-
-    df['Sentiment'] = df['Content'].apply(simple_sentiment)
-    plt.figure(figsize=(10, 6))
-    sns.scatterplot(x='Sentiment', y='Score', data=df)
-    plt.title('Review Sentiment vs Score')
-    plt.xlabel('Sentiment (Positive - Negative word count)')
-    plt.ylabel('Score')
-
-safe_plot(plot_sentiment_vs_score, 'sentiment_vs_score')
-
-# 9. Score distribution by year
-def plot_score_by_year():
-    df['Year'] = pd.to_datetime(df['Subheader'].str.extract('(\d{4})')[0], format='%Y')
-    yearly_scores = df.groupby(df['Year'].dt.year)['Score'].mean().sort_index()
-    plt.figure(figsize=(12, 6))
-    yearly_scores.plot(kind='line', marker='o')
-    plt.title('Average Score by Year')
-    plt.xlabel('Year')
-    plt.ylabel('Average Score')
-    plt.xticks(rotation=45)
-
-safe_plot(plot_score_by_year, 'score_by_year')
 
 # 10. Word cloud of most common words in titles
 def plot_title_word_cloud():
@@ -151,15 +45,6 @@ def plot_title_word_cloud():
 
 safe_plot(plot_title_word_cloud, 'title_word_cloud')
 
-# 11. Correlation heatmap
-def plot_correlation_heatmap():
-    numeric_df = df[['Score', 'Content Length', 'Subtitle Length', 'Subheader Word Count', 'Title Word Count', 'Sentiment']]
-    corr = numeric_df.corr()
-    plt.figure(figsize=(10, 8))
-    sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1, center=0)
-    plt.title('Correlation Heatmap of Numeric Features')
-
-safe_plot(plot_correlation_heatmap, 'correlation_heatmap')
 
 # 12. Score distribution for games with specific words in title
 def plot_score_by_title_keywords():
@@ -180,41 +65,6 @@ def plot_score_by_title_keywords():
 
 safe_plot(plot_score_by_title_keywords, 'score_by_title_keywords')
 
-# 13. Subheader length vs Score
-def plot_subheader_length_vs_score():
-    df['Subheader Length'] = df['Subheader'].str.len()
-    plt.figure(figsize=(10, 6))
-    sns.scatterplot(x='Subheader Length', y='Score', data=df)
-    plt.title('Subheader Length vs Score')
-    plt.xlabel('Subheader Length (characters)')
-    plt.ylabel('Score')
-
-safe_plot(plot_subheader_length_vs_score, 'subheader_length_vs_score')
-
-# 14. Top reviewers by number of reviews
-def plot_top_reviewers():
-    reviewer_counts = df['Subtitle'].value_counts().head(10)
-    plt.figure(figsize=(12, 6))
-    reviewer_counts.plot(kind='bar')
-    plt.title('Top 10 Reviewers by Number of Reviews')
-    plt.xlabel('Reviewer')
-    plt.ylabel('Number of Reviews')
-    plt.xticks(rotation=45, ha='right')
-
-safe_plot(plot_top_reviewers, 'top_reviewers')
-
-# 15. Average score by reviewer (for top reviewers)
-def plot_avg_score_by_reviewer():
-    top_reviewers = df['Subtitle'].value_counts().head(10).index
-    reviewer_avg_scores = df[df['Subtitle'].isin(top_reviewers)].groupby('Subtitle')['Score'].mean().sort_values(ascending=False)
-    plt.figure(figsize=(12, 6))
-    reviewer_avg_scores.plot(kind='bar')
-    plt.title('Average Score by Top Reviewers')
-    plt.xlabel('Reviewer')
-    plt.ylabel('Average Score')
-    plt.xticks(rotation=45, ha='right')
-
-safe_plot(plot_avg_score_by_reviewer, 'avg_score_by_reviewer')
 
 def plot_reviews_per_year():
     def extract_year(subheader):
@@ -252,7 +102,6 @@ def plot_reviews_per_year():
     
     plt.tight_layout()
 
-# Add this to your safe_plot calls
 safe_plot(plot_reviews_per_year, 'reviews_per_year')
 
 
@@ -293,6 +142,137 @@ def plot_reviews_per_month():
     plt.tight_layout()
 
 safe_plot(plot_reviews_per_month, 'reviews_per_month')
+
+def extract_original_date(subheader):
+    # Try to find the "Posted:" date first
+    posted_match = re.search(r'Posted: (\w+ \d+, \d{4})', subheader)
+    if posted_match:
+        return datetime.strptime(posted_match.group(1), '%b %d, %Y')
+    
+    # If "Posted:" is not found, look for any date
+    date_match = re.search(r'(\w+ \d+, \d{4})', subheader)
+    if date_match:
+        return datetime.strptime(date_match.group(1), '%b %d, %Y')
+    
+    return None
+
+def plot_avg_score_per_year():
+    # Extract original dates from the Subheader column
+    df['ReviewDate'] = df['Subheader'].apply(extract_original_date)
+    df['ReviewYear'] = df['ReviewDate'].dt.year
+
+    # Calculate average score per year
+    yearly_avg_scores = df.groupby('ReviewYear')['Score'].mean().sort_index()
+
+    # Plot
+    plt.figure(figsize=(15, 8))
+    yearly_avg_scores.plot(kind='line', marker='o')
+    plt.title('Average Score per Year')
+    plt.xlabel('Year')
+    plt.ylabel('Average Score')
+    
+    plt.xticks(rotation=45)
+    plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+    plt.tight_layout()
+
+safe_plot(plot_avg_score_per_year, 'avg_score_per_year')
+
+
+def extract_reviewer(subheader):
+    # Try to find the reviewer name
+    reviewer_match = re.search(r'By ([\w\s]+) Updated:', subheader)
+    if reviewer_match:
+        return reviewer_match.group(1).strip()
+    return "Unknown"
+
+def plot_top_reviewers():
+    # Extract reviewer names
+    df['Reviewer'] = df['Subheader'].apply(extract_reviewer)
+    
+    # Count reviews per reviewer
+    reviewer_counts = df['Reviewer'].value_counts()
+    
+    # Get top 20 reviewers
+    top_20_reviewers = reviewer_counts.head(20)
+    
+    # Plot
+    plt.figure(figsize=(15, 10))
+    bars = plt.bar(top_20_reviewers.index, top_20_reviewers.values)
+    plt.title('Top 20 Reviewers by Number of Reviews')
+    plt.xlabel('Reviewer')
+    plt.ylabel('Number of Reviews')
+    plt.xticks(rotation=90)
+    
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height,
+                 f'{height}',
+                 ha='center', va='bottom')
+    
+    plt.tight_layout()
+
+safe_plot(plot_top_reviewers, 'top_20_reviewers')
+
+def plot_avg_score_per_top_reviewer():
+    df['Reviewer'] = df['Subheader'].apply(extract_reviewer)
+    
+    # Calculate average score per reviewer
+    avg_scores = df.groupby('Reviewer')['Score'].agg(['mean', 'count'])
+    avg_scores = avg_scores[avg_scores['count'] >= 10]  
+    avg_scores = avg_scores.sort_values('count', ascending=False).head(20)
+    
+    # Plot
+    plt.figure(figsize=(15, 10))
+    bars = plt.bar(avg_scores.index, avg_scores['mean'])
+    plt.title('Average Score by Top 20 Reviewers (min. 10 reviews)')
+    plt.xlabel('Reviewer')
+    plt.ylabel('Average Score')
+    plt.xticks(rotation=90)
+    
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height,
+                 f'{height:.2f}',
+                 ha='center', va='bottom')
+    
+    plt.tight_layout()
+
+safe_plot(plot_avg_score_per_top_reviewer, 'avg_score_per_top_reviewer')
+
+
+def plot_avg_score_top_20_reviewers():
+    df['Reviewer'] = df['Subheader'].apply(extract_reviewer)
+    
+    top_20_reviewers = df['Reviewer'].value_counts().nlargest(20).index
+
+    # Calculate average score for top 20 reviewers
+    avg_scores = df[df['Reviewer'].isin(top_20_reviewers)].groupby('Reviewer')['Score'].agg(['mean', 'count']).sort_values('count', ascending=False)
+
+    # Plot
+    plt.figure(figsize=(20, 10))  
+    bars = plt.bar(avg_scores.index, avg_scores['mean'])
+    plt.title('Average Score by Top 20 Reviewers')
+    plt.xlabel('Reviewer')
+    plt.ylabel('Average Score')
+    plt.ylim(0, 10)  
+    
+    plt.xticks(rotation=45, ha='right')
+    
+    # Add value labels on top of each bar
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height,
+                 f'{height:.2f}',
+                 ha='center', va='bottom')
+    
+    # Add number of reviews as text below the x-axis
+    for i, (reviewer, data) in enumerate(avg_scores.iterrows()):
+        plt.text(i, -0.3, f"n={data['count']}", ha='center', va='top', rotation=45, transform=plt.gca().get_xaxis_transform())
+    
+    plt.tight_layout()
+
+
+safe_plot(plot_avg_score_top_20_reviewers, 'avg_score_top_20_reviewers_improved')
 
 print("Script execution completed.")
 
