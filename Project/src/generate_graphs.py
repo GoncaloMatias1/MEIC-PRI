@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 from collections import Counter
 from calendar import month_abbr
+from wordcloud import WordCloud
 
 data_path = 'webscrapper_out/ign.csv'
 df = pd.read_csv(data_path)
@@ -301,6 +302,49 @@ def plot_grouped_score_distribution():
     plt.tight_layout()
 
 safe_plot(plot_grouped_score_distribution, 'grouped_score_distribution')
+
+def plot_title_word_cloud(df):
+    title_text = ' '.join(df['Title'])
+    # Clean the text
+    title_text = re.sub(r'[^\w\s]', '', title_text)  # Remove punctuation
+    title_text = title_text.lower()  # Convert to lowercase
+    # Create and generate a word cloud image
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(title_text)
+    # Display the generated image
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.title('Word Cloud of Game Titles')
+
+def plot_subtitle_word_cloud(df):
+    subtitle_text = ' '.join(df['Subtitle'].dropna().astype(str))
+    # Clean the text
+    subtitle_text = re.sub(r'[^\w\s]', '', subtitle_text)  # Remove punctuation
+    subtitle_text = subtitle_text.lower()  # Convert to lowercase
+    # Create and generate a word cloud image
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(subtitle_text)
+    # Display the generated image
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.title('Word Cloud of Game Subtitles')
+
+def plot_content_word_cloud(df):
+    content_text = ' '.join(df['Content'].dropna().astype(str))
+    # Clean the text
+    content_text = re.sub(r'[^\w\s]', '', content_text)  # Remove punctuation
+    content_text = content_text.lower()  # Convert to lowercase
+    # Create and generate a word cloud image
+    wordcloud = WordCloud(width=800, height=400, background_color='white', max_words=200).generate(content_text)
+    # Display the generated image
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.title('Word Cloud of Game Reviews Content')
+
+safe_plot(lambda: plot_title_word_cloud(df), 'title_word_cloud')
+safe_plot(lambda: plot_subtitle_word_cloud(df), 'subtitle_word_cloud')
+safe_plot(lambda: plot_content_word_cloud(df), 'content_word_cloud')
 
 print("Script execution completed.")
 
