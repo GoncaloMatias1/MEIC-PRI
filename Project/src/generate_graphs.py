@@ -10,6 +10,12 @@ from wordcloud import WordCloud
 data_path = 'webscrapper_out/ign.csv'
 df = pd.read_csv(data_path)
 
+print(f"Successfully read CSV file from {data_path}")
+print(f"Number of rows: {len(df)}")
+print(f"Number of columns: {len(df.columns)}")
+print("Columns in the DataFrame:")
+print(df.columns.tolist())
+
 def safe_plot(plot_func, filename):
     try:
         plot_func()
