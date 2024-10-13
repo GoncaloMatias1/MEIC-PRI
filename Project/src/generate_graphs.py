@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import re
 from datetime import datetime
+from collections import Counter
+from calendar import month_abbr
 
 data_path = 'webscrapper_out/ign.csv'
 df = pd.read_csv(data_path)
@@ -214,6 +216,84 @@ def plot_avg_score_by_reviewer():
 
 safe_plot(plot_avg_score_by_reviewer, 'avg_score_by_reviewer')
 
-print("Script execution completed. Check the output for any error messages.")
+def plot_reviews_per_year():
+    def extract_year(subheader):
+        # Try to find the "Posted:" date first
+        posted_match = re.search(r'Posted: (\w+ \d+, (\d{4}))', subheader)
+        if posted_match:
+            return int(posted_match.group(2))
+        
+        # If "Posted:" is not found, look for "Updated:" date
+        updated_match = re.search(r'Updated: (\w+ \d+, (\d{4}))', subheader)
+        if updated_match:
+            return int(updated_match.group(2))
+        
+        # If neither is found, try to find any year
+        year_match = re.search(r'\b(19|20)\d{2}\b', subheader)
+        if year_match:
+            return int(year_match.group())
+        
+        return None
+
+    # Extract years from the Subheader column
+    df['ReviewYear'] = df['Subheader'].apply(extract_year)
+
+    # Count the number of reviews per year
+    year_counts = df['ReviewYear'].value_counts().sort_index()
+
+    # Plot
+    plt.figure(figsize=(15, 8))
+    year_counts.plot(kind='bar')
+    plt.title('Number of Reviews per Year')
+    plt.xlabel('Year')
+    plt.ylabel('Number of Reviews')
+    
+    plt.xticks(range(len(year_counts)), year_counts.index, rotation=45)
+    
+    plt.tight_layout()
+
+# Add this to your safe_plot calls
+safe_plot(plot_reviews_per_year, 'reviews_per_year')
+
+
+def plot_reviews_per_month():
+    def extract_month(subheader):
+        # Try to find the "Posted:" date first
+        posted_match = re.search(r'Posted: (\w{3}) \d+, \d{4}', subheader)
+        if posted_match:
+            return posted_match.group(1)
+        
+        # If "Posted:" is not found, look for "Updated:" date
+        updated_match = re.search(r'Updated: (\w{3}) \d+, \d{4}', subheader)
+        if updated_match:
+            return updated_match.group(1)
+        
+        return None
+
+    # Extract months from the Subheader column
+    df['ReviewMonth'] = df['Subheader'].apply(extract_month)
+
+    # Count the number of reviews per month
+    month_counts = df['ReviewMonth'].value_counts()
+
+    # Create a dictionary to map month abbreviations to their numeric order
+    month_order = {month: index for index, month in enumerate(month_abbr[1:], 1)}
+
+    # Sort the month counts based on the numeric order
+    month_counts_sorted = month_counts.sort_index(key=lambda x: x.map(month_order))
+
+    # Plot
+    plt.figure(figsize=(15, 8))
+    month_counts_sorted.plot(kind='bar')
+    plt.title('Number of Reviews per Month')
+    plt.xlabel('Month')
+    plt.ylabel('Number of Reviews')
+    
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+
+safe_plot(plot_reviews_per_month, 'reviews_per_month')
+
+print("Script execution completed.")
 
 # PARA RODAR python generate_graphs.py
