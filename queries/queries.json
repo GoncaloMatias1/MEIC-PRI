@@ -1,0 +1,30 @@
+{
+  "setup1": {
+    "action_high": {
+      "description": "Highly rated action games",
+      "query": "q=Content:action%20AND%20Score:%5B8%20TO%2010%5D&fl=Title,Score,Content&rows=10"
+    },
+    "fighting_good": {
+      "description": "Good fighting games",
+      "query": "q=Content:fighting&fl=Title,Score,Content&rows=10"
+    },
+    "rpg_recent": {
+      "description": "Recent RPG games",
+      "query": "q=Content:rpg%20AND%20Content:2020&fl=Title,Score,Content&rows=10"
+    }
+  },
+  "setup2": {
+    "action_high": {
+      "description": "Highly rated action games",
+      "query": "defType=dismax&q=action&qf=Title^4.0+Content^2.0&fq=Score:%5B8%20TO%2010%5D&fl=Title,Score,Content&rows=10"
+    },
+    "fighting_good": {
+      "description": "Good fighting games",
+      "query": "defType=dismax&q=fighting&qf=Title^4.0+Content^2.0&fl=Title,Score,Content&rows=10"
+    },
+    "rpg_recent": {
+      "description": "Recent RPG games",
+      "query": "defType=dismax&q=rpg&qf=Title^4.0+Content^2.0&fl=Title,Score,Content&rows=10"
+    }
+  }
+}
