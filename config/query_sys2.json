@@ -1,15 +1,14 @@
 {
-    "query": "action games",
-    "fields": "Title,Score,id",
+    "query": "katana zero bayonetta tomb raider far cry",
     "params": {
         "defType": "edismax",
-        "qf": "Title^3.0 Content^1.0 Subtitle^0.5",
-        "pf": "Title^5.0",
+        "qf": "Title^4.0 Content^0.5",
+        "pf": "Title^8.0",
         "ps": "2",
         "mm": "2",
-        "tie": "0.1",
         "fq": "Score:[8 TO 10]",
         "rows": "10",
+        "tie": "0.1",
         "bf": "product(Score,2.0)"
     }
 }
