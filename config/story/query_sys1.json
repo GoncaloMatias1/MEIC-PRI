@@ -1,5 +1,5 @@
 {
-    "query": "\"last of us\" OR \"red dead redemption\" OR \"mass effect\"",
+    "query": "story* narrative~ OR \"last of us\" OR \"red dead redemption\" OR \"mass effect\"",
     "params": {
         "defType": "edismax",
         "qf": "Title^2.0 Content^1.0",

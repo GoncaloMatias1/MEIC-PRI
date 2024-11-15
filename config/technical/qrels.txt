@@ -1,2 +1,3 @@
 ba380275-f276-4a77-9095-40b27248804f    # GTA V
-53269556-7649-4200-bf39-1c49641d911b    # Red Dead Redemption
+dae136a5-6c30-4fdc-b5f5-4b42b929d992    # RDR 2
+e60e2e84-9bcd-43f8-b461-e20e038aa13a    # Last of Us
