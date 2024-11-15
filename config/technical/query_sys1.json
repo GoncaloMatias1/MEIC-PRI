@@ -1,8 +1,9 @@
 {
-    "query": "smooth gameplay performance fps action combat",
+    "query": "performance~2 graphics~2",
     "params": {
         "defType": "edismax",
         "qf": "Content^1.0",
+        "bf": "product(Score,3.0)",
         "fq": "Score:[8 TO 10]",
         "rows": "10"
     }
