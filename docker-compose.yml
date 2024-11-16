@@ -1,0 +1,9 @@
+echo 'version: "3"
+services:
+  solr:
+    image: solr:9
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./solr/conf:/opt/solr/server/solr/configsets/_default/conf
+' > docker-compose.yml

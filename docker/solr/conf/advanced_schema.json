@@ -1,0 +1,93 @@
+{
+    "add-field-type": [
+      {
+        "name": "game_text",
+        "class": "solr.TextField",
+        "indexAnalyzer": {
+          "tokenizer": {
+            "class": "solr.StandardTokenizerFactory"
+          },
+          "filters": [
+            { "class": "solr.LowerCaseFilterFactory" },
+            { "class": "solr.StopFilterFactory", "words": "stopwords.txt", "ignoreCase": "true" },
+            { "class": "solr.EnglishPossessiveFilterFactory" },
+            { "class": "solr.PorterStemFilterFactory" },
+            { 
+              "class": "solr.WordDelimiterGraphFilterFactory",
+              "generateWordParts": "1",
+              "generateNumberParts": "1",
+              "catenateWords": "1",
+              "catenateNumbers": "1",
+              "catenateAll": "1",
+              "splitOnCaseChange": "1"
+            }
+          ]
+        },
+        "queryAnalyzer": {
+          "tokenizer": {
+            "class": "solr.StandardTokenizerFactory"
+          },
+          "filters": [
+            { "class": "solr.LowerCaseFilterFactory" },
+            { "class": "solr.StopFilterFactory", "words": "stopwords.txt", "ignoreCase": "true" },
+            { "class": "solr.EnglishPossessiveFilterFactory" },
+            { "class": "solr.PorterStemFilterFactory" }
+          ]
+        }
+      }
+    ],
+    "add-field": [
+      {
+        "name": "Title",
+        "type": "game_text",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "Content",
+        "type": "game_text",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "Subtitle",
+        "type": "game_text",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "Subheader",
+        "type": "game_text",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "Score",
+        "type": "pfloat",
+        "docValues": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "keywords",
+        "type": "game_text",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      }
+    ],
+    "add-copy-field": [
+      {
+        "source": "Title",
+        "dest": "_text_"
+      },
+      {
+        "source": "Content",
+        "dest": "_text_"
+      },
+      {
+        "source": "Subtitle",
+        "dest": "_text_"
+      }
+    ]
+  }
