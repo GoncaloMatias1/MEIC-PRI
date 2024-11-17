@@ -20,5 +20,5 @@ setup-cores:
 	curl -X POST -H 'Content-type:application/json' --data-binary @docker/solr/conf/advanced_schema.json "http://localhost:8983/solr/ign_advanced/schema"
 
 index-data:
-	curl -X POST -H 'Content-type:application/json' --data-binary "@csv_to_json/ign.json" "http://localhost:8983/solr/ign_simple/update?commit=true"
-	curl -X POST -H 'Content-type:application/json' --data-binary "@csv_to_json/ign.json" "http://localhost:8983/solr/ign_advanced/update?commit=true"
+	curl -X POST -H 'Content-type:application/json' --data-binary "@csv_to_json/ign_processed.json" "http://localhost:8983/solr/ign_simple/update?commit=true"
+	curl -X POST -H 'Content-type:application/json' --data-binary "@csv_to_json/ign_processed.json" "http://localhost:8983/solr/ign_advanced/update?commit=true"

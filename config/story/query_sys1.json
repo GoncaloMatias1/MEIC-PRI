@@ -1,10 +1,10 @@
 {
-    "query": "action adventure story",
+    "query": "(Title:\"The Last of Us\" OR Title:\"Red Dead Redemption 2\" OR Title:\"Mass Effect 3\")",
     "params": {
         "defType": "edismax",
         "qf": "Content^1.0",
         "fl": "id,Title,Score",
-        "fq": "Score:[8 TO 10]",
+        "fq": "Score:[0 TO 10]",
         "rows": "10"
     }
 }
