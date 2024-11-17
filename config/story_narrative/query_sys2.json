@@ -1,0 +1,1 @@
+{"params": {"defType": "edismax", "q": "story narrative character plot development", "qf": "Subtitle^3.0 Content^2.0", "pf": "Content^4.0", "bq": "Content:\"story-driven\"^2.0 Content:\"narrative-driven\"^2.0 Content:\"character development\"^1.5", "bf": "Score^1.5", "rows": 100, "fl": "id,Score"}}
