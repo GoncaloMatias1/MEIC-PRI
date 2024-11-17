@@ -1,0 +1,9 @@
+{
+    "query": "(Title:\"God of War Ragnarok\" OR Title:\"God of War III\" OR Title:\"Elden Ring\" OR Title:\"Dark Souls 3\" OR Title:\"Dark Souls Remastered\")",
+    "params": {
+      "defType": "edismax",
+      "fl": "id,Title,Score",
+      "fq": "Score:[9 TO 10]",
+      "sort": "Score desc"
+    }
+  }
