@@ -1,0 +1,10 @@
+{
+    "query": "\"Last of Us\" OR \"Red Dead Redemption\" OR \"God of War\"",
+    "params": {
+        "defType": "edismax",
+        "qf": "Title^10.0 Content^2.0",
+        "pf": "Title^20.0",
+        "fq": "Score:[9 TO 10]",
+        "rows": "10"
+    }
+}

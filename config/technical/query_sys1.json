@@ -1,0 +1,9 @@
+{
+    "query": "graphics performance gameplay",
+    "params": {
+        "defType": "edismax",
+        "qf": "Content^2.0",
+        "fq": "Score:[9 TO 10] AND Title:(\"Grand Theft Auto\" OR \"Red Dead\" OR \"Last of Us\")",
+        "rows": "10"
+    }
+}
