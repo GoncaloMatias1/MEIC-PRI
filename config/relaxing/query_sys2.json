@@ -1,0 +1,12 @@
+{
+    "params": {
+      "defType": "edismax",
+      "q": "{!boost b=Score}(Title:(*relax* *peaceful* *calm* *chill*) OR Content:(*relax* *peaceful* *calm* *meditat* *chill* *mindful*) OR keywords:(*relax* *peaceful* *calm*))",
+      "qf": "Title^4.0 Content^2.0 Subtitle^1.5 keywords^3.0",
+      "pf": "Title^8.0 Content^4.0",
+      "bf": "Score^2.0",
+      "mm": "2",
+      "rows": 100,
+      "fl": "id,Title,Score"
+    }
+  }
