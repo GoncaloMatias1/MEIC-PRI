@@ -22,11 +22,17 @@ def main(qrels_file: str, output_file: str):
         y_true = {
             line.strip().split()[2] for line in f
         }  # Use a set for fast lookup of relevant document IDs
+    print(f"Debug: Qrels IDs: {y_true}", file=sys.stderr)
 
     # Read predicted document IDs from stdin (TREC format: assume the third column contains the doc_id)
     y_pred = [
         line.strip().split()[2] for line in sys.stdin
     ]  # Extract document IDs from TREC format
+    print(f"Debug: Prediction IDs: {y_pred}", file=sys.stderr)
+
+    # Check for matches
+    matches = set(y_pred) & set(y_true)
+    print(f"Debug: Matching IDs: {matches}", file=sys.stderr)
 
     # Edge case: Handle empty inputs
     if not y_pred or not y_true:
@@ -77,7 +83,8 @@ def main(qrels_file: str, output_file: str):
     # Plot the 11-point interpolated precision-recall curve
     precisions_at_n = ""
     for n in (5, 10, 15, 20):
-        precisions_at_n += f"P@{n}:{precision[n - 1]:.2f}, "
+        if n <= len(precision):
+            precisions_at_n += f"P@{n}:{precision[n - 1]:.2f}, "
     plt.plot(
         recall_levels,
         interpolated_precision,

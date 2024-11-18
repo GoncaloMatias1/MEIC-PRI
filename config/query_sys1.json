@@ -1,9 +1,0 @@
-{
-    "params": {
-      "q": "Content:story OR Content:narrative OR Content:adventure OR Content:rpg",
-      "defType": "edismax",
-      "qf": "Title^2.0 Content^1.0 Subtitle^1.5",
-      "rows": 20,
-      "fl": "id,Score,Title"
-    }
-  }
