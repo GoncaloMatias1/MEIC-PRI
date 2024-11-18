@@ -1,9 +1,0 @@
-{
-    "query": "open world action adventure sandbox",
-    "params": {
-        "defType": "edismax",
-        "qf": "Content^1.0",
-        "fq": "Score:[8 TO 10]",
-        "rows": "10"
-    }
-}

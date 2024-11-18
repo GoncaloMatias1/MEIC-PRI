@@ -1,14 +1,11 @@
 {
-    "query": "katana zero bayonetta tomb raider far cry",
     "params": {
-        "defType": "edismax",
-        "qf": "Title^4.0 Content^0.5",
-        "pf": "Title^8.0",
-        "ps": "2",
-        "mm": "2",
-        "fq": "Score:[8 TO 10]",
-        "rows": "10",
-        "tie": "0.1",
-        "bf": "product(Score,2.0)"
+      "q": "{!boost b=Score}Content:story OR Content:narrative OR Content:adventure OR Content:rpg",
+      "defType": "edismax",
+      "qf": "Title^3.0 Content^1.0 Subtitle^2.0",
+      "bq": "Title:\"story game\"^2.0 Title:\"narrative game\"^2.0",
+      "boost": "Score^1.5",
+      "rows": 20,
+      "fl": "id,Score,Title"
     }
-}
+  }
