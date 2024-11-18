@@ -1,1 +1,7 @@
-{"params": {"q": "Subtitle:(story OR narrative OR \"story-driven\" OR \"narrative-driven\") OR Content:(\"story-driven\" OR \"narrative-driven\" OR \"character development\" OR \"storytelling\" OR \"story-focused\" OR \"narrative experience\")", "rows": 100, "fl": "id,Score"}}
+{
+    "params": {
+        "q": "Subtitle:(story OR narrative OR \"story-driven\" OR \"narrative-driven\") OR Content:(\"story-driven\" OR \"narrative-driven\" OR \"character development\" OR \"storytelling\" OR \"story-focused\" OR \"narrative experience\")",
+        "rows": 100,
+        "fl": "id,Score"
+    }
+}

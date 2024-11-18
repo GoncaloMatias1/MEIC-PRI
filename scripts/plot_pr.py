@@ -38,12 +38,14 @@ def main(qrels_file: str, output_file: str):
     recall = []
     relevant_ranks = []  # To hold precision values at ranks where relevant documents are retrieved
     relevant_count = 0
+    relevant_docs = []
 
     for i in range(1, len(y_pred) + 1):
         # Check how many predicted documents so far are relevant
         if y_pred[i - 1] in y_true:
             relevant_count += 1
             relevant_ranks.append(relevant_count / i)  # Precision at this rank (relevant document)
+            relevant_docs.append(i - 1)
 
         # Precision: relevant docs so far / total docs retrieved so far
         precision.append(relevant_count / i)
@@ -64,14 +66,21 @@ def main(qrels_file: str, output_file: str):
     # Compute the Area Under Curve (AUC) for the precision-recall curve
     auc_score = np.trapz(interpolated_precision, recall_levels)
 
+    # Compute AVP (Average Precision)
+    avp_score = sum(map(lambda idx: precision[idx], relevant_docs)) / len(relevant_docs)
+
     # Plot the 11-point interpolated precision-recall curve
+    precisions_at_n = ""
+    for n in (5, 10, 15, 20):
+        precisions_at_n += f"P@{n}:{precision[n - 1]:.2f}, "
     plt.plot(
         recall_levels,
         interpolated_precision,
         drawstyle="steps-post",
-        label=f"MAP: {map_score:.4f}, AUC: {auc_score:.4f}",
+        label=f"AVP: {avp_score:.3f}, MAP: {map_score:.3f}, AUC: {auc_score:.3f}",
         linewidth=1,
     )
+    plt.figtext(0.5, 0.01, precisions_at_n, wrap=True, horizontalalignment='center', fontsize=7)
 
     # Customize plot appearance
     plt.xlabel("Recall")
