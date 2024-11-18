@@ -53,6 +53,14 @@ def main(qrels_file: str, output_file: str):
         # Recall: relevant docs so far / total relevant docs in qrels
         recall.append(relevant_count / len(y_true))
 
+    # Handle case where no relevant documents were found
+    if not relevant_docs:
+        print("Warning: No relevant documents found in the results.")
+        avp_score = 0
+    else:
+        # Compute AVP (Average Precision)
+        avp_score = sum(map(lambda idx: precision[idx], relevant_docs)) / len(relevant_docs)
+
     # Compute Mean Average Precision (MAP) as the mean of precision values for relevant documents
     map_score = np.sum(relevant_ranks) / len(y_true) if relevant_ranks else 0
 
@@ -64,10 +72,7 @@ def main(qrels_file: str, output_file: str):
     ]
 
     # Compute the Area Under Curve (AUC) for the precision-recall curve
-    auc_score = np.trapz(interpolated_precision, recall_levels)
-
-    # Compute AVP (Average Precision)
-    avp_score = sum(map(lambda idx: precision[idx], relevant_docs)) / len(relevant_docs)
+    auc_score = np.trapezoid(interpolated_precision, recall_levels)
 
     # Plot the 11-point interpolated precision-recall curve
     precisions_at_n = ""
