@@ -1,10 +1,10 @@
 {
     "params": {
-      "q": "Title:(*relax* OR *peaceful* OR *calm* OR *chill*) OR Content:(*relax* OR *peaceful* OR *calm* OR *meditat* OR *chill*)",
+      "q": "Title:(*relax* OR *peaceful* OR *calm* OR *chill*) OR Content:(*relax* OR *peaceful* OR *calm* OR *meditat* OR *chill*) or Subtitle:(*relax* OR *peaceful* OR *calm* OR *meditat* OR *chill*)",
       "defType": "edismax",
       "bf": "Score^2.0",
       "qf": "Title^4.0 Content^2.0 Subtitle^1.5",
       "rows": 100,
       "fl": "id,Title,Score"
     }
-  }
+}

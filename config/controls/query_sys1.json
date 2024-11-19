@@ -1,0 +1,10 @@
+{
+    "params": {
+      "defType": "edismax",
+      "q": "Content:(*tight* *responsive* *precise*) OR Subtitle:(*tight* *responsive* *precise*)",
+      "qf": "Content^4.0 Subtitle^2.0",
+      "rows": 100,
+      "fl": "id,Title,Content,Score"
+    }
+  }
+  

@@ -1,0 +1,12 @@
+{
+    "params": {
+      "defType": "edismax",
+      "q": "Title:(*multiplayer* *online*) OR Content: (*multiplayer* *team*) Subtitle: (*multiplayer* *online* *cooperative* *team*)",
+      "qf": "Title^4.0 Content^2.0 Subtitle^1.5",
+      "fq": "Content:multiplayer",
+      "bq": "Subtitle:(*online*)^3.0 Content:(*multiplayer*)^5.0",
+      "rows": 100,
+      "fl": "id,Title,Content,Score"
+    }
+  }
+  

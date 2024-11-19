@@ -12,7 +12,7 @@ def solr_to_trec(solr_response, run_id="run0"):
         
         for rank, doc in enumerate(docs, start=1):
             doc_id = doc['id']
-            score = doc.get('score', 1.0)
+            score = doc.get('Score', 1.0)
             print(f"Doc ID: {doc_id}, Score: {score}", file=sys.stderr)
             print(f"0 Q0 {doc_id} {rank} {score} {run_id}")
 

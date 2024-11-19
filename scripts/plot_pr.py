@@ -78,7 +78,7 @@ def main(qrels_file: str, output_file: str):
     ]
 
     # Compute the Area Under Curve (AUC) for the precision-recall curve
-    auc_score = np.trapezoid(interpolated_precision, recall_levels)
+    auc_score = np.trapz(interpolated_precision, recall_levels)
 
     # Plot the 11-point interpolated precision-recall curve
     precisions_at_n = ""
@@ -92,7 +92,7 @@ def main(qrels_file: str, output_file: str):
         label=f"AVP: {avp_score:.3f}, MAP: {map_score:.3f}, AUC: {auc_score:.3f}",
         linewidth=1,
     )
-    plt.figtext(0.5, 0.01, precisions_at_n, wrap=True, horizontalalignment='center', fontsize=7)
+    plt.figtext(0.5, 0.01, precisions_at_n, wrap=True, horizontalalignment='center', fontsize=6)
 
     # Customize plot appearance
     plt.xlabel("Recall")
