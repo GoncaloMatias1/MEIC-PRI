@@ -1,8 +1,8 @@
 {
     "params": {
       "defType": "edismax",
-      "q": "Title:(*relax* *peaceful* *calm* *chill*) OR Content:(*relax* *peaceful* *calm* *meditat* *chill* *mindful*)",
-      "qf": "Title^4.0 Content^2.0 Subtitle^1.5",
+      "q": "Title:(*relax* *peaceful* *calm* *chill*) OR Content:(*relax* *peaceful* *calm* *meditat* *chill* *mindful* *simple* *serene* *enjoy* *soft*)",
+      "qf": "Title^2.0 Content^3.0 Subtitle^2.5",
       "pf": "Title^8.0 Content^4.0",
       "bq": "Subtitle:(*peaceful*)^2.0 Content(*calm* *relax*)^3.0",
       "rows": 100,
