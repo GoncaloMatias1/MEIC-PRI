@@ -9,13 +9,19 @@ RESULTS_DIR = results
 
 help:
 	@echo "Commands:"
-	@echo "down       		  : stops all running services"
-	@echo "up         		  : starts Solr with both cores"
-	@echo "setup-cores		  : creates and configures both cores"
-	@echo "index-data 		  : indexes data into both cores"
-	@echo "index-data-subset  : indexes subset data into both cores"
-	@echo "query-results-sys1 : indexes subset data into both cores"
-	
+	@echo "  down                                  : stops all running services"
+	@echo "  up                                    : starts Solr with both cores"
+	@echo "  setup-cores                           : creates and configures both cores"
+	@echo "  index-data                            : indexes data into both cores"
+	@echo "  index-data-subset                     : indexes subset data into both cores"
+	@echo "  query-results-sys1 QUERY=<query-name> : runs the given query for system 1 and saves result to a file"
+	@echo "  query-results-sys2 QUERY=<query-name> : runs the given query for system 2 and saves result to a file"
+	@echo "  qrels2trec QUERY=<query-name>         : gets qrels.txt file from the query and transforms it into a trec file in the results"
+	@echo "  qrels2trec-copy QUERY=<query-name>    : copies qrels.txt file from the query to a trec file in the results, used if qrels.txt is already in trec format"
+	@echo "  query-plot-sys1 QUERY=<query-name>    : plots the results of the given query for system 1"
+	@echo "  query-plot-sys2 QUERY=<query-name>    : plots the results of the given query for system 2"
+	@echo "  query QUERY=<query-name>              : runs 'queries-results' for both systems and plots the results for a given query"
+	@echo "  all-queries                           : runs 'query' command for all queries"
 
 down:
 	docker-compose down
