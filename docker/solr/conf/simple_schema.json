@@ -1,59 +1,57 @@
 {
-    "add-field-type": [
-      {
-        "name": "text_simple",
-        "class": "solr.TextField",
-        "indexAnalyzer": {
-          "tokenizer": {
-            "class": "solr.StandardTokenizerFactory"
-          },
-          "filters": [
-            { "class": "solr.LowerCaseFilterFactory" },
-            { "class": "solr.StopFilterFactory" }
-          ]
+  "add-field-type": [
+    {
+      "name": "text_basic",
+      "class": "solr.TextField",
+      "indexAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
         },
-        "queryAnalyzer": {
-          "tokenizer": {
-            "class": "solr.StandardTokenizerFactory"
-          },
-          "filters": [
-            { "class": "solr.LowerCaseFilterFactory" },
-            { "class": "solr.StopFilterFactory" }
-          ]
-        }
+        "filters": [
+          {"class": "solr.LowerCaseFilterFactory"}
+        ]
+      },
+      "queryAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "filters": [
+          {"class": "solr.LowerCaseFilterFactory"}
+        ]
       }
-    ],
-    "add-field": [
-      {
-        "name": "Title",
-        "type": "text_simple",
-        "indexed": true,
-        "stored": true
-      },
-      {
-        "name": "Content",
-        "type": "text_simple",
-        "indexed": true,
-        "stored": true
-      },
-      {
-        "name": "Subtitle",
-        "type": "text_simple",
-        "indexed": true,
-        "stored": true
-      },
-      {
-        "name": "Subheader",
-        "type": "text_simple",
-        "indexed": true,
-        "stored": true
-      },
-      {
-        "name": "Score",
-        "type": "pfloat",
-        "docValues": true,
-        "indexed": true,
-        "stored": true
-      }
-    ]
-  }
+    }
+  ],
+  "add-field": [
+    {
+      "name": "Title",
+      "type": "text_basic",
+      "indexed": true,
+      "stored": true
+    },
+    {
+      "name": "Content",
+      "type": "text_basic",
+      "indexed": true,
+      "stored": true
+    },
+    {
+      "name": "Subtitle",
+      "type": "text_basic",
+      "indexed": true,
+      "stored": true
+    },
+    {
+      "name": "Subheader",
+      "type": "text_basic",
+      "indexed": true,
+      "stored": true
+    },
+    {
+      "name": "Score",
+      "type": "pfloat",
+      "docValues": true,
+      "indexed": true,
+      "stored": true
+    }
+  ]
+}

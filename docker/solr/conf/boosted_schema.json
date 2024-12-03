@@ -1,0 +1,87 @@
+{
+  "add-field-type": [
+    {
+      "name": "text_advanced",
+      "class": "solr.TextField",
+      "indexAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "filters": [
+          {"class": "solr.LowerCaseFilterFactory"},
+          {"class": "solr.StopFilterFactory", "words": "lang/stopwords_en.txt", "ignoreCase": true},
+          {"class": "solr.EnglishPossessiveFilterFactory"},
+          {"class": "solr.EnglishMinimalStemFilterFactory"},
+          {
+            "class": "solr.WordDelimiterGraphFilterFactory",
+            "generateWordParts": 1,
+            "generateNumberParts": 1,
+            "catenateWords": 1,
+            "catenateNumbers": 1,
+            "catenateAll": 1,
+            "splitOnCaseChange": 1
+          },
+          {"class": "solr.NGramFilterFactory", "minGramSize": 2, "maxGramSize": 3},
+          {
+            "class": "solr.SynonymGraphFilterFactory",
+            "synonyms": "synonyms.txt",
+            "expand": true,
+            "ignoreCase": true
+          }
+        ]
+      },
+      "queryAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "filters": [
+          {"class": "solr.LowerCaseFilterFactory"},
+          {"class": "solr.StopFilterFactory", "words": "lang/stopwords_en.txt", "ignoreCase": true},
+          {"class": "solr.EnglishPossessiveFilterFactory"},
+          {"class": "solr.EnglishMinimalStemFilterFactory"}
+        ]
+      }
+    }
+  ],
+  "add-field": [
+    {
+      "name": "Title",
+      "type": "text_advanced",
+      "indexed": true,
+      "stored": true,
+      "termPositions": true,
+      "termVectors": true
+    },
+    {
+      "name": "Content",
+      "type": "text_advanced",
+      "indexed": true,
+      "stored": true,
+      "termPositions": true,
+      "termVectors": true
+    },
+    {
+      "name": "Subtitle",
+      "type": "text_advanced",
+      "indexed": true,
+      "stored": true,
+      "termPositions": true,
+      "termVectors": true
+    },
+    {
+      "name": "Subheader",
+      "type": "text_advanced",
+      "indexed": true,
+      "stored": true,
+      "termPositions": true,
+      "termVectors": true
+    },
+    {
+      "name": "Score",
+      "type": "pfloat",
+      "docValues": true,
+      "indexed": true,
+      "stored": true
+    }
+  ]
+}
