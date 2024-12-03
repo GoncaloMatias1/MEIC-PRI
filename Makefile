@@ -1,7 +1,7 @@
 CORE_NAME = ign_simple
 SCHEMA_DIR = docker/solr/conf
-DATA_DIR = csv_to_json
-QUERIES_DIR = config
+DATA_DIR = data
+QUERIES_DIR = queries
 SCRIPTS_DIR = scripts
 RESULTS_DIR = results
 
