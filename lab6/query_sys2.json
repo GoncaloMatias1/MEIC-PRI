@@ -1,7 +1,0 @@
-{
-    "query": "title:(informação)^2 OR objectives:(informação) OR learning_outcomes:(informação) OR title:(dados)^1",
-    "fields": "id, score",
-    "params": {
-        "defType": "edismax"
-    }
-}
