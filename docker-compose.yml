@@ -5,4 +5,4 @@ services:
     ports:
       - "8983:8983"
     volumes:
-      - ./solr_config:/opt/solr/server/solr/configsets/_default/conf
+      - ./docker/solr/:/opt/solr/server/solr/configsets/myconfig/

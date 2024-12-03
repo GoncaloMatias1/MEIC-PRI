@@ -1,13 +1,9 @@
 {
-    "params": {
+  "params": {
       "defType": "edismax",
-      "q": "(Title:(*controls* *responsive* *precise* *tight*) OR Content:(*controls* *responsive* *precise* *tight* *accurate* *fluid* *precision*) OR Subtitle:(*controls* *responsive* *precise* *tight*))",
-      "qf": "Title^2.0 Content^3.0 Subtitle^2.5",
-      "pf": "Title^6.0 Content^3.0",
-      "bq": "Subtitle:(*precise*)^5.0 Content:(*fluid* *responsive*)^3.0",
+      "q": "control gameplay",
+      "qf": "Title^2.0 Content^1.0",
       "rows": 100,
       "fl": "id,Title,Content,Score"
-    }
   }
-  
-  
+}
