@@ -1,32 +1,7 @@
-# Controls and Gameplay
-controls, handling, input
-responsive, smooth, fluid
-precise, accurate, exact
-tight, responsive, precise
-
-# Combat
-combat, fighting, battles, action
-damage, attack, hurt
-defense, protection, shield
-
-# Game Modes
-multiplayer, multi-player, online
-co-op, cooperative, coop
-singleplayer, single-player, solo
-
-# Performance
-fps, frames per second, frame rate
-latency, lag, delay
-performance, speed, smoothness
-
-# Game Elements
-story, narrative, plot, tale
-graphics, visuals, appearance
-sound, audio, music
-mechanics, gameplay, systems
-
-# Game Feel
-difficulty, challenge, hard
-relaxing, casual, chill, peaceful
-intense, hardcore, challenging
-fun, enjoyable, entertaining
+# Relaxing game synonyms
+relaxing => relaxing peaceful calm chill laid-back casual
+peaceful => peaceful calm serene tranquil
+casual => casual relaxed easy-going laid-back
+zen => zen meditative peaceful calm
+meditation => meditation mindful zen peaceful
+chill => chill relaxing casual laid-back

@@ -1,0 +1,10 @@
+{
+    "params": {
+        "defType": "edismax",
+        "q": "relaxing peaceful calm meditation zen casual cozy tranquil chill soothing",
+        "qf": "Title^4.0 Content^2.0 Subtitle^1.0",
+        "rows": 300,
+        "fl": "id,Title,Content,Subtitle,Score",
+        "sort": "Score desc"
+    }
+}
