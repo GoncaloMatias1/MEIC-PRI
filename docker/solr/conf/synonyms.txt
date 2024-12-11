@@ -1,32 +1,15 @@
-# Controls and Gameplay
-controls, handling, input
-responsive, smooth, fluid
-precise, accurate, exact
-tight, responsive, precise
-
-# Combat
-combat, fighting, battles, action
-damage, attack, hurt
-defense, protection, shield
-
-# Game Modes
-multiplayer, multi-player, online
-co-op, cooperative, coop
-singleplayer, single-player, solo
-
-# Performance
-fps, frames per second, frame rate
-latency, lag, delay
-performance, speed, smoothness
-
-# Game Elements
-story, narrative, plot, tale
-graphics, visuals, appearance
-sound, audio, music
-mechanics, gameplay, systems
-
-# Game Feel
-difficulty, challenge, hard
-relaxing, casual, chill, peaceful
-intense, hardcore, challenging
-fun, enjoyable, entertaining
+controls, handling, inputs, input, gameplay, maneuverability
+responsive, tight, precise, accurate, fluid, smooth
+unresponsive, sloppy, sluggish, clunky, imprecise
+excellent, great, good, solid, perfect, fantastic, amazing, impressive
+terrible, bad, poor, awful, horrible, frustrating
+stiff, rigid, clumsy, awkward, unwieldy
+intuitive, natural, straightforward, comfortable
+flawless, polished, refined
+lag, delay, latency, input delay
+movement, motion, mobility
+precise, precision, accuracy, accurate
+platforming, jumping, maneuvering
+physics, momentum, weight
+twitchy, sensitive, responsive
+control scheme, control system, control setup

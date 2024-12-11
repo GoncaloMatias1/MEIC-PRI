@@ -9,12 +9,12 @@ from sklearn.metrics import auc
 
 def calculate_metrics(precision, recall):
     """Calculate MAP, AUC, and AVP"""
-    map_score = np.mean([p for p, r in zip(precision, recall)])
+    map_score = np.mean(precision)
     auc_score = auc(recall, precision)
-    avp = np.sum(precision) / len(precision) if len(precision) > 0 else 0
+    avp = np.mean([p for p, r in zip(precision, recall)]) 
     return map_score, auc_score, avp
 
-def main(solr_response_file: str, relevance_file: str, output_file: str):
+def main(input_json, relevance_file: str, output_file: str):
     # Read relevance judgments
     relevant_docs = {}
     with open(relevance_file, 'r') as f:
@@ -22,9 +22,8 @@ def main(solr_response_file: str, relevance_file: str, output_file: str):
             doc_id, relevance = line.strip().split('\t')
             relevant_docs[doc_id] = int(relevance)
     
-    # Read Solr results
-    with open(solr_response_file, 'r') as f:
-        results = json.load(f)
+    # Parse input JSON
+    results = json.loads(input_json)
     retrieved_docs = [doc['id'] for doc in results['response']['docs']]
     
     # Calculate metrics
@@ -36,27 +35,16 @@ def main(solr_response_file: str, relevance_file: str, output_file: str):
     for i, doc_id in enumerate(retrieved_docs, 1):
         if doc_id in relevant_docs and relevant_docs[doc_id] == 1:
             relevant_count += 1
-        
         precision.append(relevant_count / i)
         recall.append(relevant_count / total_relevant if total_relevant > 0 else 0)
-    
-    # Calculate MAP, AUC, AVP
+
+    # Calculate metrics
     map_score, auc_score, avp = calculate_metrics(precision, recall)
     
-    # Plot smooth PR curve
+    # Plot step curve
     plt.figure(figsize=(10, 6))
-    
-    # Use interpolation for smoother curve
-    recall_points = np.linspace(0, 1, 100)
-    precision_interp = []
-    
-    for r in recall_points:
-        # Find precision values at recall >= r
-        prec_at_recall = [p for p, rec in zip(precision, recall) if rec >= r]
-        # Take the maximum precision (or 0 if none found)
-        precision_interp.append(max(prec_at_recall) if prec_at_recall else 0)
-    
-    plt.plot(recall_points, precision_interp, '-', label=f'MAP: {map_score:.3f}\nAUC: {auc_score:.3f}\nAVP: {avp:.3f}')
+    plt.step(recall, precision, 'b-', where='post', 
+             label=f'AVP: {avp:.3f}, MAP: {map_score:.3f}, AUC: {auc_score:.3f}')
     
     # Calculate P@k values
     p_at_k = {}
@@ -73,19 +61,16 @@ def main(solr_response_file: str, relevance_file: str, output_file: str):
     plt.title('Precision-Recall Curve')
     plt.grid(True)
     plt.legend(loc='lower left')
+    plt.ylim(0, 1.2)
+    plt.xlim(0, 1.2)
     plt.savefig(output_file, bbox_inches='tight', dpi=300)
-    
-    print(f"Metrics:")
-    print(f"MAP: {map_score:.3f}")
-    print(f"AUC: {auc_score:.3f}")
-    print(f"AVP: {avp:.3f}")
-    for k, v in p_at_k.items():
-        print(f"P@{k}: {v:.2f}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate Precision-Recall curve and metrics")
+    parser = argparse.ArgumentParser(description="Generate Step-Style Precision-Recall curve")
     parser.add_argument('--relevance', required=True, help='File containing manual relevance judgments')
     parser.add_argument('--output', required=True, help='Output PNG file path')
     args = parser.parse_args()
     
-    main(sys.stdin, args.relevance, args.output)
+    # Read JSON from stdin
+    input_json = sys.stdin.read()
+    main(input_json, args.relevance, args.output)

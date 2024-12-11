@@ -9,19 +9,8 @@
         },
         "filters": [
           {"class": "solr.LowerCaseFilterFactory"},
-          {"class": "solr.StopFilterFactory", "words": "lang/stopwords_en.txt", "ignoreCase": true},
           {"class": "solr.EnglishPossessiveFilterFactory"},
           {"class": "solr.EnglishMinimalStemFilterFactory"},
-          {
-            "class": "solr.WordDelimiterGraphFilterFactory",
-            "generateWordParts": 1,
-            "generateNumberParts": 1,
-            "catenateWords": 1,
-            "catenateNumbers": 1,
-            "catenateAll": 1,
-            "splitOnCaseChange": 1
-          },
-          {"class": "solr.NGramFilterFactory", "minGramSize": 2, "maxGramSize": 3},
           {
             "class": "solr.SynonymGraphFilterFactory",
             "synonyms": "synonyms.txt",
@@ -36,7 +25,6 @@
         },
         "filters": [
           {"class": "solr.LowerCaseFilterFactory"},
-          {"class": "solr.StopFilterFactory", "words": "lang/stopwords_en.txt", "ignoreCase": true},
           {"class": "solr.EnglishPossessiveFilterFactory"},
           {"class": "solr.EnglishMinimalStemFilterFactory"}
         ]
