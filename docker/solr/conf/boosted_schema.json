@@ -13,7 +13,7 @@
           {"class": "solr.EnglishMinimalStemFilterFactory"},
           {
             "class": "solr.SynonymGraphFilterFactory",
-            "synonyms": "synonyms.txt",
+            "synonyms": "/var/solr/data/ign_boosted/conf/synonyms.txt",
             "expand": true,
             "ignoreCase": true
           }

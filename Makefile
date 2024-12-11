@@ -42,6 +42,12 @@ setup-cores:
 	curl -X POST -H 'Content-type:application/json' --data-binary @$(SCHEMA_DIR)/simple_schema.json "http://localhost:8983/solr/$(CORE_SIMPLE)/schema"
 	curl -X POST -H 'Content-type:application/json' --data-binary @$(SCHEMA_DIR)/boosted_schema.json "http://localhost:8983/solr/$(CORE_BOOSTED)/schema"
 
+copy-synonyms:
+	docker cp docker/solr/conf/synonyms.txt pri-solr-1:/tmp/synonyms.txt
+	docker exec pri-solr-1 cp /tmp/synonyms.txt /var/solr/data/ign_boosted/conf/synonyms.txt
+	docker exec pri-solr-1 chown solr:solr /var/solr/data/ign_boosted/conf/synonyms.txt
+	curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=ign_boosted"
+
 index-data:
 	curl -X POST -H 'Content-type:application/json' --data-binary "@$(DATA_DIR)/ign_processed.json" "http://localhost:8983/solr/$(CORE_SIMPLE)/update?commit=true"
 	curl -X POST -H 'Content-type:application/json' --data-binary "@$(DATA_DIR)/ign_processed.json" "http://localhost:8983/solr/$(CORE_BOOSTED)/update?commit=true"
