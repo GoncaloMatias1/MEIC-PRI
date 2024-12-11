@@ -1,9 +1,8 @@
 {
-    "params": {
-      "defType": "edismax",
-      "q": "Content:(*graphically* *visuals*) OR Subtitle:(*graphically* *visuals*)",
-      "qf": "Content^4.0 Subtitle^2.0",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
-    }
+  "params": {
+    "q": "Content:(graphics visuals performance technical resolution framerate)",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content",
+    "sort": "score desc"
   }
+}

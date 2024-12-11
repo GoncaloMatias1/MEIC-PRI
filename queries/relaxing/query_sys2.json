@@ -1,11 +1,11 @@
 {
-    "params": {
-      "defType": "edismax",
-      "q": "Title:(*relax* *peaceful* *calm* *chill*) OR Content:(*relax* *peaceful* *calm* *meditat* *chill* *mindful* *simple* *serene* *enjoy* *soft*)",
-      "qf": "Title^2.0 Content^3.0 Subtitle^2.5",
-      "pf": "Title^8.0 Content^4.0",
-      "bq": "Subtitle:(*peaceful*)^2.0 Content(*calm* *relax*)^3.0",
-      "rows": 100,
-      "fl": "id,Title,Score"
-    }
+  "params": {
+    "defType": "edismax",
+    "q": "(Content:(relaxing peaceful casual cozy atmosphere meditation)^4 OR Content:(exploration story adventure farming puzzle)^2 OR Title:(relaxing peaceful casual adventure)^3) OR Content:(charming pleasant gentle calm)",
+    "qf": "Content^4 Title^2 Subtitle",
+    "pf": "Content^8",
+    "mm": "1<50%",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content"
+  }
 }

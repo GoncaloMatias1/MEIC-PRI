@@ -1,9 +1,8 @@
 {
   "params": {
-    "defType": "edismax",
-    "q": "Content:(*story* *narrative*) OR Subtitle:(*story* *narrative*)",
-    "qf": "Content^4.0 Subtitle^2.0",
-    "rows": 100,
-    "fl": "id,Title,Content,Score"
+    "q": "Content:(story narrative writing plot characters storytelling dialogue compelling emotional engaging)",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content",
+    "sort": "score desc"
   }
 }

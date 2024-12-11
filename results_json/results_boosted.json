@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 36,
+    "QTime": 127,
     "params": {
       "json": "{\"params\": {\"defType\": \"edismax\", \"q\": \"Content:(controls responsive tight precise fluid gameplay handling)^4 OR Content:(gameplay movement physics)^2 OR Title:(controls gameplay)^3\", \"qf\": \"Content^3 Title^2 Subtitle\", \"pf\": \"Content^10\", \"mm\": \"2<70%\", \"rows\": 30, \"fl\": \"id,Title,Score,Subtitle,Content\"}}"
     }

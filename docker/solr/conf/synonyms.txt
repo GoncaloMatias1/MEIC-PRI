@@ -13,3 +13,84 @@ platforming, jumping, maneuvering
 physics, momentum, weight
 twitchy, sensitive, responsive
 control scheme, control system, control setup
+multiplayer, multi-player, multi player, online multiplayer, online play
+coop, co-op, cooperative, co-operative, collaboration
+pvp, player vs player, player-vs-player, versus, competitive
+matchmaking, match-making, match making, queuing, queue
+team, teams, party, group, squad
+online, networked, internet, connected
+lobby, room, server, instance
+latency, lag, delay, ping, network delay
+host, hosting, server hosting, dedicated server
+peer-to-peer, p2p, peer to peer
+crossplay, cross-play, cross platform, cross-platform
+netcode, networking, network code
+sync, synchronization, desync, desynchronization
+connectivity, connection, network connection
+drop-in, drop out, join in progress
+progression, ranking, matchmaking rating, MMR
+leaderboard, rankings, ladder, competitive ranking
+guild, clan, team, organization
+raids, raiding, group content, team content
+arena, versus, competition, tournament
+social, community, interaction, communication
+relaxing, peaceful, calm, soothing, tranquil, serene
+casual, laid-back, easy-going, gentle, low-stress
+cozy, comfortable, comforting, snug, homey
+meditative, contemplative, mindful, zen
+atmosphere, ambiance, mood, vibe, feeling
+peaceful, serene, quiet, calming
+stress-free, unwinding, de-stress, unwind
+exploration, wandering, discovery
+ambient, atmospheric, immersive
+therapeutic, healing, restorative
+simple, straightforward, uncomplicated
+leisure, recreational, pastime
+slow-paced, unhurried, meandering
+gentle, soft, mellow, smooth
+pleasant, enjoyable, satisfying
+wholesome, feel-good, uplifting
+farming, gardening, life-sim, simulation
+puzzle-solving, brain-teaser, riddles
+crafting, building, creating, making
+story-driven, narrative, tale
+story, narrative, tale, plot, storyline
+writing, prose, script, screenplay, dialogue
+characters, cast, protagonists, personalities
+storytelling, narration, narrative design
+compelling, engaging, gripping, captivating
+emotional, moving, touching, powerful, impactful
+dialogue, conversation, interactions, exchanges
+cutscenes, cinematics, scenes, moments
+plot twist, revelation, surprise, turning point
+worldbuilding, lore, backstory, setting
+character development, character arc, growth
+narrative-driven, story-focused, story-rich
+branching, choices, decisions, consequences
+rpg, role-playing, role playing, roleplaying
+adventure, quest, journey, expedition
+drama, dramatic, theatrical, cinematic
+interactive fiction, visual novel, text adventure
+choice-based, decision-making, player choice
+immersive, absorbing, engrossing
+story beats, story elements, story threads
+graphics, visuals, visual fidelity, graphical quality
+performance, optimization, optimized, frame rate, fps
+resolution, display quality, pixel density, clarity
+ray tracing, rtx, ray-traced lighting, path tracing
+textures, texture quality, texture work, assets
+lighting, illumination, shadows, ambient occlusion
+rendering, rendered, visual effects, graphical effects
+animations, character animation, movement animation, motion
+technical, technological, engine, technology
+frame rate, framerate, fps, frames per second
+stuttering, stutter, frame pacing, frame times
+lag, latency, input lag, delay
+4k, uhd, ultra hd, high definition
+hdr, high dynamic range, contrast, brightness
+anti aliasing, aa, fxaa, txaa, msaa
+dlss, upscaling, image scaling, super resolution
+particle effects, particles, visual effects, vfx
+draw distance, pop-in, level of detail, lod
+loading times, load times, loading screens
+physics, physics engine, ragdoll, simulation

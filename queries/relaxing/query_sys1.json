@@ -1,10 +1,8 @@
 {
-    "params": {
-      "q": "Title:(*relax* *peaceful* *calm* *chill*) OR Content:(*relax* *peaceful* *calm* *meditat* *chill* *simple* *serene* *enjoy* *soft*) OR Subtitle:(*relax* *peaceful* *calm* *meditat* *chill*)",
-      "defType": "edismax",
-      "bf": "Score^2.0",
-      "qf": "Title^2.0 Content^3.0 Subtitle^2.5",
-      "rows": 100,
-      "fl": "id,Title,Score"
-    }
+  "params": {
+    "q": "Content:(relaxing peaceful casual calm soothing meditative cozy atmosphere peaceful)",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content",
+    "sort": "score desc"
+  }
 }

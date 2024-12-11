@@ -1,12 +1,12 @@
 {
-    "params": {
-      "defType": "edismax",
-      "q": "Title:(*visually* *graphically* *visuals* *realistic*) OR Content:(*visually* *graphically* *visuals* *realistic*) OR Subtitle:(*visually* *graphically* *visuals* *realistic*)",
-      "qf": "Title^2.0 Content^3.0 Subtitle^2.5",
-      "pf": "Title^6.0 Content^3.0",
-      "bq": "Subtitle:(*visuals*)^4.0 Content:(*realistic*)^3.0",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
-    }
+  "params": {
+    "defType": "edismax",
+    "q": "Content:(graphics visuals fidelity ray-tracing performance)^4 OR Content:(optimization framerate resolution rendered)^3 OR Content:(textures lighting effects animations)^2 OR Title:(graphics performance technical)^3",
+    "qf": "Content^3 Title^2 Subtitle",
+    "pf": "Content^10",
+    "mm": "2<70%",
+    "bf": "Score^2",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content"
   }
-  
+}

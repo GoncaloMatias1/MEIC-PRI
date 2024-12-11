@@ -1,7 +1,7 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 22,
+    "QTime": 95,
     "params": {
       "json": "{\"params\": {\"q\": \"Content:(controls good tight precise responsive fluid excellent smooth)\", \"rows\": 30, \"fl\": \"id,Title,Score,Subtitle,Content\", \"sort\": \"score desc\"}}"
     }
