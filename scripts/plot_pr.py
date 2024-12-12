@@ -14,7 +14,7 @@ def calculate_metrics(precision, recall):
     avp = np.sum(precision) / len(precision) if len(precision) > 0 else 0
     return map_score, auc_score, avp
 
-def main(solr_response_file: str, relevance_file: str, output_file: str):
+def main(solr_response_str: str, relevance_file: str, output_file: str):
     # Read relevance judgments
     relevant_docs = {}
     with open(relevance_file, 'r') as f:
@@ -22,9 +22,8 @@ def main(solr_response_file: str, relevance_file: str, output_file: str):
             doc_id, relevance = line.strip().split('\t')
             relevant_docs[doc_id] = int(relevance)
     
-    # Read Solr results
-    with open(solr_response_file, 'r') as f:
-        results = json.load(f)
+    # Parse Solr results from string
+    results = json.loads(solr_response_str)
     retrieved_docs = [doc['id'] for doc in results['response']['docs']]
     
     # Calculate metrics
@@ -88,4 +87,7 @@ if __name__ == "__main__":
     parser.add_argument('--output', required=True, help='Output PNG file path')
     args = parser.parse_args()
     
-    main(sys.stdin, args.relevance, args.output)
+    # Read JSON from stdin as string
+    solr_response = sys.stdin.read()
+    
+    main(solr_response, args.relevance, args.output)

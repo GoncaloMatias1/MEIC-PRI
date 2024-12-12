@@ -1,0 +1,88 @@
+{
+    "add-field-type": [
+      {
+        "name": "text_advanced",
+        "class": "solr.TextField",
+        "indexAnalyzer": {
+          "tokenizer": {
+            "class": "solr.StandardTokenizerFactory"
+          },
+          "filters": [
+            {"class": "solr.LowerCaseFilterFactory"},
+            {"class": "solr.EnglishPossessiveFilterFactory"},
+            {"class": "solr.EnglishMinimalStemFilterFactory"},
+            {
+              "class": "solr.SynonymGraphFilterFactory",
+              "synonyms": "/var/solr/data/ign_semantic/conf/synonyms.txt",
+              "expand": true,
+              "ignoreCase": true
+            }
+          ]
+        },
+        "queryAnalyzer": {
+          "tokenizer": {
+            "class": "solr.StandardTokenizerFactory"
+          },
+          "filters": [
+            {"class": "solr.LowerCaseFilterFactory"},
+            {"class": "solr.EnglishPossessiveFilterFactory"},
+            {"class": "solr.EnglishMinimalStemFilterFactory"}
+          ]
+        }
+      },
+      {
+        "name": "vector",
+        "class": "solr.DenseVectorField",
+        "vectorDimension": 384,
+        "similarityFunction": "cosine",
+        "knnAlgorithm": "hnsw"
+      }
+    ],
+    "add-field": [
+      {
+        "name": "Title",
+        "type": "text_advanced",
+        "indexed": true,
+        "stored": true,
+        "termPositions": true,
+        "termVectors": true
+      },
+      {
+        "name": "Content",
+        "type": "text_advanced",
+        "indexed": true,
+        "stored": true,
+        "termPositions": true,
+        "termVectors": true
+      },
+      {
+        "name": "Subtitle",
+        "type": "text_advanced",
+        "indexed": true,
+        "stored": true,
+        "termPositions": true,
+        "termVectors": true
+      },
+      {
+        "name": "Subheader",
+        "type": "text_advanced",
+        "indexed": true,
+        "stored": true,
+        "termPositions": true,
+        "termVectors": true
+      },
+      {
+        "name": "Score",
+        "type": "pfloat",
+        "docValues": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "vector",
+        "type": "vector",
+        "indexed": true,
+        "stored": true
+      }
+    ]
+  }
