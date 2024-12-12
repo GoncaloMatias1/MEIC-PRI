@@ -1,0 +1,410 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 40,
+    "params": {
+      "q": "{!knn f=vector topK=50}[0.0008261498878709972, -0.026360997930169106, -0.0526253916323185, -0.08912317454814911, -0.05622952803969383, 0.057254400104284286, 0.03711992874741554, 0.04208289459347725, 0.018968084827065468, 0.06818484514951706, -0.007885674946010113, -0.03555531054735184, -0.0034813815727829933, -0.028524810448288918, 0.07199437916278839, -0.05125463008880615, 0.14750808477401733, 0.016600769013166428, 0.09457981586456299, -0.08629769831895828, -0.019397176802158356, 0.016121529042720795, -0.04952780529856682, 0.022008590400218964, -0.03789500892162323, 0.0036178298760205507, -0.014435828663408756, 0.04036300256848335, -0.05606264993548393, -0.059812720865011215, -0.0419279970228672, 0.0051414454355835915, 0.07554222643375397, 0.010691900737583637, -0.09891427308320999, -0.030712857842445374, 0.011721538379788399, -0.062294572591781616, -0.06587348878383636, -0.08372288942337036, -0.11209144443273544, -0.025280725210905075, 0.02207588590681553, 0.02969900332391262, -0.0052300021052360535, -0.006763775832951069, -0.06641428917646408, 0.04429396986961365, -0.013589132577180862, 0.08522524684667587, -0.05880368873476982, -0.062428683042526245, 0.003356157336384058, 0.016048353165388107, 0.05020544305443764, 0.0004212745698168874, -0.01197931170463562, 0.04335001856088638, 0.034137625247240067, -0.02404809184372425, -0.0007729344652034342, -0.045233774930238724, 0.022932371124625206, 0.09828662127256393, 0.03505498543381691, 0.04029279202222824, 0.09148380160331726, 0.010343803092837334, -0.02698514610528946, -0.10362972319126129, -0.06313731521368027, 0.0007887500687502325, -0.009767240844666958, -0.040715865790843964, 0.018141450360417366, 0.02721693180501461, -0.09315837174654007, -0.04747067019343376, -0.014723781496286392, 0.04170721769332886, 0.07814817875623703, 0.05399476736783981, -0.04548107087612152, -0.028077399358153343, -0.06145733594894409, -0.04728393256664276, -0.08915069699287415, 0.013876193203032017, 0.10423940420150757, -0.0007984665571711957, -0.07480073720216751, 0.042640574276447296, 0.09193451702594757, 0.005624708253890276, -0.0727023035287857, -0.008274592459201813, 0.031464677304029465, -0.0775211974978447, 0.015574317425489426, 0.010927081108093262, -0.03926580399274826, 0.06419770419597626, -0.02980416640639305, -0.016891831532120705, 0.06343929469585419, 0.089227095246315, 0.04838772863149643, 0.03725752606987953, 0.03093019872903824, -0.0018083059694617987, -0.10495444387197495, -0.06906677782535553, -0.08780456334352493, -0.05830869451165199, 0.029325397685170174, 0.07318232953548431, 0.09160256385803223, 0.0654684528708458, 0.027340508997440338, 0.016199443489313126, 0.0751672014594078, -0.0989399254322052, -0.024488849565386772, 0.0056780665181577206, 0.13003109395503998, 0.01143142394721508, -0.016214195638895035, 1.555525796971379e-33, -0.004466970916837454, 0.024989858269691467, 0.027097569778561592, 0.022844141349196434, -0.008280822075903416, -0.026718270033597946, 0.039858460426330566, -0.030670834705233574, -0.09197718650102615, -0.060766223818063736, -0.05963338166475296, 0.02777077443897724, -0.011356320232152939, 0.033331796526908875, 0.10255205631256104, -0.02459307201206684, -0.0308997742831707, 0.06276791542768478, 0.026849472895264626, -0.0013906604144722223, 0.033819761127233505, 0.0052281212992966175, -0.014042578637599945, 0.005585112608969212, 0.0010312736267223954, 0.003410925390198827, -0.04822685569524765, -0.008496974594891071, 0.04593876749277115, -0.017967842519283295, 0.017089348286390305, -0.05388892441987991, -0.029386209324002266, 0.011638772673904896, 0.04022817686200142, 0.022892026230692863, -0.010155921801924706, -0.08317980170249939, 0.02386629953980446, 0.040324266999959946, -0.01641009747982025, -0.05057262256741524, -0.09163334220647812, 0.0089444974437356, -0.082109734416008, -0.08405046910047531, -0.06992073357105255, -0.05956393852829933, -0.14188942313194275, -0.04853948950767517, -0.05448957532644272, 0.09655146300792694, -0.017178788781166077, 0.0033660687040537596, 0.011812928132712841, -0.020746534690260887, -0.020566988736391068, -0.0010913097066804767, -0.03163932263851166, 0.05714191123843193, 0.02275661751627922, -0.003608543425798416, 0.030321357771754265, -0.04931430146098137, -0.008484267629683018, 0.04312635585665703, 0.06423475593328476, -0.04630737379193306, 0.06805900484323502, 0.03371378779411316, -0.010378750041127205, 0.022037053480744362, 0.025599295273423195, 0.013973472639918327, -0.008351766504347324, 0.0029326051007956266, -0.00086612330051139, -0.07545804232358932, 0.010729511268436909, -0.00225270539522171, 0.021662406623363495, -0.05251375213265419, -0.0457068607211113, 0.07457052916288376, 0.05996348336338997, -0.03571957349777222, -0.057862162590026855, -0.027849320322275162, -0.09782915562391281, 0.014759456738829613, -0.06099415197968483, 0.0012112515978515148, -0.02955866977572441, 0.00777992932125926, 0.0680912584066391, -1.9946069161370818e-33, -0.08461565524339676, -0.03420214354991913, -0.05718012526631355, 0.046486496925354004, 0.00923122838139534, 0.04521532729268074, -0.012226572260260582, -0.02447536215186119, 0.030940523371100426, 0.044352736324071884, -0.04719727113842964, 0.06562972068786621, 0.009879790246486664, 0.04164839908480644, -0.04629475623369217, -0.011582957580685616, -0.020548541098833084, -0.058842603117227554, 0.04995579272508621, -0.005983415059745312, 0.0621560662984848, 0.020729031413793564, -0.002269784454256296, -0.037704646587371826, 0.02256913296878338, 0.04884234815835953, -0.0322909913957119, -0.0461462177336216, -0.004218108486384153, 0.05767669901251793, -0.0025652486365288496, 0.010452053509652615, 0.027233801782131195, -0.0006303174886852503, -0.020632199943065643, 0.02131105773150921, 0.020334599539637566, 0.06988810002803802, -0.06891214102506638, 0.01638626493513584, 0.07597030699253082, -0.09396535903215408, -0.05428313836455345, -0.008431303314864635, 0.006871100049465895, 0.04261958599090576, 0.0066108135506510735, 0.022126737982034683, 0.0265060942620039, 0.04098278656601906, -0.019705580547451973, 0.03862530365586281, -0.10397795587778091, -0.06541940569877625, -0.11828102916479111, -0.045811641961336136, 0.009746668860316277, -0.022212732583284378, -0.02868371643126011, -0.0018325633136555552, 0.07078888267278671, -0.009377704933285713, -0.07801668345928192, 0.0671866238117218, 0.13501615822315216, 0.03330644965171814, 0.058063797652721405, 0.023442069068551064, 0.05296747013926506, -0.010036548599600792, 0.015402903780341148, 0.06729765981435776, 0.04228794947266579, -0.009861675091087818, 0.08753985166549683, -0.038695331662893295, -0.09407723695039749, -0.0140231903642416, -0.03652516379952431, 0.042257919907569885, -0.02499893121421337, 0.048977747559547424, 0.097162626683712, 0.06816895306110382, 0.03556567057967186, 0.05788525193929672, -0.08062621206045151, 0.08543000370264053, -0.008844411931931973, -0.035474274307489395, 0.05597009137272835, 0.0939209833741188, 0.02591102197766304, -0.02912667579948902, -0.024800175800919533, -1.908109048542883e-08, 0.009737908840179443, 0.03503340855240822, 0.07489600777626038, 0.02320433221757412, 0.017800793051719666, 0.09646476805210114, 0.03645450994372368, -0.08271371573209763, -0.007980513386428356, 0.06920956820249557, -0.06660263985395432, -0.014046126045286655, 0.09566579759120941, -0.0174067635089159, 0.03493449091911316, 0.047231048345565796, -0.047344014048576355, 0.03421858698129654, -0.05345519632101059, -0.0163333211094141, 0.12124950438737869, 0.00945516861975193, -0.05501728877425194, -0.012211725115776062, -0.03782229125499725, 0.03085017390549183, -0.05759911611676216, 0.03078559972345829, 0.02685072459280491, 0.050249695777893066, 0.0652620941400528, -0.031911659985780716, 0.05240027233958244, -0.037508200854063034, 0.04692873731255531, -0.07634725421667099, 0.06938361376523972, 0.03580392524600029, -0.050211597234010696, -0.06436900794506073, -0.12382321059703827, 0.03980564698576927, -0.07049686461687088, -0.005889159627258778, 0.031330183148384094, 0.045793112367391586, 0.0021935615222901106, -0.06421442329883575, -0.017013197764754295, -0.06808429211378098, 0.017632821574807167, -0.002022284083068371, -0.06282111257314682, 0.03979869931936264, 0.0900496318936348, -0.010759408585727215, 0.03366687148809433, 0.04447522386908531, 0.06775229424238205, 0.0053471410647034645, 0.032468777149915695, 0.03252765163779259, -0.028049038723111153, 0.0038277688436210155]",
+      "fl": "id,parent_id,Title,Content,Score,paragraph_num,score",
+      "rows": "30",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 50,
+    "start": 0,
+    "maxScore": 0.7874397,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "57cfb402165a68888f772ef8ee08c9ed_9",
+        "parent_id": [
+          "57cfb402165a68888f772ef8ee08c9ed"
+        ],
+        "Title": "Trine 2: Director's Cut Review",
+        "Score": 9.0,
+        "Content": "A variety of control schemes is implemented for several controller configurations, too, and each has it own appeal \u2013 using the GamePad you can conjure the wizard's blocks and platforms into existence using the touch screen. If you use a Wii Remote and Nunchuk instead, though, pointing at objects to levitate them or aim Zoya's arrows becomes easier. Trine 2's online multiplayer also worked out very well in my time testing it, though, as with any online game, you'll find better results if you coordinate with friends rather than jumping into games with strangers \u2013 because, should another player drop out of the session, your adventure is also immediately ended.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.7874397
+      },
+      {
+        "id": "9a63679d8657efa07b841badfaf15411_20",
+        "parent_id": [
+          "9a63679d8657efa07b841badfaf15411"
+        ],
+        "Title": "Super Mario Maker 2 Review",
+        "Score": 9.5,
+        "Content": "Co-op play is also kind of confusing. It's well-known you can't play online with your friends, at least not right away. But what you CAN do is play with your friends on another Switch if you're all in the same room (or close enough to connect to one another).",
+        "paragraph_num": [
+          20
+        ],
+        "score": 0.7848724
+      },
+      {
+        "id": "26f48fa1bb1d233171a0461034bde38e_21",
+        "parent_id": [
+          "26f48fa1bb1d233171a0461034bde38e"
+        ],
+        "Title": "Overcooked 2 Review",
+        "Score": 8.5,
+        "Content": "All modes can also be played online with friends, and matchmaking is available for arcade and versus. While Overcooked 2 still feels right at home as a couch co-op experience, it\u2019s nice to have the option to play online when you don\u2019t have friends nearby. A word of warning, though: the Switch version does not have voice chat.",
+        "paragraph_num": [
+          21
+        ],
+        "score": 0.7786408
+      },
+      {
+        "id": "074ac5c5b15fd0e1bbedfa33b24cd4c0_4",
+        "parent_id": [
+          "074ac5c5b15fd0e1bbedfa33b24cd4c0"
+        ],
+        "Title": "TowerFall Ascension Review",
+        "Score": 8.9,
+        "Content": "Developer Matt Makes Games unfortunately didn\u2019t include an online mode, and the single-player and co-op modes against waves of simple-minded enemies don\u2019t stand out significantly except as practice. But TowerFall\u2019s selection of match modifiers and over 120 maps allow you to tweak this couch-multiplayer game in fun ways that kept me and my friends playing and laughing for hours.",
+        "paragraph_num": [
+          4
+        ],
+        "score": 0.7760042
+      },
+      {
+        "id": "38877b82014a782868f8fd7d88fd4aee_9",
+        "parent_id": [
+          "38877b82014a782868f8fd7d88fd4aee"
+        ],
+        "Title": "Warriors Orochi Review",
+        "Score": 5.7,
+        "Content": "These titles can be fun in small doses and will certainly please gamers who like straight-forward gameplay, but I greatly prefer combat systems with more depth and the promise of challenging combos. Lastly, I should mention that playing co-op locally with another player on the same PC is very unusual. Unless you have an extra gamepad lying around, chances are you won't huddle together at one keyboard and pound away on buttons together -- unless you're very close...",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.77428377
+      },
+      {
+        "id": "67084bdebb60f4e56cadc89c67db3a2b_15",
+        "parent_id": [
+          "67084bdebb60f4e56cadc89c67db3a2b"
+        ],
+        "Title": "Windjammers 2 Review",
+        "Score": 8.0,
+        "Content": "It comes packaged with two matchmade playlists: Quick Match and Ranked Match, the former which just pits you against any available player and the latter matches you against similarly skilled players and gives you a chance to climb up or down the ranking ladder with your victories or defeats. The online mode works well enough but, at least on the Nintendo Switch where I played, wait times can be a bit long and frankly the online UI and overall experience is pretty clunky. That said, it works well enough to get the job done and I experienced minimal input lag in the online games I played, so it\u2019s a good time.",
+        "paragraph_num": [
+          15
+        ],
+        "score": 0.77306366
+      },
+      {
+        "id": "c0a04affa69f22d0a20bf647b70584da_39",
+        "parent_id": [
+          "c0a04affa69f22d0a20bf647b70584da"
+        ],
+        "Title": "Call of Duty: Black Ops 2 Wii U Review",
+        "Score": 9.3,
+        "Content": "You can still play with two people on the same TV, or, thanks to some brilliant designers, use the GamePad as your second player\u2019s screen. One additional caveat about Black Ops II on Wii U: Its multiplayer is every bit as fun as that on other platforms, but hardly anyone is playing right now. I could easily find games of Team Deathmatch, but finding games in other modes or in League Play is currently nigh impossible.",
+        "paragraph_num": [
+          39
+        ],
+        "score": 0.77216566
+      },
+      {
+        "id": "03819cdffdd44527130875b97c1105c7_6",
+        "parent_id": [
+          "03819cdffdd44527130875b97c1105c7"
+        ],
+        "Title": "Guncraft Review",
+        "Score": 6.4,
+        "Content": "Siege, for instance, has two teams build bases while attacking the opponents\u2019, but more often than not both sides duked it out in the middle and ignored crafting for the most part until the clock ran out. Spleef\u2014a mode in which players knock blocks out from under each other to send enemies falling to their deaths\u2014lost its appeal after a mere 30 seconds due to the sporadic and inconsistent scoring system, making me think it\u2019d be more at home in the next Mario Party than as its own game type. The Gears of War Horde clone, dubbed Onslaught, is a decent co-op experience, though the lack of in-game voice chat (beyond Steam\u2019s built-in VOIP) makes teamwork difficult.",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.77133405
+      },
+      {
+        "id": "7aa88129980c5c63cc2bb8a34dbc2b80_16",
+        "parent_id": [
+          "7aa88129980c5c63cc2bb8a34dbc2b80"
+        ],
+        "Title": "Dawn of Discovery: Venice Review",
+        "Score": 6.5,
+        "Content": "However, their impact will certainly be felt more in PVP when strategies become less predictable. While there are features such as a new quest type called \"Trade Race\" that add to the single player game, most of the changes compliment the new player vs. player and co-op online modes.",
+        "paragraph_num": [
+          16
+        ],
+        "score": 0.7706056
+      },
+      {
+        "id": "c7f983053e3a2571a5ef3bb82f82cab0_14",
+        "parent_id": [
+          "c7f983053e3a2571a5ef3bb82f82cab0"
+        ],
+        "Title": "G.I. Joe: The Rise of Cobra Game Review",
+        "Score": 5.8,
+        "Content": "It's nice to be able to play with a buddy (why should one person suffer alone?), but online play is pretty standard these days. This is a full-priced retail game. It's ugly and not very satisfying; the least it could do is give gamers a feature-set equal to other titles.",
+        "paragraph_num": [
+          14
+        ],
+        "score": 0.76972795
+      },
+      {
+        "id": "2e87b24140bb14535431808a0fe44222_13",
+        "parent_id": [
+          "2e87b24140bb14535431808a0fe44222"
+        ],
+        "Title": "Damnation Review",
+        "Score": 2.5,
+        "Content": "The whole mechanic is clunky thanks to poor animations (Rourke can climb a motionless rope without using his legs -- his appendages just hang there lifelessly.). As if everything I just told you didn't completely turn you off to this title, you need to know that multiplayer is worthless here. Yes, you can play co-op online, but there's no voicechat so don't even think about discussing attack plans.",
+        "paragraph_num": [
+          13
+        ],
+        "score": 0.7689183
+      },
+      {
+        "id": "c7bc1ecb8c986db50bcd529fc3b9a922_20",
+        "parent_id": [
+          "c7bc1ecb8c986db50bcd529fc3b9a922"
+        ],
+        "Title": "Tetris Worlds Online",
+        "Score": 4.8,
+        "Content": "Needless to say, we were not very pleased with multiplayer. Xbox Live As the game's title might suggest, Tetris Worlds Online lets you challenge Tetris players across the globe via Xbox Live. Online, you can battle up to four players in any of the six game styles and choose between Knock-Out or Race modes.",
+        "paragraph_num": [
+          20
+        ],
+        "score": 0.7679343
+      },
+      {
+        "id": "5e67f598b7ac4597a8a235ba82d29e72_23",
+        "parent_id": [
+          "5e67f598b7ac4597a8a235ba82d29e72"
+        ],
+        "Title": "Homeworld 3 Multiplayer Review",
+        "Score": 8.0,
+        "Content": "Homeworld has a long, proud history of mods that includes some of the finest Star Wars and Star Trek (among others) total conversions ever created, and I look forward to that tradition carrying forward.",
+        "paragraph_num": [
+          23
+        ],
+        "score": 0.76493484
+      },
+      {
+        "id": "5b824f8239bd6084591c83ebeba45b09_8",
+        "parent_id": [
+          "5b824f8239bd6084591c83ebeba45b09"
+        ],
+        "Title": "It Takes Two Review",
+        "Score": 9.0,
+        "Content": "How do you prefer to play co-op games? Online On the same couch By myself with two controllers, one in each hand Answer See Results Additionally, while a lot of the elements in It Takes Two\u2019s environments are there to serve a very clear gameplay purpose, a substantial amount of objects are interactive for no other reason than because they\u2019re fun. The giant bass drum kick pedal plays no part in you reaching a level goal, but you can still buttstomp onto it and thump its hammer into a towering drum, because it\u2019s fun.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.76444834
+      },
+      {
+        "id": "c753d2ca348e3c9d04583e8edd3e0e73_20",
+        "parent_id": [
+          "c753d2ca348e3c9d04583e8edd3e0e73"
+        ],
+        "Title": "The Finals Review",
+        "Score": 8.0,
+        "Content": "Justin's favorite multiplayer shooters Fragging is better with friends, and these are the best games for it. See All Halo 3 Bungie Titanfall 2 Respawn Splatoon 3 Nintendo EPD Quake II Rogue Entertainment Call of Duty 4: Modern Warfare Infinity Ward Unreal Championship Epic Games Apex Legends Panic Button Tom Clancy's Rainbow Six Siege Ubisoft Montreal Overwatch Blizzard Team Fortress 2 Valve If you don\u2019t have many friends to share those triumphant victories with, matchmaking as a solo player is quick and easy, and the single button ping system makes it simple to communicate with random people without needing to be on a mic.",
+        "paragraph_num": [
+          20
+        ],
+        "score": 0.7643096
+      },
+      {
+        "id": "d8913476d61b6ee9e09cf5220f337318_15",
+        "parent_id": [
+          "d8913476d61b6ee9e09cf5220f337318"
+        ],
+        "Title": "Frozen Cortex Review",
+        "Score": 8.1,
+        "Content": "Likewise, the \"knockout mode\" is basically franchise mode, except that your season ends the first time you lose a game and you can't buy players. So the same, but with even less stuff to do. The AI, at least, tends to put up a good fight and gave me something to do while waiting for human players to file their turns.",
+        "paragraph_num": [
+          15
+        ],
+        "score": 0.7633307
+      },
+      {
+        "id": "bbe65ef7cb1c3759d86b1299466c7338_7",
+        "parent_id": [
+          "bbe65ef7cb1c3759d86b1299466c7338"
+        ],
+        "Title": "Tron Review",
+        "Score": 4.9,
+        "Content": "Luckily Tron does offer a bit more beyond the standard single- and two-player experiences. Not only can you play in a versus game, but you can play cooperatively where you and a friend can work together for the highest score possible. Then there's a game mode called Pressure Cooker.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.7628224
+      },
+      {
+        "id": "28802c6760ee5fcedb553b37beb5932b_10",
+        "parent_id": [
+          "28802c6760ee5fcedb553b37beb5932b"
+        ],
+        "Title": "MLB The Show 22 Review",
+        "Score": 7.0,
+        "Content": "Double Play Online co-op is one of the key new editions in 2022, allowing you to form teams for 2v2 or 3v3 competition across platforms either with friends or through random matchmaking. Players on each team alternate batters while at the plate and rotate between pitching and fielding each inning, and being able to focus single-mindedly on one defensive task is liberating. While one person plays cat and mouse with pitch selection, the other can focus on where to go for force outs and make strategic choices around the diamond.",
+        "paragraph_num": [
+          10
+        ],
+        "score": 0.7625537
+      },
+      {
+        "id": "5e67f598b7ac4597a8a235ba82d29e72_3",
+        "parent_id": [
+          "5e67f598b7ac4597a8a235ba82d29e72"
+        ],
+        "Title": "Homeworld 3 Multiplayer Review",
+        "Score": 8.0,
+        "Content": "Homeworld 3 Multiplayer Skirmish Screenshots 7 Images IGN's Twenty Questions - Guess the game! IGN's Twenty Questions - Guess the game! \ud83d\udca1 Hint To start: ...try asking a question that can be answered with a \"Yes\" or \"No\".",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.761673
+      },
+      {
+        "id": "4c5b15c5bcc3794e3dd88cab7a7443f1_82",
+        "parent_id": [
+          "4c5b15c5bcc3794e3dd88cab7a7443f1"
+        ],
+        "Title": "Grand Theft Auto IV PS3 Review",
+        "Score": 10.0,
+        "Content": "These three \"modes\" are missions similar to what you might experience in the single-player game. Niko doesn't exist in multiplayer, but you still get cut-scenes and some unique dialogue wrapped around some fun missions. Co-op supports up to four players and only has some minor variables.",
+        "paragraph_num": [
+          82
+        ],
+        "score": 0.761526
+      },
+      {
+        "id": "c7bc1ecb8c986db50bcd529fc3b9a922_15",
+        "parent_id": [
+          "c7bc1ecb8c986db50bcd529fc3b9a922"
+        ],
+        "Title": "Tetris Worlds Online",
+        "Score": 4.8,
+        "Content": "It's important to consider that people buy Tetris on console very often for the multiplayer. Indeed, this is the one area of Tetris Worlds we thought might salvage its worth as it supports up to four players. Sadly, there are only two available variations on multiplayer.",
+        "paragraph_num": [
+          15
+        ],
+        "score": 0.7600819
+      },
+      {
+        "id": "3e2639c9007d8d6b915eda01092a960d_86",
+        "parent_id": [
+          "3e2639c9007d8d6b915eda01092a960d"
+        ],
+        "Title": "Grand Theft Auto IV Xbox 360 Review",
+        "Score": 10.0,
+        "Content": "These three \"modes\" are missions similar to what you might experience in the single-player game. Niko doesn't exist in multiplayer, but you still get cut-scenes and some unique dialogue wrapped around some fun missions. Co-op supports up to four players and only has some minor variables.",
+        "paragraph_num": [
+          86
+        ],
+        "score": 0.7599835
+      },
+      {
+        "id": "70629b5f7dd1e17563b1ae64b68c869d_9",
+        "parent_id": [
+          "70629b5f7dd1e17563b1ae64b68c869d"
+        ],
+        "Title": "Scramble Review",
+        "Score": 4.5,
+        "Content": "This co-op may be strange, but even more mind numbing is the fact that you can't play it offline. Although the ability to include this is clearly there since you can do it online, you can only play a multiplayer game offline by trading turns. There's also an online versus mode.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.7597505
+      },
+      {
+        "id": "2f452df41d59b9797f65a8a476739c36_15",
+        "parent_id": [
+          "2f452df41d59b9797f65a8a476739c36"
+        ],
+        "Title": "Mortal Kombat X Review",
+        "Score": 8.4,
+        "Content": "It\u2019s a fun, social way to play and learn with other people. The netcode is mostly up to the task of keeping online fights reasonably smooth, but there was usually just enough input lag to throw off my combos or punish timings relative to what I\u2019m used to playing locally. Still, that\u2019s a huge improvement over Mortal Kombat 9, and while online isn\u2019t a replacement for in-person competition, it\u2019s close enough to keep me learning and playing for a long time.",
+        "paragraph_num": [
+          15
+        ],
+        "score": 0.7592741
+      },
+      {
+        "id": "848925366f65ff08f92d62a81cfc5788_15",
+        "parent_id": [
+          "848925366f65ff08f92d62a81cfc5788"
+        ],
+        "Title": "PlayerUnknown's Battlegrounds Review",
+        "Score": 9.5,
+        "Content": "Playing in first-person-only servers also brings a new, challenging dimension to matches by eliminating the corner-peaking advantages granted by the default third-person camera. The gunplay itself is also great. \u201c The gunplay itself is also great.",
+        "paragraph_num": [
+          15
+        ],
+        "score": 0.7591584
+      },
+      {
+        "id": "5af97666af2fed56dfe3bf3179024ac4_0",
+        "parent_id": [
+          "5af97666af2fed56dfe3bf3179024ac4"
+        ],
+        "Title": "Red Faction: Battlegrounds Review",
+        "Score": 5.0,
+        "Content": "Red Faction: Battlegrounds is a twin-stick vehicular combat title that you can download for a mere ten dollars. In terms of core gameplay, very little is wrong with Battlegrounds. Its easy control scheme will be accessible to casual and hardcore gamers alike, and the rule-set isn't at all overwhelming.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.75895435
+      },
+      {
+        "id": "c7e1413894b277dabd3826a6e53eca9a_31",
+        "parent_id": [
+          "c7e1413894b277dabd3826a6e53eca9a"
+        ],
+        "Title": "Spelunky 2 Review",
+        "Score": 10.0,
+        "Content": "(Spelunky 2 also features online multiplayer, though the servers weren\u2019t available at the time of this review, so unfortunately, I wasn\u2019t able to test it out. Instead, we made use of Steam's Remote Play feature to simulate local co-op.)",
+        "paragraph_num": [
+          31
+        ],
+        "score": 0.75880206
+      },
+      {
+        "id": "267e7713457ddba5b7c278872806c5f5_14",
+        "parent_id": [
+          "267e7713457ddba5b7c278872806c5f5"
+        ],
+        "Title": "JoJo's Bizarre Adventure HD Review",
+        "Score": 7.0,
+        "Content": "The online experience fares a bit better, with replay support as well as the ability to toggle hit boxes and inputs during replays, but the netcode isn't quite good enough to make it worth grinding. It isn't unplayable, but it doesn't approach the experience of Soul Calibur 5, Skullgirls, or any of the Arc System games online. Of course, that's assuming you can even find a match.",
+        "paragraph_num": [
+          14
+        ],
+        "score": 0.7586839
+      },
+      {
+        "id": "2d9041b6d7f83d7ff1a0ab048ff0fe0f_1",
+        "parent_id": [
+          "2d9041b6d7f83d7ff1a0ab048ff0fe0f"
+        ],
+        "Title": "Black Desert Online Review",
+        "Score": 7.0,
+        "Content": "The loop in the catch-rope I cast is laughably too small, for instance, and I can't even tell the gender of the horse for breeding it with other horses until I've caught it. But there's always a moment of quiet joy when I managed to win one over with a handful of sugar. I can think of no other contemporary massively multiplayer online RPG that grants me that same satisfaction.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.7584512
+      },
+      {
+        "id": "5af97666af2fed56dfe3bf3179024ac4_9",
+        "parent_id": [
+          "5af97666af2fed56dfe3bf3179024ac4"
+        ],
+        "Title": "Red Faction: Battlegrounds Review",
+        "Score": 5.0,
+        "Content": "Rather, it's about who is using the right vehicles for the task at hand and who knows the maps best. And furthermore, when playing multiplayer online, you'll find plenty of hiccups that further hamper the experience, including dropped connections, disappearing vehicles, and other unfortunate glitches. My console even locked up a couple of times when playing online.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.75829566
+      }
+    ]
+  }
+}
