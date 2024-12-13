@@ -1,12 +1,7 @@
 import sys
 import json
 from collections import Counter
-from sentence_transformers import SentenceTransformer
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-nltk.download('punkt')
-nltk.download('stopwords')
+import re
 
 def load_results_and_judgments(category):
     """Load results and relevance judgments for a category"""
@@ -25,14 +20,11 @@ def load_results_and_judgments(category):
 
 def extract_terms(text):
     """Extract important terms from text"""
-    # Tokenize and convert to lowercase
-    tokens = word_tokenize(text.lower())
-    
-    # Remove stopwords and punctuation
-    stop_words = set(stopwords.words('english'))
-    tokens = [word for word in tokens if word.isalnum() and word not in stop_words]
-    
-    return tokens
+    # Simple word extraction without NLTK
+    words = re.findall(r'\b\w+\b', text.lower())
+    # Basic stopwords
+    stopwords = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
+    return [w for w in words if w not in stopwords and len(w) > 2]
 
 def get_important_terms(results, relevant_docs, top_n=10):
     """Get most important terms from relevant documents"""
@@ -41,7 +33,7 @@ def get_important_terms(results, relevant_docs, top_n=10):
     # Count terms in relevant documents
     for doc in results['response']['docs']:
         if doc['id'] in relevant_docs and relevant_docs[doc['id']] == 1:
-            terms = extract_terms(doc['Content'])
+            terms = extract_terms(doc.get('Content', ''))
             term_counter.update(terms)
     
     # Get top terms
@@ -49,17 +41,7 @@ def get_important_terms(results, relevant_docs, top_n=10):
 
 def create_enhanced_query(category, original_query, important_terms):
     """Create enhanced query using original query and important terms"""
-    if category == 'technical':
-        base = "games with impressive graphics visual quality performance and technical features"
-    elif category == 'controls':
-        base = "responsive precise controls and good handling gameplay mechanics"
-    elif category == 'multiplayer':
-        base = "multiplayer online games with co-op or competitive gameplay features"
-    elif category == 'relaxing':
-        base = "peaceful calming relaxing games with soothing gentle gameplay"
-    elif category == 'story_narrative':
-        base = "games with excellent story narrative writing characters and plot"
-    
+    base = "peaceful and calming games focused on gentle activities like farming, life simulation, crafting where players can take their time and relax at their own pace"
     term_string = " ".join(important_terms)
     enhanced_query = f"{base} {term_string}"
     
@@ -71,6 +53,8 @@ def main():
         sys.exit(1)
     
     category = sys.argv[1]
+    
+    print(f"\nProcessing category: {category}")
     
     # Load data
     results, relevant_docs = load_results_and_judgments(category)
