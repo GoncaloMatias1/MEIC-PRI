@@ -1,0 +1,410 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 69,
+    "params": {
+      "q": "{!knn f=vector topK=50}[0.0372186079621315, -0.037835460156202316, 0.013371235691010952, -0.04503367096185684, -0.05824960768222809, 0.04242733493447304, 0.01561831496655941, 0.030293960124254227, 0.09656592458486557, 0.0807560533285141, -0.013760434463620186, 0.036340486258268356, 0.01102452538907528, -0.004565528128296137, 0.03358712047338486, -0.006864769849926233, 0.0832611471414566, 0.023380417376756668, 0.06941826641559601, -0.05922318994998932, 0.02641274221241474, 0.015335183590650558, 0.007452257443219423, -0.010126595385372639, -0.03837721049785614, -0.016669712960720062, -0.024743760004639626, 0.025404559448361397, -0.05892704054713249, -0.07137400656938553, -0.06253763288259506, -0.00646244129166007, 0.061481576412916183, -0.03509639948606491, -0.004219588823616505, 0.03214825689792633, 0.02377152442932129, -0.02479345165193081, -0.04620470851659775, -0.047960203140974045, -0.10203400999307632, -0.018201297149062157, 0.032391954213380814, 0.038204994052648544, 0.07261190563440323, -0.040007177740335464, -0.09229062497615814, 0.022278234362602234, -0.02365141734480858, 0.06745429337024689, -0.07385775446891785, 0.026173627004027367, 0.023581746965646744, -0.030336648225784302, 0.048597242683172226, 0.032630302011966705, -0.010150349698960781, 0.041427165269851685, 0.024377871304750443, -0.12533141672611237, -0.047226663678884506, -0.025822686031460762, -0.06637709587812424, 0.02430490031838417, 0.027332734316587448, -0.03659108281135559, 0.03319315239787102, 0.08215750008821487, -0.024370817467570305, -0.0329308919608593, -0.07364793866872787, -0.0018540481105446815, 0.016983481124043465, -0.05618923157453537, -0.006644137669354677, 0.04314297065138817, -0.0739152729511261, -0.09007129818201065, -0.04644293338060379, -0.012209941633045673, 0.0431356243789196, -0.0027889881748706102, -0.02408420480787754, 0.030649397522211075, -0.08450694382190704, -0.044259775429964066, -0.039153970777988434, 0.02466973289847374, 0.06812384724617004, 0.07329867780208588, -0.04034845903515816, -0.08216381818056107, 0.12643171846866608, 0.033656518906354904, -0.05017172545194626, 0.04260664060711861, -0.018202081322669983, -0.09053710103034973, -0.043611593544483185, 0.02225347049534321, -0.010584673844277859, 0.001167031587101519, 0.0016022546915337443, -0.0029492746107280254, 0.09792226552963257, 0.05207761749625206, 0.026887821033596992, -0.002246372401714325, -0.07023973017930984, -0.020730875432491302, 0.0058356039226055145, -0.04055699706077576, -0.10446536540985107, 0.07670721411705017, 0.13836625218391418, 0.04118902608752251, 0.06548509746789932, 0.009237236343324184, -0.05211939290165901, 0.06504187732934952, 0.06739781051874161, 0.0025467374362051487, -0.08595642447471619, 0.07683540880680084, 0.05998313054442406, 0.002859729342162609, 0.053213007748126984, 1.4653798902717025e-33, 0.0318610779941082, 0.08040923625230789, 0.0088812205940485, 0.024685455486178398, 0.041692059487104416, 0.008088599890470505, -0.005079387687146664, -0.01160774752497673, -0.06218912452459335, 0.0231106448918581, -0.09493663907051086, 0.03531326353549957, -0.07786773890256882, 0.05898663401603699, 0.03477993234992027, -0.015722017735242844, -0.09825600683689117, 0.044751398265361786, 0.016528738662600517, 0.0449361577630043, 0.0033481328282505274, 0.040856439620256424, 0.015186388976871967, -0.03805062919855118, -0.046649690717458725, 0.0465225987136364, -0.03886759653687477, -0.02003939263522625, 0.0018855975940823555, -0.009114716202020645, -0.032098785042762756, -0.04159034788608551, -0.011112655512988567, -0.056051839143037796, -0.0013084642123430967, -0.00014778980403207242, -0.024668117985129356, -0.07901408523321152, 0.0493205226957798, 0.11407093703746796, -0.07552524656057358, -0.008096534758806229, -0.08185580372810364, -0.041580043733119965, 0.04155740141868591, -0.014910846017301083, -0.0039480323903262615, -0.08794878423213959, -0.10811357200145721, -0.04332820326089859, -0.08149104565382004, 0.02217750810086727, 0.02239568904042244, -0.0132523188367486, 0.028119318187236786, -0.05113264545798302, 0.015213649719953537, -0.05480661243200302, -0.014481970109045506, 0.051330529153347015, 0.10370263457298279, 0.047876305878162384, 0.047818005084991455, -0.043883830308914185, 0.008959276601672173, 0.06577431410551071, 0.039716366678476334, -0.014151360839605331, -0.00955495610833168, -0.015363185666501522, -0.04064791277050972, -0.003486552508547902, 0.0783219039440155, 0.0032390542328357697, -0.03474484756588936, 0.0216321162879467, -0.03652101010084152, -0.05900442600250244, -0.0847102701663971, 0.04062299802899361, 0.01636626198887825, -0.06586010009050369, -0.11398153752088547, 0.0397244356572628, 0.06230517849326134, -0.041404128074645996, -0.012433459050953388, -0.05482669919729233, -0.06684435904026031, -0.033164188265800476, -0.04956565424799919, -0.05116588994860649, 0.03662630915641785, -0.0017052087932825089, 0.047182291746139526, -7.648574398815993e-34, -0.024517681449651718, -0.011773602105677128, -0.03607115522027016, 0.06183305010199547, -0.02058110572397709, -0.032272741198539734, -0.07618819177150726, 0.012796502560377121, 0.052358828485012054, 0.019085781648755074, -0.1017032265663147, 0.06388572603464127, 0.006280472036451101, -0.005226047243922949, 0.025790570303797722, -0.05356653034687042, 0.031041912734508514, -0.06538109481334686, -0.013850416988134384, -0.037386465817689896, 0.05341155081987381, 0.08053308725357056, -0.09848971664905548, -0.027315262705087662, 0.10753724724054337, 0.03261464089155197, -0.058243278414011, -0.013991090469062328, -0.052439671009778976, 0.029006337746977806, -0.046580612659454346, 0.04849880933761597, 0.07272233814001083, 0.05361580848693848, -0.03188489004969597, 0.007689957972615957, 0.06879846006631851, -0.0008677956648170948, -0.05016402155160904, 0.05028478056192398, 0.07560455799102783, -0.09500528872013092, -0.011449892073869705, 0.03590978682041168, -0.04203919693827629, 0.09877511858940125, 0.004393904935568571, 0.012102309614419937, 0.05624435469508171, 0.01794924959540367, -0.04814913868904114, 0.018522946164011955, -0.018750080838799477, -0.05891207978129387, -0.0739385336637497, -0.08629613369703293, 0.03699405863881111, -0.03420120105147362, 0.0269898883998394, 0.001776960096322, 0.021890509873628616, 0.03960893675684929, -0.020515743643045425, -0.010647623799741268, 0.0853092148900032, -0.045765288174152374, 0.05311167240142822, -0.007584793027490377, 0.012248384766280651, -0.06383690237998962, 0.022100966423749924, -0.0028484095819294453, 0.038649749010801315, 0.0669625774025917, 0.0603611022233963, 0.07938417792320251, -0.10537142306566238, -0.04834476858377457, -0.024873850867152214, 0.020471086725592613, -0.021855924278497696, 0.008523259311914444, 0.06234567612409592, 0.1117817834019661, 0.0709342509508133, 0.11076109856367111, -0.058164700865745544, 0.053650859743356705, 0.00032991819898597896, 0.005805209744721651, 0.04754866659641266, 0.07928183674812317, 0.1029740571975708, 0.06177898868918419, -0.0485793799161911, -1.7311917233087115e-08, -0.013214152306318283, -0.049127425998449326, 0.04356062784790993, -0.013893920928239822, -0.00031121924985200167, 0.05854359269142151, 0.026801014319062233, -0.013242538087069988, -0.012985270470380783, 0.07158344238996506, -0.005627303849905729, 0.02577783539891243, 0.01758151315152645, -0.005460099782794714, 0.06809190660715103, 0.014037207700312138, 0.08572440594434738, -0.013544847257435322, -0.054364074021577835, 0.022075865417718887, 0.1743229180574417, 0.07834099978208542, -0.02026008814573288, -0.05563834309577942, -0.08687102049589157, -0.011924955062568188, -0.09267276525497437, -0.05881233513355255, -0.00526177603751421, 0.06674697250127792, 0.09091917425394058, 0.009030795656144619, 0.027793625369668007, 0.024614054709672928, 0.029657844454050064, -0.007195188198238611, 0.08051762729883194, 0.03355248644948006, -0.018940703943371773, -0.057743094861507416, -0.004034140147268772, 0.008914359845221043, -0.006135980598628521, -0.025057226419448853, 0.004467804916203022, 0.030264755710959435, -0.00350990635342896, -0.11081893742084503, 0.004239342641085386, -0.030492929741740227, -0.036916881799697876, -0.0030560654122382402, -0.024734696373343468, 0.029018254950642586, 0.05592738464474678, 0.011898702941834927, 0.01390463300049305, 0.0363205149769783, -0.010503343306481838, -0.020143847912549973, 0.038958653807640076, 0.09047693014144897, -0.01676195114850998, -0.03558892756700516]",
+      "fl": "id,parent_id,Title,Content,Score,paragraph_num,score",
+      "rows": "30",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 50,
+    "start": 0,
+    "maxScore": 0.80307007,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "3a0837d9256a3e009fb58bb577b61752_19",
+        "parent_id": [
+          "3a0837d9256a3e009fb58bb577b61752"
+        ],
+        "Title": "Cyberpunk 2077: Gangs of Night City Board Game Review",
+        "Score": 7.0,
+        "Content": "The story system injects a much needed element of fiction into the game and frames the action around a prescribed narrative. Like the other mechanisms, they\u2019re not intensely detailed, so you\u2019re not reading lengthy paragraphs. Instead, cards offer a couple sentences of context.",
+        "paragraph_num": [
+          19
+        ],
+        "score": 0.80307007
+      },
+      {
+        "id": "88a10b2770355434916a125f9f80acdc_2",
+        "parent_id": [
+          "88a10b2770355434916a125f9f80acdc"
+        ],
+        "Title": "Undertale Review",
+        "Score": 10.0,
+        "Content": "My journey had begun with dumb puns and silly puzzles, but the end affected me in a way I never expected. That\u2019s kind of Undertale\u2019s specialty \u2014 playing with our expectations of what an RPG should be, subverting them, and using them to drive a story unique to what games can do. Its strong writing, integration of gameplay with storytelling, and acute understanding of its audience all build to something that surprises at every turn.",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.798983
+      },
+      {
+        "id": "cfa91b328793e8022d03a77f9953dcbd_6",
+        "parent_id": [
+          "cfa91b328793e8022d03a77f9953dcbd"
+        ],
+        "Title": "New Tales from the Borderlands Review",
+        "Score": 7.0,
+        "Content": "Sure, your controller is down, but they\u2019re a fun and refreshing way to break up the large swaths of QTE\u2019s and dialogue trees. What is your favorite Telltale adventure game? Tales from the Borderlands The Wolf Among Us The Walking Dead Tales of Monkey Island Batman Back to the Future Other Answer See Results New Tales tries to give your hands more to do by occasionally letting you wander around a scene, examining objects and opening crates for cash that you\u2019ll never be able to spend all of on the cache of cosmetic character skins, or participate in minigames such as hacking or the Vaultlander action-figure fights.",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.79626846
+      },
+      {
+        "id": "88a10b2770355434916a125f9f80acdc_6",
+        "parent_id": [
+          "88a10b2770355434916a125f9f80acdc"
+        ],
+        "Title": "Undertale Review",
+        "Score": 10.0,
+        "Content": "Everything I did mattered. That clever manipulation of gameplay mechanics adds weight to a story that couldn\u2019t have been told in any other way or medium. Undertale has to be a game, and that\u2019s the key to its brilliance.",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.7943596
+      },
+      {
+        "id": "94e5ffdd9c348b33cde567e9ce16312f_5",
+        "parent_id": [
+          "94e5ffdd9c348b33cde567e9ce16312f"
+        ],
+        "Title": "Catherine Review",
+        "Score": 9.0,
+        "Content": "Sure, the game looks really nice and has an awesome accompanying soundtrack, but it's the fact that the game deals with two issues in particular that gaming pretty much never broaches -- a fear of commitment and cheating on your loved one -- that lends to its uniqueness. But when you get into the nitty-gritty of how the game plays and how you explore the story, you'll realize that there's a lot more to this game than just plot. There's difficult puzzle gameplay, plenty of conversation to partake in, choices to make, and even a morality system to keep an eye on that gives the game inherent replay value.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.7936959
+      },
+      {
+        "id": "23c90eb5e7378b09d6a5ff7e98b1181a_25",
+        "parent_id": [
+          "23c90eb5e7378b09d6a5ff7e98b1181a"
+        ],
+        "Title": "Baldur's Gate 3 Review",
+        "Score": 10.0,
+        "Content": "Len's List of RPGs With the Best Stories Len's top RPGs for strong storytelling, in no particular order. See All Baldur's Gate III Larian Studios Baldur's Gate II: Shadows of Amn BioWare Planescape: Torment Black Isle Studios Fallout: New Vegas Obsidian Entertainment Disco Elysium ZA/UM Vampire: The Masquerade -- Bloodlines Troika Dragon Age: Origins BioWare Persona 5 Atlus Hades Supergiant Games Thronebreaker: The Witcher Tales CD Projekt Red The really amazing thing was not how big Baldur's Gate 3 is, though.",
+        "paragraph_num": [
+          25
+        ],
+        "score": 0.79019505
+      },
+      {
+        "id": "edfcb3c468af3c3863b5715bdcc7b0c9_3",
+        "parent_id": [
+          "edfcb3c468af3c3863b5715bdcc7b0c9"
+        ],
+        "Title": "Tales of Xillia Review",
+        "Score": 8.0,
+        "Content": "It outright expresses it. Xillia is the thirteenth primary Tales game, so even with the choice of a main character, there\u2019s a lot that series veterans will find familiar and welcome. New systems and approaches are combined with tried-and-true, traditional Tales staples to create a product that complements an already-extensive catalog of PlayStation 3 RPGs.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.78630346
+      },
+      {
+        "id": "611bae67588e7f218bdbd180f93a8108_2",
+        "parent_id": [
+          "611bae67588e7f218bdbd180f93a8108"
+        ],
+        "Title": "The DioField Chronicle Review",
+        "Score": 7.0,
+        "Content": "There is something homey about it all, even if it feels fairly predictable. IGN's Twenty Questions - Guess the game! IGN's Twenty Questions - Guess the game!",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.786268
+      },
+      {
+        "id": "79e6212030e88977e54667652c637858_1",
+        "parent_id": [
+          "79e6212030e88977e54667652c637858"
+        ],
+        "Title": "Tales of Xillia 2 Review",
+        "Score": 8.0,
+        "Content": "You didn't really want it to end, but it did anyway. 2013's Tales of Xillia was one such JRPG , a game I really enjoyed spending time with, getting to know, and ultimately beating and leaving behind with a heavy heart. In most respects, PlayStation 3's Tales of Xillia 2 -- which is the 14th core Tales game -- is simply more Tales of Xillia, but as a fan of the original, that\u2019s exactly what I wanted.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.78314686
+      },
+      {
+        "id": "b6e909fc172ae59e360ef452133beda7_0",
+        "parent_id": [
+          "b6e909fc172ae59e360ef452133beda7"
+        ],
+        "Title": "Game Dev Story iPhone Review",
+        "Score": 9.0,
+        "Content": "As the iPhone and its App Store continue to grow and mature, it's become clear to me that games that are expected to thrive must do so by addicting their users to one simple gameplay mechanic. Game Dev Story is the latest example of a download that succeeds with flying colors in this regard. It presents players with a simple premise: take the reins of a video game developer startup and grow them into a powerhouse of the industry.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.78130794
+      },
+      {
+        "id": "764f93cc135a605161eed2530f56bf43_9",
+        "parent_id": [
+          "764f93cc135a605161eed2530f56bf43"
+        ],
+        "Title": "Inkheart: The Game Review",
+        "Score": 4.5,
+        "Content": "It all seems like I'm just going through the motions of gameplay between long sections of conversations. Especially when all too often the character is just trying to eavesdrop on conversations. It's like the characters can't stand not talking to each other so they make me solve puzzles just so they can stand there and say nothing of any interest.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.78007936
+      },
+      {
+        "id": "a097d37e5f6abae3b4b68644b0b7cffb_0",
+        "parent_id": [
+          "a097d37e5f6abae3b4b68644b0b7cffb"
+        ],
+        "Title": "Endgame",
+        "Score": 3.5,
+        "Content": "I never really thought about it before, but light-gun games are apparently hard to make. They always seemed pretty easy to me. You don't really need a story, but there's always a high drama action storyline (i.e.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7800086
+      },
+      {
+        "id": "88a10b2770355434916a125f9f80acdc_7",
+        "parent_id": [
+          "88a10b2770355434916a125f9f80acdc"
+        ],
+        "Title": "Undertale Review",
+        "Score": 10.0,
+        "Content": "Its dodging-based combat minigames especially rely on that concept. Boss battles consistently subverted my expectations, even after I thought I\u2019d figured everything out, but even run-of-the-mill random encounters are closely intertwined with storytelling and worldbuilding. Every enemy has a unique personality expressed both through combat and non-combative options.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.77911115
+      },
+      {
+        "id": "3e83000e3bd1c7420cfef9b063fc35ef_0",
+        "parent_id": [
+          "3e83000e3bd1c7420cfef9b063fc35ef"
+        ],
+        "Title": "Tales of Symphonia Chronicles Review",
+        "Score": 8.0,
+        "Content": "Of all the tales told in Wolf Team and Namco\u2019s long-running JRPG series, 2004\u2019s Tales of Symphonia on the Nintendo GameCube is among the best. The 2008 follow-up, Tales of Symphonia: Dawn of the New World for the Wii, isn\u2019t as fondly remembered, but hey, I\u2019ll take it. Tales of Symphonia Chronicles brings both games together on the PlayStation 3 with a decent graphics upgrade, making it the best way to experience the original Symphonia\u2019s still-great adventure and combat.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7784746
+      },
+      {
+        "id": "e4a0add241e93a464f9b0bdcbc128ded_11",
+        "parent_id": [
+          "e4a0add241e93a464f9b0bdcbc128ded"
+        ],
+        "Title": "Project Spark Review",
+        "Score": 8.0,
+        "Content": "It\u2019s still very early in its life, so right now most of what Project Spark\u2019s community has made is...lacking in quality, to say the least. People are still learning what\u2019s possible though, and I found myself giving high ratings to games that accomplished novel things I didn\u2019t know how to do, rather than games I actually thought were good. There\u2019s potential here, even if most of the action games are garbage Fable clones, or straight-up remakes of other games.",
+        "paragraph_num": [
+          11
+        ],
+        "score": 0.7758604
+      },
+      {
+        "id": "9d196e303de332e10ef2ffeb831ca5ef_5",
+        "parent_id": [
+          "9d196e303de332e10ef2ffeb831ca5ef"
+        ],
+        "Title": "The Forgotten City Review",
+        "Score": 9.0,
+        "Content": "The absolute best part of The Forgotten City is its excellently written characters. Each person has their own motives, problems, and opinions of one another and of the Golden Rule itself to discover, with standouts like the conniving Aurelia being particularly fun to talk to. While I was initially a bit disappointed to see that there were no RPG systems to use during dialogue, especially after a game like Disco Elysium showed just how interesting they could be, the conversations are very engaging without the need to roll skill checks.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.7755842
+      },
+      {
+        "id": "19e256b0c4c5d2c8593ff60783ce7d0f_36",
+        "parent_id": [
+          "19e256b0c4c5d2c8593ff60783ce7d0f"
+        ],
+        "Title": "Dragon\u2019s Dogma 2 Review",
+        "Score": 8.0,
+        "Content": "More than once have I taken big damage or even died because I was body-blocked by my foes, and that has never been a good way for a fight to end. Jarrett Green's Action RPG Atrium A very good list of very good action RPGS See All Dragon's Dogma Capcom Elden Ring FromSoftware The Legend of Zelda: Tears of the Kingdom Nintendo EPD Fallout: New Vegas Obsidian Entertainment Bloodborne FromSoftware Dark Souls II FromSoftware Monster Hunter World Capcom Nier Automata PlatinumGames Onimusha: Dawn of Dreams Capcom The Witcher 2: Assassins of Kings CD Projekt Red Even if I\u2019m not getting bullied out of the shot, as the numbers of the combatants picks up, you can watch the frame rate slowly diminish \u2013 not ideal for a game where success in combat can be so heavily dependent on timing your attacks, blocks, and dodges.",
+        "paragraph_num": [
+          36
+        ],
+        "score": 0.7753128
+      },
+      {
+        "id": "34b8bb4a79ecaf95b545302723d4f942_1",
+        "parent_id": [
+          "34b8bb4a79ecaf95b545302723d4f942"
+        ],
+        "Title": "Golf Story Review",
+        "Score": 7.5,
+        "Content": "Golf Story tells an odd but enjoyable story full of clever and funny writing. You meet expressive and lively characters on your journey for golfing glory, all of which talk to you through emotive dialogue bubbles that tilt, grow, or change pace with their attitude. That quest takes you across eight varied pixel art worlds, which range from regular grass courses to prehistoric valleys to island beaches, and even a spooky haunted graveyard.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.7753056
+      },
+      {
+        "id": "88a10b2770355434916a125f9f80acdc_19",
+        "parent_id": [
+          "88a10b2770355434916a125f9f80acdc"
+        ],
+        "Title": "Undertale Review",
+        "Score": 10.0,
+        "Content": "Both work well, but the sensitivity of the stick in certain fights had me preferring the buttons to the stick.",
+        "paragraph_num": [
+          19
+        ],
+        "score": 0.7751605
+      },
+      {
+        "id": "33dcf5612939b5a8d9a73d894a8d8713_2",
+        "parent_id": [
+          "33dcf5612939b5a8d9a73d894a8d8713"
+        ],
+        "Title": "Mario & Luigi: Bowser's Inside Story Review",
+        "Score": 9.5,
+        "Content": "It also focused on a battle system that required more than basic menu selections. It involved the players with skill-based challenges, so while they could certainly watch the attacks unfold on-screen, to really take advantage of the power of the attack the game needed help from the player with well-timed button presses as the attacks played out. Then there's the idea of having players directly control two characters together, and tying those characters' action to individual action buttons really made the game its own design.",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.7746303
+      },
+      {
+        "id": "ac53f464c6acc7018b75647267f5ea30_21",
+        "parent_id": [
+          "ac53f464c6acc7018b75647267f5ea30"
+        ],
+        "Title": "Metaphor: ReFantazio Review",
+        "Score": 9.0,
+        "Content": "It\u2019s not necessarily the emotional experience I\u2019ve gotten from Meguro\u2019s other soundtracks, but it is a strong and crucial part of Metaphor\u2019s identity. Michael Higham's Top 10 Favorite RPGs of All Time See All 1 Persona 5 Royal Atlus 2 Persona 3: Reload Atlus 3 Final Fantasy XIV Online: Shadowbringers Square Enix 4 Chrono Trigger Square 5 Undertale TobyFox 6 Xenoblade Chronicles 3 Monolith Software (JP) 7 Deus Ex Ion Storm 8 Final Fantasy VI Square 9 Final Fantasy Tactics Square 10 Super Mario RPG: Legend of the Seven Stars Nintendo Metaphor has the message, the gameplay, the style, and the music, but it also has the heart to make all of those core tenets truly sing together.",
+        "paragraph_num": [
+          21
+        ],
+        "score": 0.7737765
+      },
+      {
+        "id": "d8bf4d0c058227421ae978a4d34d304e_3",
+        "parent_id": [
+          "d8bf4d0c058227421ae978a4d34d304e"
+        ],
+        "Title": "Minecraft: Story Mode Episode 3 - The Last Place You Look Review",
+        "Score": 7.7,
+        "Content": "Story Mode\u2019s forgiving difficulty - you can fail one or two button prompts and your character will still succeed on-screen, with only repeated failures resulting in a \u201cgame over\u201d screen - also contributes to the the overall unsatisfying feeling of much of the action. It feels loose and a little random. Still, letting us participate in the on-screen drama is always preferable to passively absorbing it for minutes at a time, with no need to touch the controller.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.77323914
+      },
+      {
+        "id": "88a10b2770355434916a125f9f80acdc_16",
+        "parent_id": [
+          "88a10b2770355434916a125f9f80acdc"
+        ],
+        "Title": "Undertale Review",
+        "Score": 10.0,
+        "Content": "Every one of them feels deliberate \u2014 long sections of dialogue at the beginning and certain fights can be slow, but they are necessary for establishing the characters in a way that only games can do. In a different run, underwhelming boss battles turn mournful because of what one-hit KOs imply in the world. It was Undertale's ongoing, well-woven theme of determination that kept me playing and replaying.",
+        "paragraph_num": [
+          16
+        ],
+        "score": 0.7731072
+      },
+      {
+        "id": "764f93cc135a605161eed2530f56bf43_2",
+        "parent_id": [
+          "764f93cc135a605161eed2530f56bf43"
+        ],
+        "Title": "Inkheart: The Game Review",
+        "Score": 4.5,
+        "Content": "It's a point-and-click adventure that is played in the Nintendo DS system's book format. I assume the plot of the game is the same as the film, but it's hard to tell because the game was released first. This not only made it hard to follow the abbreviated plot, but also ruined any potential surprises of the film.",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.7729292
+      },
+      {
+        "id": "1bd8e065f409b030fcefa2f8882abdd5_13",
+        "parent_id": [
+          "1bd8e065f409b030fcefa2f8882abdd5"
+        ],
+        "Title": "Concord Review",
+        "Score": 7.0,
+        "Content": "With 16 likable characters front-and-center, you\u2019d think story would be a major focus, but sadly, this is an area that\u2019s woefully lacking. With just two cutscenes right now to flesh out small bits of lore, Concord\u2019s strategy is to slowly drip feed players with short snippets of story over a long period of time, subsidized by the Galactic Guide, a map filled with nodes where you can read about the locations and characters. I\u2019ve spent a fair bit of time scrolling through this sizable library of short descriptions, and though much of it is well-written, it\u2019s a pretty poor substitute for in-game storytelling that I worry won\u2019t come often enough to keep me invested.",
+        "paragraph_num": [
+          13
+        ],
+        "score": 0.7721882
+      },
+      {
+        "id": "508e3d5585ef95c7d0924a95a9701402_13",
+        "parent_id": [
+          "508e3d5585ef95c7d0924a95a9701402"
+        ],
+        "Title": "Cris Tales Review",
+        "Score": 7.0,
+        "Content": "Cris Tales calls itself a \u201clove letter to classic JRPGs,\u201d and it plays like one through and through, in ways both good and bad. It\u2019s got the larger than life party of characters and a story that grows from humble beginnings to an epic struggle on a cosmic scale, but it\u2019s also got some of the uglier traditional JRPG mechanics I could have done without, like static save points and no autosaves. Look, I get it.",
+        "paragraph_num": [
+          13
+        ],
+        "score": 0.77156705
+      },
+      {
+        "id": "cadf57f9e97978f667879bae94e8bd68_22",
+        "parent_id": [
+          "cadf57f9e97978f667879bae94e8bd68"
+        ],
+        "Title": "Xenoblade Chronicles Review",
+        "Score": 9.0,
+        "Content": "I could talk about the gem crafting, skill trees, talent arts and myriad collectibles that deepen the experience \u2013 things that are there to play with if you want, but that don't bog down the game in reams of detail. I could talk about the thoughtful little touches that make it such a pleasure to play, like the ability to fast-travel and the comprehensive but easy to understand inventory system and the story memos that give you a gentle, optional reminder of where you have to go and why. It's a proper epic, too, with hour-and-a-half long boss battles that take place in several parts, more than 50 hours of story, and an abundance of side-quests.",
+        "paragraph_num": [
+          22
+        ],
+        "score": 0.77145123
+      },
+      {
+        "id": "b505d3a30bcb353a998d6ada9d276bd7_9",
+        "parent_id": [
+          "b505d3a30bcb353a998d6ada9d276bd7"
+        ],
+        "Title": "Tales of Kenzera: Zau Review",
+        "Score": 7.0,
+        "Content": "And some findables do exist like Echoes, which are voice notes for unexplored lore bits, I just didn\u2019t feel much incentive to stick around any particular place simply to find them. Approachability seems to be the main focus here, and I think Tales of Kenzera succeeds in that regard. Jarrett Green and the Multitude of Metroidvainias A mighty list of very good metroidvainias See All 1 Hollow Knight Team Cherry 2 Castlevania X: Rondo of Blood Konami 3 Metroid Dread MercurySteam 4 Blasphemous The Games Kitchen 5 Bloodstained: Ritual of the Night WayForward 6 Ori and the Blind Forest: Definitive Edition Moon Studios 7 Salt and Sanctuary Ska Studios 8 Overwhelm Ruari O'Sullivan 9 Carrion Phobia Game Studio 10 Super Metroid Nintendo R&D1 Combat is simple but satisfyingly quick and impactful.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.77086353
+      },
+      {
+        "id": "18e77000aa307db16d7e13c5af77ae8e_0",
+        "parent_id": [
+          "18e77000aa307db16d7e13c5af77ae8e"
+        ],
+        "Title": "Firewatch Review",
+        "Score": 9.3,
+        "Content": "These days I tend to enjoy games that are similar to a good book: a solitary, escapist experience I can get completely lost in without any interruptions from the outside world. Firewatch, then \u2013 on the strength of its gripping story, brilliant branching script, wholly convincing voice-acting performances, and stunning art direction \u2013 is easily one of my favorite and most memorable game experiences of this decade. Firewatch quickly lets you know that it\u2019s not going to pull any emotional punches over its four to five\u2013hour runtime, opening with a series of text-based choices that call back to adventure genre forebears like Zork.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.77035606
+      },
+      {
+        "id": "7cde124cc14cdc2a6aa21e8839ab7047_8",
+        "parent_id": [
+          "7cde124cc14cdc2a6aa21e8839ab7047"
+        ],
+        "Title": "Tales of the Abyss 3DS Review",
+        "Score": 7.0,
+        "Content": "Luke and company. It's also nice that Tales of the Abyss doesn't bombard you with incidental story detail and long, long cutscenes too often, hiding most of its background details in optional skits \u2013 animated conversations between main characters that crop up every five or ten minutes. A prompt in the bottom left of the screen lets you know when one of these is available, and if you don't want to spend two minutes watching it, you don't have to.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.7701951
+      }
+    ]
+  }
+}
