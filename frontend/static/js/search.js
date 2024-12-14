@@ -233,8 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const category = document.getElementById('searchCategory').value;
         const minScore = document.getElementById('minScore').value;
         
-        if (!query) {
-            showError('Please enter a search term');
+        // Only require query if no category is selected
+        if (!query && category === 'all') {
+            showError('Please enter a search term or select a category');
             return;
         }
         

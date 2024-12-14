@@ -33,7 +33,7 @@ def get_latest_reviews():
                 "q": "Subheader:*2024*",  # Find reviews from 2024
                 "fl": "id,Title,Content,Score,Subtitle,Subheader",
                 "rows": 20,  # Get more to randomly select from
-                "sort": "random_1234 desc"  # Random sort to get different reviews each time
+                "sort": "random_1234 desc"  # Random sort
             }
         }
         
@@ -90,8 +90,9 @@ def search():
         category = data.get('category', 'all')
         min_score = float(data.get('minScore', 0)) if data.get('minScore') else None
         
-        if not query:
-            return jsonify({'error': 'Query is required'}), 400
+        # Don't require query if category is selected
+        if not query and category == 'all':
+            return jsonify({'error': 'Query is required when no category is selected'}), 400
             
         # Get appropriate core name
         core = CORES.get(search_type, CORES['boosted'])
@@ -149,16 +150,27 @@ def construct_solr_query(query, search_type, category, min_score=None):
     # Add score filter if specified
     if min_score is not None and min_score > 0:
         base_query["params"]["fq"] = f"Score:[{min_score} TO *]"
+
+    # If no query but category selected, search by category
+    if not query and category != 'all':
+        category_terms = {
+            'controls': 'Content:(controls OR gameplay OR mechanics OR handling)',
+            'multiplayer': 'Content:(multiplayer OR "co-op" OR "online multiplayer" OR "pvp" OR "player vs player" OR "competitive multiplayer" OR "online mode" OR "multiplayer mode" OR "cooperative" OR "online play" OR "team-based" OR "battle royale")',
+            'relaxing': 'Content:(relaxing OR peaceful OR calm OR casual)',
+            'story': 'Content:(story OR narrative OR plot OR characters)',
+            'technical': 'Content:(graphics OR performance OR fps OR resolution)'
+        }
+        base_query["params"]["q"] = category_terms.get(category, '*:*')
+        base_query["params"]["sort"] = "Score desc"  # Sort by score when searching by category only
     
-    if search_type == 'semantic':
+    elif search_type == 'semantic':
         model = SentenceTransformer('all-MiniLM-L6-v2')
         query_vector = model.encode(query, convert_to_tensor=False).tolist()
-        
         base_query["params"].update({
             "q": "{!knn f=vector topK=50}" + str(query_vector),
             "rows": 30
         })
-    else:  # boosted
+    else:  # boosted with query
         # Clean and prepare the query
         clean_query = query.strip()
         terms = clean_query.split()
@@ -181,8 +193,21 @@ def construct_solr_query(query, search_type, category, min_score=None):
                 "mm": "100%"
             })
 
+        # If category is selected with a query, add it as a filter
         if category != 'all':
-            base_query["params"]["bq"] = f"Content:({category})^2"
+            category_terms = {
+                'controls': '(controls OR gameplay OR mechanics OR handling)',
+                'multiplayer': '(multiplayer OR cooperative OR online OR pvp)',
+                'relaxing': '(relaxing OR peaceful OR calm OR casual)',
+                'story': '(story OR narrative OR plot OR characters)',
+                'technical': '(graphics OR performance OR fps OR resolution)'
+            }
+            if category in category_terms:
+                filter_query = f"Content:({category_terms[category]})"
+                if 'fq' in base_query["params"]:
+                    base_query["params"]["fq"] += f" AND {filter_query}"
+                else:
+                    base_query["params"]["fq"] = filter_query
     
     return base_query
 
