@@ -5,6 +5,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const clustersDiv = document.getElementById('clusters');
     const clusterList = document.getElementById('cluster-list');
     
+    // Fetch and display trending games on page load
+    async function fetchTrendingGames() {
+        try {
+            const response = await fetch('/trending');
+            const games = await response.json();
+            
+            const trendingContainer = document.getElementById('trending-games');
+            if (!trendingContainer) return;
+            
+            trendingContainer.innerHTML = games.map(game => `
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer"
+                     onclick="showFullReview('${game.id}')">
+                    <div class="relative mb-4">
+                        <span class="absolute top-0 right-0 bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
+                            Score: ${game.Score.toFixed(1)}
+                        </span>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">${game.Title}</h4>
+                    <p class="text-gray-600 line-clamp-3">
+                        ${game.Content.substring(0, 150)}...
+                    </p>
+                    <div class="mt-4 text-sm text-indigo-600 hover:text-indigo-800">
+                        Read full review →
+                    </div>
+                </div>
+            `).join('');
+            
+        } catch (error) {
+            console.error('Error fetching trending games:', error);
+        }
+    }
+
+    // Call it when page loads
+    fetchTrendingGames();
+    
     function displayResults(data) {
         const resultsDiv = document.getElementById('results');
         const clustersDiv = document.getElementById('clusters');
@@ -12,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear previous results
         resultsDiv.innerHTML = '';
         clusterList.innerHTML = '';
+        
+        // Hide trending section
+        document.getElementById('trending-section').classList.add('hidden');
         
         // Display clusters
         if (Object.keys(data.clusters).length > 1) {

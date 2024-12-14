@@ -7,6 +7,7 @@ from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 import re
 from sentence_transformers import SentenceTransformer
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -21,6 +22,36 @@ CORES = {
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/trending')
+def get_trending():
+    try:
+        # Query Solr for high-rated games
+        solr_url = f"{SOLR_BASE_URL}/ign_boosted/select"
+        query = {
+            "params": {
+                "q": "*:*",
+                "fq": "Score:[8 TO *]",  # Only high-rated games
+                "fl": "id,Title,Content,Score,Subtitle",
+                "rows": 20,  # Get more to randomly select from
+                "sort": "random_1234 desc"  # Random sort
+            }
+        }
+        
+        response = requests.post(solr_url, json=query)
+        response.raise_for_status()
+        
+        results = response.json()
+        if results['response']['docs']:
+            # Randomly select 6 games
+            trending_games = random.sample(results['response']['docs'], min(6, len(results['response']['docs'])))
+            return jsonify(trending_games)
+        else:
+            return jsonify([])
+            
+    except Exception as e:
+        app.logger.error(f"Error fetching trending games: {str(e)}")
+        return jsonify([]), 500
 
 @app.route('/review/<review_id>')
 def get_review(review_id):
