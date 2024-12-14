@@ -5,6 +5,98 @@ document.addEventListener('DOMContentLoaded', function() {
     const clustersDiv = document.getElementById('clusters');
     const clusterList = document.getElementById('cluster-list');
     
+    // Make showFullReview globally available
+    window.showFullReview = async function(reviewId) {
+        try {
+            const response = await fetch(`/review/${reviewId}`);
+            if (!response.ok) throw new Error('Failed to fetch review');
+            
+            const review = await response.json();
+            const modal = document.getElementById('reviewModal');
+            
+            if (!modal) {
+                console.error('Modal element not found');
+                return;
+            }
+    
+            // Extract date and author from Subheader
+            let publishDate = 'Date not available';
+            let author = 'Unknown author';
+            let publisher = 'IGN';
+            
+            if (review.Subheader) {
+                const dateMatch = review.Subheader.match(/Updated: ([A-Za-z]+ \d+, \d{4})/);
+                if (dateMatch) {
+                    publishDate = dateMatch[1];
+                }
+                
+                const authorMatch = review.Subheader.match(/By ([^,]+)/);
+                if (authorMatch) {
+                    author = authorMatch[1].trim();
+                }
+            }
+    
+            // Detect platforms from content
+            const platforms = detectPlatformsFromContent(review.Content || '');
+            
+            // Update title
+            const titleElement = document.getElementById('modalTitle');
+            if (titleElement) {
+                titleElement.textContent = review.Title || '';
+            }
+    
+            // Main content container
+            const contentContainer = document.getElementById('modalContent');
+            if (!contentContainer) {
+                console.error('Modal content container not found');
+                return;
+            }
+    
+            // Build the modal content
+            contentContainer.innerHTML = `
+                <div class="review-metadata">
+                    <div class="metadata-item">
+                        <div class="text-sm">Score</div>
+                        <div class="text-lg score-highlight">${review.Score ? review.Score.toFixed(1) : 'N/A'}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="text-sm">Published</div>
+                        <div class="text-md">${publishDate}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="text-sm">Author</div>
+                        <div class="text-md">${author}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="text-sm">Publisher</div>
+                        <div class="text-md">${publisher}</div>
+                    </div>
+                    ${platforms.length > 0 ? `
+                        <div class="metadata-item col-span-full">
+                            <div class="text-sm">Platforms</div>
+                            <div class="platform-tags">
+                                ${platforms.map(platform => `
+                                    <span class="platform-tag">${platform}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+                ${review.Subtitle ? `<div class="review-subtitle">${review.Subtitle}</div>` : ''}
+                <div class="review-content">
+                    ${review.Content || 'No content available'}
+                </div>
+            `;
+            
+            // Show modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        } catch (error) {
+            console.error('Error fetching review:', error);
+            showError('Failed to load review details');
+        }
+    };
+    
     // Fetch and display trending games on page load
     async function fetchTrendingGames() {
         try {
@@ -121,97 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         return Array.from(foundPlatforms);
-    }
-    
-    async function showFullReview(reviewId) {
-        try {
-            const response = await fetch(`/review/${reviewId}`);
-            if (!response.ok) throw new Error('Failed to fetch review');
-            
-            const review = await response.json();
-            const modal = document.getElementById('reviewModal');
-            
-            if (!modal) {
-                console.error('Modal element not found');
-                return;
-            }
-    
-            // Extract date and author from Subheader
-            let publishDate = 'Date not available';
-            let author = 'Unknown author';
-            let publisher = 'IGN';
-            
-            if (review.Subheader) {
-                const dateMatch = review.Subheader.match(/Updated: ([A-Za-z]+ \d+, \d{4})/);
-                if (dateMatch) {
-                    publishDate = dateMatch[1];
-                }
-                
-                const authorMatch = review.Subheader.match(/By ([^,]+)/);
-                if (authorMatch) {
-                    author = authorMatch[1].trim();
-                }
-            }
-    
-            // Detect platforms from content
-            const platforms = detectPlatformsFromContent(review.Content || '');
-            
-            // Update title
-            const titleElement = document.getElementById('modalTitle');
-            if (titleElement) {
-                titleElement.textContent = review.Title || '';
-            }
-    
-            // Main content container
-            const contentContainer = document.getElementById('modalContent');
-            if (!contentContainer) {
-                console.error('Modal content container not found');
-                return;
-            }
-    
-            // Build the modal content
-            document.getElementById('modalContent').innerHTML = `
-            <div class="review-metadata">
-                <div class="metadata-item">
-                    <div class="text-sm">Score</div>
-                    <div class="text-lg score-highlight">${review.Score ? review.Score.toFixed(1) : 'N/A'}</div>
-                </div>
-                <div class="metadata-item">
-                    <div class="text-sm">Published</div>
-                    <div class="text-md">${publishDate}</div>
-                </div>
-                <div class="metadata-item">
-                    <div class="text-sm">Author</div>
-                    <div class="text-md">${author}</div>
-                </div>
-                <div class="metadata-item">
-                    <div class="text-sm">Publisher</div>
-                    <div class="text-md">${publisher}</div>
-                </div>
-                ${platforms.length > 0 ? `
-                    <div class="metadata-item col-span-full">
-                        <div class="text-sm">Platforms</div>
-                        <div class="platform-tags">
-                            ${platforms.map(platform => `
-                                <span class="platform-tag">${platform}</span>
-                            `).join('')}
-                        </div>
-                    </div>
-                ` : ''}
-            </div>
-            ${review.Subtitle ? `<div class="review-subtitle">${review.Subtitle}</div>` : ''}
-            <div class="review-content">
-                ${review.Content || 'No content available'}
-            </div>
-        `;
-            
-            // Show modal
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        } catch (error) {
-            console.error('Error fetching review:', error);
-            showError('Failed to load review details');
-        }
     }
     
     async function performSearch() {
