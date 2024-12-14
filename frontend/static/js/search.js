@@ -97,40 +97,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Fetch and display trending games on page load
-    async function fetchTrendingGames() {
+    // Fetch and display latest reviews on page load
+    async function fetchLatestReviews() {
         try {
-            const response = await fetch('/trending');
-            const games = await response.json();
+            const response = await fetch('/latest');
+            const reviews = await response.json();
             
-            const trendingContainer = document.getElementById('trending-games');
-            if (!trendingContainer) return;
+            const latestContainer = document.getElementById('latest-reviews');
+            if (!latestContainer) return;
             
-            trendingContainer.innerHTML = games.map(game => `
-                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer"
-                     onclick="showFullReview('${game.id}')">
-                    <div class="relative mb-4">
-                        <span class="absolute top-0 right-0 bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
-                            Score: ${game.Score.toFixed(1)}
-                        </span>
+            latestContainer.innerHTML = reviews.map(review => {
+                // Extract the date from Subheader
+                let publishDate = 'Recent';
+                if (review.Subheader) {
+                    const dateMatch = review.Subheader.match(/Updated: ([A-Za-z]+ \d+, \d{4})/);
+                    if (dateMatch) {
+                        publishDate = dateMatch[1];
+                    }
+                }
+                
+                return `
+                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer"
+                         onclick="showFullReview('${review.id}')">
+                        <div class="relative mb-4">
+                            <span class="absolute top-0 right-0 bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+                                Score: ${review.Score.toFixed(1)}
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-2">${publishDate}</div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">${review.Title}</h4>
+                        <p class="text-gray-600 line-clamp-3">
+                            ${review.Content.substring(0, 150)}...
+                        </p>
+                        <div class="mt-4 text-sm text-indigo-600 hover:text-indigo-800">
+                            Read full review →
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">${game.Title}</h4>
-                    <p class="text-gray-600 line-clamp-3">
-                        ${game.Content.substring(0, 150)}...
-                    </p>
-                    <div class="mt-4 text-sm text-indigo-600 hover:text-indigo-800">
-                        Read full review →
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
             
         } catch (error) {
-            console.error('Error fetching trending games:', error);
+            console.error('Error fetching latest reviews:', error);
         }
     }
 
     // Call it when page loads
-    fetchTrendingGames();
+    fetchLatestReviews();
     
     function displayResults(data) {
         const resultsDiv = document.getElementById('results');
@@ -140,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsDiv.innerHTML = '';
         clusterList.innerHTML = '';
         
-        // Hide trending section
+        // Hide latest reviews section
         document.getElementById('trending-section').classList.add('hidden');
         
         // Display clusters

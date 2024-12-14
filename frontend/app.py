@@ -23,18 +23,17 @@ CORES = {
 def home():
     return render_template('index.html')
 
-@app.route('/trending')
-def get_trending():
+@app.route('/latest')
+def get_latest_reviews():
     try:
-        # Query Solr for high-rated games
+        # Query Solr for latest reviews
         solr_url = f"{SOLR_BASE_URL}/ign_boosted/select"
         query = {
             "params": {
-                "q": "*:*",
-                "fq": "Score:[8 TO *]",  # Only high-rated games
-                "fl": "id,Title,Content,Score,Subtitle",
+                "q": "Subheader:*2024*",  # Find reviews from 2024
+                "fl": "id,Title,Content,Score,Subtitle,Subheader",
                 "rows": 20,  # Get more to randomly select from
-                "sort": "random_1234 desc"  # Random sort
+                "sort": "random_1234 desc"  # Random sort to get different reviews each time
             }
         }
         
@@ -43,14 +42,14 @@ def get_trending():
         
         results = response.json()
         if results['response']['docs']:
-            # Randomly select 6 games
-            trending_games = random.sample(results['response']['docs'], min(6, len(results['response']['docs'])))
-            return jsonify(trending_games)
+            # Select 6 random reviews from the results
+            latest_reviews = random.sample(results['response']['docs'], min(6, len(results['response']['docs'])))
+            return jsonify(latest_reviews)
         else:
             return jsonify([])
             
     except Exception as e:
-        app.logger.error(f"Error fetching trending games: {str(e)}")
+        app.logger.error(f"Error fetching latest reviews: {str(e)}")
         return jsonify([]), 500
 
 @app.route('/review/<review_id>')
