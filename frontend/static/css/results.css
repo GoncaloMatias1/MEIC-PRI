@@ -116,3 +116,34 @@
     border-radius: 0.5rem;
     margin: 1rem 0;
 }
+
+/* Add these at the end of your results.css file */
+
+.review-metadata .platform-tag {
+    display: inline-block;
+    background-color: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.metadata-group {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.metadata-label {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.metadata-value {
+    font-weight: 500;
+}

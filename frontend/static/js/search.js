@@ -16,12 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display clusters
         if (Object.keys(data.clusters).length > 1) {
             Object.entries(data.clusters).forEach(([clusterId, docs]) => {
-                const clusterLabel = data.cluster_labels[clusterId];
                 const clusterCard = document.createElement('div');
                 clusterCard.className = 'cluster-card';
                 
                 clusterCard.innerHTML = `
-                    <div class="cluster-label">${clusterLabel}</div>
+                    <div class="cluster-label">${data.cluster_labels[clusterId]}</div>
                     <div class="text-sm text-gray-600">
                         ${docs.length} results
                     </div>
@@ -59,6 +58,32 @@ document.addEventListener('DOMContentLoaded', function() {
             resultsDiv.appendChild(card);
         });
     }
+
+    function detectPlatformsFromContent(content) {
+        const platformPatterns = {
+            'PS5': /\b(PS5|PlayStation 5)\b/i,
+            'PS4': /\b(PS4|PlayStation 4)\b/i,
+            'PS3': /\b(PS3|PlayStation 3)\b/i,
+            'Xbox Series X|S': /\b(Xbox Series X|Series X|Series S|Xbox Series)\b/i,
+            'Xbox One': /\bXbox One\b/i,
+            'Xbox 360': /\bXbox 360\b/i,
+            'Nintendo Switch': /\b(Nintendo Switch|Switch)\b/i,
+            'PC': /\b(PC|Windows|Steam)\b/i,
+            'Wii U': /\bWii U\b/i,
+            'Nintendo 3DS': /\b(3DS|Nintendo 3DS)\b/i,
+            'Mobile': /\b(iOS|Android|iPhone|iPad|Mobile)\b/i
+        };
+
+        const foundPlatforms = new Set();
+        
+        for (const [platform, pattern] of Object.entries(platformPatterns)) {
+            if (pattern.test(content)) {
+                foundPlatforms.add(platform);
+            }
+        }
+        
+        return Array.from(foundPlatforms);
+    }
     
     async function showFullReview(reviewId) {
         try {
@@ -68,28 +93,98 @@ document.addEventListener('DOMContentLoaded', function() {
             const review = await response.json();
             const modal = document.getElementById('reviewModal');
             
-            document.getElementById('modalTitle').textContent = review.Title;
-            document.getElementById('modalContent').innerHTML = `
-                ${review.Subtitle ? `<div class="text-gray-600 mb-4">${review.Subtitle}</div>` : ''}
-                <div class="inline-block bg-indigo-100 text-indigo-800 rounded-lg px-4 py-2 mb-6">
-                    Score: ${review.Score.toFixed(1)}
-                </div>
-                <div class="text-gray-700 whitespace-pre-wrap">${review.Content}</div>
-            `;
+            if (!modal) {
+                console.error('Modal element not found');
+                return;
+            }
+    
+            // Extract date and author from Subheader
+            let publishDate = 'Date not available';
+            let author = 'Unknown author';
+            let publisher = 'IGN';
             
+            if (review.Subheader) {
+                const dateMatch = review.Subheader.match(/Updated: ([A-Za-z]+ \d+, \d{4})/);
+                if (dateMatch) {
+                    publishDate = dateMatch[1];
+                }
+                
+                const authorMatch = review.Subheader.match(/By ([^,]+)/);
+                if (authorMatch) {
+                    author = authorMatch[1].trim();
+                }
+            }
+    
+            // Detect platforms from content
+            const platforms = detectPlatformsFromContent(review.Content || '');
+            
+            // Update title
+            const titleElement = document.getElementById('modalTitle');
+            if (titleElement) {
+                titleElement.textContent = review.Title || '';
+            }
+    
+            // Main content container
+            const contentContainer = document.getElementById('modalContent');
+            if (!contentContainer) {
+                console.error('Modal content container not found');
+                return;
+            }
+    
+            // Build the modal content
+            document.getElementById('modalContent').innerHTML = `
+            <div class="review-metadata">
+                <div class="metadata-item">
+                    <div class="text-sm">Score</div>
+                    <div class="text-lg score-highlight">${review.Score ? review.Score.toFixed(1) : 'N/A'}</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="text-sm">Published</div>
+                    <div class="text-md">${publishDate}</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="text-sm">Author</div>
+                    <div class="text-md">${author}</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="text-sm">Publisher</div>
+                    <div class="text-md">${publisher}</div>
+                </div>
+                ${platforms.length > 0 ? `
+                    <div class="metadata-item col-span-full">
+                        <div class="text-sm">Platforms</div>
+                        <div class="platform-tags">
+                            ${platforms.map(platform => `
+                                <span class="platform-tag">${platform}</span>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+            </div>
+            ${review.Subtitle ? `<div class="review-subtitle">${review.Subtitle}</div>` : ''}
+            <div class="review-content">
+                ${review.Content || 'No content available'}
+            </div>
+        `;
+            
+            // Show modal
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         } catch (error) {
             console.error('Error fetching review:', error);
+            showError('Failed to load review details');
         }
     }
     
     async function performSearch() {
-        const query = searchInput.value;
+        const query = searchInput.value.trim();
         const searchType = document.getElementById('searchType').value;
         const category = document.getElementById('searchCategory').value;
         
-        if (!query) return;
+        if (!query) {
+            showError('Please enter a search term');
+            return;
+        }
         
         showLoading(true);
         
@@ -145,4 +240,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('reviewModal').classList.add('hidden');
         document.body.style.overflow = 'auto';
     };
+
+    // Close modal when clicking outside
+    document.getElementById('reviewModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('reviewModal')) {
+            closeReviewModal();
+        }
+    });
 });
