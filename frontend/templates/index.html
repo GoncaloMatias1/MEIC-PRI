@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Review Search</title>
+    <title>LudoLens - Game Review Explorer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
 </head>
 <body class="bg-gray-100 min-h-screen">
-    <nav class="bg-indigo-600 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 py-3">
-            <h1 class="text-white text-2xl font-bold">Game Review Search</h1>
-        </div>
-    </nav>
-
+    <!-- Removed the nav bar -->
     <main class="max-w-7xl mx-auto px-4 py-8">
         {% include 'partials/search_form.html' %}
         {% include 'partials/results.html' %}
