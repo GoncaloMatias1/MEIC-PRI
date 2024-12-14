@@ -58,6 +58,7 @@ def search():
         query = data.get('query', '')
         search_type = data.get('searchType', 'boosted')
         category = data.get('category', 'all')
+        min_score = float(data.get('minScore', 0)) if data.get('minScore') else None
         
         if not query:
             return jsonify({'error': 'Query is required'}), 400
@@ -66,7 +67,7 @@ def search():
         core = CORES.get(search_type, CORES['boosted'])
         
         # Construct Solr query based on search type
-        solr_query = construct_solr_query(query, search_type, category)
+        solr_query = construct_solr_query(query, search_type, category, min_score)
         
         # Send request to Solr
         solr_url = f"{SOLR_BASE_URL}/{core}/select"
@@ -106,7 +107,7 @@ def search():
         app.logger.error(f"Search error: {str(e)}")
         return jsonify({'error': 'Internal server error'}), 500
 
-def construct_solr_query(query, search_type, category):
+def construct_solr_query(query, search_type, category, min_score=None):
     """Construct appropriate Solr query based on search parameters"""
     base_query = {
         "params": {
@@ -114,6 +115,10 @@ def construct_solr_query(query, search_type, category):
             "rows": 30
         }
     }
+    
+    # Add score filter if specified
+    if min_score is not None and min_score > 0:
+        base_query["params"]["fq"] = f"Score:[{min_score} TO *]"
     
     if search_type == 'semantic':
         model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -129,7 +134,6 @@ def construct_solr_query(query, search_type, category):
         terms = clean_query.split()
         
         if len(terms) > 1:
-            # For multi-word queries (like game titles), prioritize exact matches
             base_query["params"].update({
                 "defType": "edismax",
                 "q": f"Title:\"{clean_query}\"^10 OR Content:\"{clean_query}\"^8 OR "
@@ -140,7 +144,6 @@ def construct_solr_query(query, search_type, category):
                 "tie": "0.1"
             })
         else:
-            # For single-word queries
             base_query["params"].update({
                 "defType": "edismax",
                 "q": f"Title:({clean_query})^5 OR Content:({clean_query})^3",
@@ -148,7 +151,6 @@ def construct_solr_query(query, search_type, category):
                 "mm": "100%"
             })
 
-        # Add category-specific boosts if category is not 'all'
         if category != 'all':
             base_query["params"]["bq"] = f"Content:({category})^2"
     

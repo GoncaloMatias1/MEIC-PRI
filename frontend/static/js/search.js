@@ -180,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const query = searchInput.value.trim();
         const searchType = document.getElementById('searchType').value;
         const category = document.getElementById('searchCategory').value;
+        const minScore = document.getElementById('minScore').value;
         
         if (!query) {
             showError('Please enter a search term');
@@ -197,7 +198,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({
                     query: query,
                     searchType: searchType,
-                    category: category
+                    category: category,
+                    minScore: minScore || null
                 })
             });
             
