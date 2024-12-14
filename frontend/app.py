@@ -110,7 +110,7 @@ def construct_solr_query(query, search_type, category):
     """Construct appropriate Solr query based on search parameters"""
     base_query = {
         "params": {
-            "fl": "id,Title,Content,Score,Subtitle",
+            "fl": "id,Title,Content,Score,Subtitle,Subheader",
             "rows": 30
         }
     }
@@ -124,21 +124,33 @@ def construct_solr_query(query, search_type, category):
             "rows": 30
         })
     else:  # boosted
-        # Handle multi-word phrases
-        phrases = []
-        terms = query.split()
+        # Clean and prepare the query
+        clean_query = query.strip()
+        terms = clean_query.split()
+        
         if len(terms) > 1:
-            phrases.append(f'"{query}"^5')  # Boost exact phrase matches
-        
-        term_query = ' '.join(terms)
-        
-        base_query["params"].update({
-            "defType": "edismax",
-            "q": f"{' '.join(phrases)} Content:({term_query})^4 OR Title:({term_query})^3",
-            "qf": "Content^3 Title^2 Subtitle",
-            "pf": "Content^10",
-            "mm": "2<70%"
-        })
+            # For multi-word queries (like game titles), prioritize exact matches
+            base_query["params"].update({
+                "defType": "edismax",
+                "q": f"Title:\"{clean_query}\"^10 OR Content:\"{clean_query}\"^8 OR "
+                     f"Title:({clean_query})^5 OR Content:({clean_query})^4",
+                "qf": "Title^5 Content^3 Subtitle^2",
+                "pf": "Title^10 Content^8",
+                "mm": "75%",
+                "tie": "0.1"
+            })
+        else:
+            # For single-word queries
+            base_query["params"].update({
+                "defType": "edismax",
+                "q": f"Title:({clean_query})^5 OR Content:({clean_query})^3",
+                "qf": "Title^4 Content^2 Subtitle",
+                "mm": "100%"
+            })
+
+        # Add category-specific boosts if category is not 'all'
+        if category != 'all':
+            base_query["params"]["bq"] = f"Content:({category})^2"
     
     return base_query
 
