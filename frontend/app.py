@@ -78,6 +78,46 @@ def get_review(review_id):
         app.logger.error(f"Error fetching review: {str(e)}")
         return jsonify({'error': 'Failed to fetch review'}), 500
 
+@app.route('/more-like-this/<review_id>')
+def get_similar_reviews(review_id):
+    try:
+        # First get the original review from boosted core
+        solr_url = f"{SOLR_BASE_URL}/ign_boosted/select"
+        
+        # Get the original review
+        query = {
+            "params": {
+                "q": f"id:{review_id}",
+                "fl": "*"
+            }
+        }
+        
+        response = requests.post(solr_url, json=query)
+        review = response.json()['response']['docs'][0]
+        
+        # Now find similar reviews using mlt query
+        similar_query = {
+            "params": {
+                "q": f"{review['Content']}",  # Use the content for similarity
+                "defType": "edismax",
+                "qf": "Content^4 Title^2",
+                "pf": "Content^2",
+                "fq": f"-id:{review_id}",  # Exclude the current review
+                "fl": "id,Title,Score,Subtitle,Content",
+                "rows": "5",
+                "sort": "score desc"
+            }
+        }
+        
+        similar_response = requests.post(solr_url, json=similar_query)
+        similar_response.raise_for_status()
+        
+        return jsonify(similar_response.json()['response']['docs'])
+        
+    except Exception as e:
+        app.logger.error(f"Error fetching similar reviews: {str(e)}")
+        return jsonify([]), 500
+
 @app.route('/search', methods=['POST'])
 def search():
     try:

@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="text-lg score-highlight">${review.Score ? review.Score.toFixed(1) : 'N/A'}</div>
                     </div>
                     <div class="metadata-item">
-                        <div class="text-sm">Published</div>
+                        <div class="text-sm">Published or Last Updated</div>
                         <div class="text-md">${publishDate}</div>
                     </div>
                     <div class="metadata-item">
@@ -86,10 +86,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="review-content">
                     ${review.Content || 'No content available'}
                 </div>
+                <div id="similar-reviews-section" class="mt-8 pt-8 border-t border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Similar Games</h3>
+                    <div id="similar-reviews" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="text-center text-gray-500">Loading similar games...</div>
+                    </div>
+                </div>
             `;
             
             // Show modal
             modal.classList.remove('hidden');
+            try {
+                const similarResponse = await fetch(`/more-like-this/${review.id}`);
+                if (!similarResponse.ok) throw new Error('Failed to fetch similar reviews');
+                
+                const similarReviews = await similarResponse.json();
+                const similarContainer = document.getElementById('similar-reviews');
+                
+                if (similarReviews.length > 0) {
+                    similarContainer.innerHTML = similarReviews.map(similar => `
+                        <div class="bg-white rounded-lg shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow"
+                            onclick="showFullReview('${similar.id}')">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">${similar.Title}</h4>
+                                <span class="bg-indigo-100 text-indigo-800 rounded-full px-2 py-1 text-sm">
+                                    ${similar.Score.toFixed(1)}
+                                </span>
+                            </div>
+                            <p class="text-gray-600 text-sm line-clamp-2">${similar.Content.substring(0, 100)}...</p>
+                        </div>
+                    `).join('');
+                } else {
+                    similarContainer.innerHTML = '<div class="col-span-2 text-center text-gray-500">No similar games found</div>';
+                }
+            } catch (error) {
+                console.error('Error loading similar reviews:', error);
+                document.getElementById('similar-reviews').innerHTML = 
+                    '<div class="col-span-2 text-center text-gray-500">Failed to load similar games</div>';
+            }
             document.body.style.overflow = 'hidden';
         } catch (error) {
             console.error('Error fetching review:', error);
@@ -178,9 +212,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display all results
         const allDocs = Object.values(data.clusters).flat();
         
+        if (allDocs.length === 0) {
+            resultsDiv.innerHTML = `
+                <div class="col-span-full text-center py-12">
+                    <div class="text-4xl text-gray-400 mb-4">🔍</div>
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">No Results Found</h3>
+                    <p class="text-gray-600">Try adjusting your search terms or filters</p>
+                </div>
+            `;
+            return;
+        }
+    
+        // Change grid layout based on number of results
+        if (allDocs.length === 1) {
+            resultsDiv.className = 'flex justify-center items-start w-full';
+        } else {
+            resultsDiv.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
+        }
+        
         allDocs.forEach(doc => {
             const card = document.createElement('div');
-            card.className = 'result-card p-6 cursor-pointer hover:shadow-lg transition-all';
+            // For single result, make it narrower
+            card.className = `result-card p-6 cursor-pointer hover:shadow-lg transition-all ${allDocs.length === 1 ? 'w-full max-w-2xl' : ''}`;
             
             card.innerHTML = `
                 <div class="relative">
@@ -194,9 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="text-sm text-indigo-600 hover:text-indigo-800">Click to read full review</div>
             `;
             
-            // Add click event listener
             card.addEventListener('click', () => showFullReview(doc.id));
-            
             resultsDiv.appendChild(card);
         });
     }
