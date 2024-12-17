@@ -241,11 +241,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = data.cluster_labels[key].split(',')[0].trim()
             data.cluster_labels[key] = title.charAt(0).toUpperCase() + title.slice(1)
         }
-
+    
         // Pass titles to docs
         for (const key in data.clusters)
             data.clusters[key].map(doc => doc.ClusterLabel = data.cluster_labels[key]);
-
+    
         // Display clusters
         if (Object.keys(data.clusters).length > 1) {
             Object.entries(data.clusters).forEach(([clusterId, docs]) => {
@@ -266,9 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             clustersDiv.classList.add('hidden');
         }
-        
-        console.log(data.clusters)
-
+    
         // Display all results
         const allDocs = Object.values(data.clusters).flat();
         
@@ -292,25 +290,25 @@ document.addEventListener('DOMContentLoaded', function() {
         
         allDocs.forEach(doc => {
             const card = document.createElement('div');
-            // For single result, make it narrower
             card.className = `result-card p-6 cursor-pointer hover:shadow-lg transition-all ${allDocs.length === 1 ? 'w-full max-w-2xl' : ''}`;
- 
+     
             card.innerHTML = `
-                <div class="relative">
-                    <h2 class="text-xl font-bold text-gray-900 mb-2">${doc.Title}</h2>
+                <div class="relative mb-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-2 pr-24">${doc.Title}</h2>
                     <div class="absolute top-0 right-0">
-                        <div class="bg-white text-gray-500 border-2 border-gray-300 rounded-full px-3 py-1 mx-1 inline">
-                            ${doc.ClusterLabel}
-                        </div>
-                        <div class="bg-indigo-100 text-indigo-800 rounded-full px-3 py-1 mx-1 inline">
+                        <div class="bg-indigo-100 text-indigo-800 rounded-full px-3 py-1">
                             Score: ${doc.Score.toFixed(1)}
                         </div>
                     </div>
-                    
                 </div>
                 ${doc.Subtitle ? `<div class="text-gray-600 mb-4">${doc.Subtitle}</div>` : ''}
                 <div class="text-gray-700 line-clamp-3 mb-4">${doc.Content.substring(0, 200)}...</div>
-                <div class="text-sm text-indigo-600 hover:text-indigo-800">Click to read full review</div>
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-indigo-600 hover:text-indigo-800">Click to read full review</div>
+                    <div class="bg-white text-gray-500 border-2 border-gray-300 rounded-full px-3 py-1 text-sm">
+                        ${doc.ClusterLabel}
+                    </div>
+                </div>
             `;
             
             card.addEventListener('click', () => showFullReview(doc.id));

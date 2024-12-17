@@ -251,38 +251,79 @@ def construct_solr_query(query, search_type, category, min_score=None):
     
     return base_query
 
-def cluster_results(docs, num_clusters=3):
+def cluster_results(docs, num_clusters=5):
     if not docs:
         return {}, {}
         
-    try:
-        # Create TF-IDF matrix
-        vectorizer = TfidfVectorizer(stop_words='english')
-        contents = [doc.get('Content', '') for doc in docs]
-        tfidf_matrix = vectorizer.fit_transform(contents)
+    # Predefined categories and their associated keywords
+    categories = {
+        'Tight Controls': [
+            'combat', 'controls', 'gameplay', 'mechanics', 'handling', 'movement',
+            'responsive', 'fluid', 'precise', 'tight', 'combat system'
+        ],
+        'Story & Narrative': [
+            'story', 'narrative', 'plot', 'character', 'dialogue', 'writing',
+            'cutscene', 'storytelling', 'campaign', 'lore', 'world-building'
+        ],
+        'Multiplayer & Social': [
+            'multiplayer', 'co-op', 'cooperative', 'pvp', 'online',
+            'competitive', 'team', 'social', 'battle royale', 'community'
+        ],
+        'Technical & Graphics': [
+            'graphics', 'performance', 'fps', 'resolution', 'visual',
+            'frame rate', 'optimization', 'texture', 'rendering', 'technical'
+        ],
+        'Relaxing': [
+            'atmosphere', 'immersive', 'beautiful', 'peaceful', 'relaxing',
+            'ambient', 'environment', 'mood', 'aesthetic', 'experience'
+        ]
+    }
+
+    def calculate_category_score(text, keywords):
+        """Calculate how well a text matches a category's keywords"""
+        text = text.lower()
+        score = 0
+        for keyword in keywords:
+            # Count occurrences and weight them
+            count = text.count(keyword.lower())
+            if count > 0:
+                # Add extra weight for keyword appearances in title
+                score += count * (3 if keyword in text[:100] else 1)
+        return score
+
+    # Initialize results dictionary
+    clustered_results = defaultdict(list)
+    
+    # Process each document
+    for doc in docs:
+        content = f"{doc.get('Title', '')} {doc.get('Content', '')}"
         
-        # Perform clustering
-        n_clusters = min(num_clusters, len(docs))
-        kmeans = KMeans(n_clusters=n_clusters)
-        clusters = kmeans.fit_predict(tfidf_matrix)
+        # Calculate scores for each category
+        category_scores = {}
+        for category, keywords in categories.items():
+            score = calculate_category_score(content, keywords)
+            category_scores[category] = score
         
-        # Group documents by cluster
-        clustered_results = defaultdict(list)
-        for doc, cluster_id in zip(docs, clusters):
-            clustered_results[int(cluster_id)].append(doc)
-        
-        # Generate cluster labels
-        cluster_labels = {}
-        feature_names = vectorizer.get_feature_names_out()
-        for cluster_id, cluster_center in enumerate(kmeans.cluster_centers_):
-            top_terms_idx = cluster_center.argsort()[-3:][::-1]
-            top_terms = [feature_names[idx] for idx in top_terms_idx]
-            cluster_labels[cluster_id] = ", ".join(top_terms)
-        
-        return dict(clustered_results), cluster_labels
-    except Exception as e:
-        app.logger.error(f"Clustering error: {str(e)}")
-        return {'0': docs}, {'0': 'All Results'}
+        # Assign document to highest scoring category
+        # Only if the score is above a threshold
+        max_category = max(category_scores.items(), key=lambda x: x[1])
+        if max_category[1] > 2:  # Minimum threshold to be included in a category
+            clustered_results[max_category[0]].append(doc)
+        else:
+            # Create a "Mixed" category for documents that don't strongly match any category
+            clustered_results['Other Games'].append(doc)
+    
+    # Remove empty categories and sort by number of documents
+    clustered_results = {k: v for k, v in clustered_results.items() if v}
+    
+    # Sort documents within each cluster by Score
+    for category in clustered_results:
+        clustered_results[category].sort(key=lambda x: float(x.get('Score', 0)), reverse=True)
+    
+    # Create labels dictionary
+    cluster_labels = {category: category for category in clustered_results.keys()}
+    
+    return dict(clustered_results), cluster_labels
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
