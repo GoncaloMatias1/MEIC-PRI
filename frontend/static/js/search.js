@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) throw new Error('Failed to fetch review');
             
             const review = await response.json();
-            const modal = document.getElementById('reviewModal');
             
-            if (!modal) {
+            const reviewModal = document.getElementById('reviewModal');
+            const clusterModal = document.getElementById('clusterModal');
+            if (!reviewModal || !clusterModal) {
                 console.error('Modal element not found');
                 return;
             }
@@ -95,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             
             // Show modal
-            modal.classList.remove('hidden');
+            reviewModal.classList.remove('hidden');
+            clusterModal.classList.add('hidden');
             try {
                 const similarResponse = await fetch(`/more-like-this/${review.id}`);
                 if (!similarResponse.ok) throw new Error('Failed to fetch similar reviews');
@@ -130,6 +132,51 @@ document.addEventListener('DOMContentLoaded', function() {
             showError('Failed to load review details');
         }
     };
+
+    window.showCluster = async function(cluster_data, cluster_label) {
+        const reviewModal = document.getElementById('reviewModal');
+        const clusterModal = document.getElementById('clusterModal');
+        if (!reviewModal || !clusterModal) {
+            console.error('Modal element not found');
+            return;
+        }
+        
+        // Update title
+        const titleElement = document.getElementById('clusterModalTitle');
+        if (titleElement) {
+            titleElement.textContent = cluster_label || '';
+        }
+
+        // Main content container
+        const contentContainer = document.getElementById('clusterModalContent');
+        if (!contentContainer) {
+            console.error('Modal content container not found');
+            return;
+        }
+                
+        if (Object.keys(cluster_data).length > 0) {
+            contentContainer.innerHTML = cluster_data.map(review => `
+                <div class="bg-white rounded-lg shadow-sm p-4 cursor-pointer hover:shadow-md transition-shadow"
+                    onclick="showFullReview('${review.id}')">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-gray-900">${review.Title}</h4>
+                        <span class="bg-indigo-100 text-indigo-800 rounded-full px-2 py-1 text-sm">
+                            ${review.Score.toFixed(1)}
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-sm line-clamp-2">${review.Content.substring(0, 100)}...</p>
+                </div>
+            `).join('');
+        } else {
+            contentContainer.innerHTML = '<div class="col-span-2 text-center text-gray-500">Error. No cluster data.</div>';
+        }
+        
+        // Show modal
+        reviewModal.classList.add('hidden');
+        clusterModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    };
+    
     
     // Fetch and display latest reviews on page load
     async function fetchLatestReviews() {
@@ -189,6 +236,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hide latest reviews section
         document.getElementById('trending-section').classList.add('hidden');
         
+        // Get cluster titles
+        for (const key in data.cluster_labels) {
+            const title = data.cluster_labels[key].split(',')[0].trim()
+            data.cluster_labels[key] = title.charAt(0).toUpperCase() + title.slice(1)
+        }
+
+        // Pass titles to docs
+        for (const key in data.clusters)
+            data.clusters[key].map(doc => doc.ClusterLabel = data.cluster_labels[key]);
+
         // Display clusters
         if (Object.keys(data.clusters).length > 1) {
             Object.entries(data.clusters).forEach(([clusterId, docs]) => {
@@ -202,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `;
                 
+                clusterCard.addEventListener('click', () => showCluster(docs, data.cluster_labels[clusterId]));
                 clusterList.appendChild(clusterCard);
             });
             clustersDiv.classList.remove('hidden');
@@ -209,6 +267,8 @@ document.addEventListener('DOMContentLoaded', function() {
             clustersDiv.classList.add('hidden');
         }
         
+        console.log(data.clusters)
+
         // Display all results
         const allDocs = Object.values(data.clusters).flat();
         
@@ -234,13 +294,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const card = document.createElement('div');
             // For single result, make it narrower
             card.className = `result-card p-6 cursor-pointer hover:shadow-lg transition-all ${allDocs.length === 1 ? 'w-full max-w-2xl' : ''}`;
-            
+ 
             card.innerHTML = `
                 <div class="relative">
                     <h2 class="text-xl font-bold text-gray-900 mb-2">${doc.Title}</h2>
-                    <div class="absolute top-0 right-0 bg-indigo-100 text-indigo-800 rounded-full px-3 py-1">
-                        Score: ${doc.Score.toFixed(1)}
+                    <div class="absolute top-0 right-0">
+                        <div class="bg-white text-gray-500 border-2 border-gray-300 rounded-full px-3 py-1 mx-1 inline">
+                            ${doc.ClusterLabel}
+                        </div>
+                        <div class="bg-indigo-100 text-indigo-800 rounded-full px-3 py-1 mx-1 inline">
+                            Score: ${doc.Score.toFixed(1)}
+                        </div>
                     </div>
+                    
                 </div>
                 ${doc.Subtitle ? `<div class="text-gray-600 mb-4">${doc.Subtitle}</div>` : ''}
                 <div class="text-gray-700 line-clamp-3 mb-4">${doc.Content.substring(0, 200)}...</div>
@@ -322,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function showLoading(show) {
         loadingDiv.classList.toggle('hidden', !show);
-        clustersDiv.classList.add('hidden');
+        // clustersDiv.classList.add('hidden');
     }
     
     function showError(message) {
@@ -350,6 +416,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('reviewModal').addEventListener('click', (e) => {
         if (e.target === document.getElementById('reviewModal')) {
             closeReviewModal();
+        }
+    });
+
+    // Make closeClusterModal available globally
+    window.closeClusterModal = function() {
+        document.getElementById('clusterModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    };
+
+    // Close modal when clicking outside
+    document.getElementById('clusterModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('clusterModal')) {
+            closeClusterModal();
         }
     });
 });
