@@ -1,10 +1,8 @@
 {
-    "params": {
-      "defType": "edismax",
-      "q": "Title:(*multiplayer* *online*) OR Content:(*multiplayer*)",
-      "qf": "Title^3.0 Content^2.0",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
-    }
+  "params": {
+    "q": "Content:(multiplayer online coop cooperative competitive pvp gameplay fun engaging players teams)",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content",
+    "sort": "score desc"
   }
-  
+}

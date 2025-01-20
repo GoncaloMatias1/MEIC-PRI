@@ -1,11 +1,11 @@
 {
   "params": {
     "defType": "edismax",
-    "q": "Title:(*story* *narrative* *emotional* *character*) OR Content:(*story* *narrative* *emotional* *character*) OR Subtitle:(*story* *narrative* *emotional* *character*)",
-    "qf": "Title^2.0 Content^3.0 Subtitle^2.5",
-    "pf": "Title^6.0 Content^3.0",
-    "bq": "Subtitle:(*story*)^5.0 Content:(*character* *emotional*)^4.0",
-    "rows": 100,
-    "fl": "id,Title,Content,Score"
+    "q": "Content:(story narrative writing characters plot)^4 OR Content:(storytelling dialogue emotional writing)^2 OR Title:(story narrative rpg adventure)^3",
+    "qf": "Content^3 Title^2 Subtitle",
+    "pf": "Content^10",
+    "mm": "2<70%",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content"
   }
 }

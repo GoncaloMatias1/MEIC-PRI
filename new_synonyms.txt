@@ -1,0 +1,17 @@
+controls,handling,inputs,input,gameplay,maneuverability
+responsive,tight,precise,accurate,fluid,smooth
+unresponsive,sloppy,sluggish,clunky,imprecise
+excellent,great,good,solid,perfect,fantastic,amazing,impressive
+terrible,bad,poor,awful,horrible,frustrating
+stiff,rigid,clumsy,awkward,unwieldy
+intuitive,natural,straightforward,comfortable
+flawless,polished,refined
+lag,delay,latency,input_delay
+movement,motion,mobility
+precise,precision,accuracy,accurate
+platforming,jumping,maneuvering
+physics,momentum,weight
+twitchy,sensitive,responsive
+control_scheme,control_system,control_setup
+multiplayer,multi_player,online_multiplayer,online_play
+coop,co_op,cooperative,collaboration

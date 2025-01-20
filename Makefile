@@ -1,27 +1,30 @@
 CORE_SIMPLE = ign_simple
 CORE_BOOSTED = ign_boosted
+CORE_SEMANTIC = ign_semantic
 SCHEMA_DIR = docker/solr/conf
 DATA_DIR = data
 QUERIES_DIR = queries
 SCRIPTS_DIR = scripts
 RESULTS_DIR = results
 
-.PHONY: help down up clean setup-cores index-data index-data-subset query-results-sys1 query-results-sys2 qrels2trec qrels2trec-copy query-plot-sys1 query-plot-sys2 query all-queries
+.PHONY: help down up clean setup-cores index-data index-data-subset query-results-sys1 query-results-sys2 qrels2trec qrels2trec-copy query-plot-sys1 query-plot-sys2 query all-queries setup-semantic process-semantic
 
 help:
 	@echo "Commands:"
 	@echo "  down                                  : stops all running services"
 	@echo "  up                                    : starts Solr with both cores"
 	@echo "  setup-cores                           : creates and configures both cores"
+	@echo "  setup-semantic                        : creates and configures semantic core"
 	@echo "  index-data                            : indexes data into both cores"
 	@echo "  index-data-subset                     : indexes subset data into both cores"
+	@echo "  process-semantic                      : processes and indexes semantic data"
 	@echo "  query-results-sys1 QUERY=<query-name> : runs the given query for simple core and saves result to a file"
 	@echo "  query-results-sys2 QUERY=<query-name> : runs the given query for boosted core and saves result to a file"
 	@echo "  qrels2trec QUERY=<query-name>         : gets qrels.txt file from the query and transforms it into a trec file in the results"
-	@echo "  qrels2trec-copy QUERY=<query-name>    : copies qrels.txt file from the query to a trec file in the results, used if qrels.txt is already in trec format"
+	@echo "  qrels2trec-copy QUERY=<query-name>    : copies qrels.txt file from the query to a trec file in the results"
 	@echo "  query-plot-sys1 QUERY=<query-name>    : plots the results of the given query for simple core"
 	@echo "  query-plot-sys2 QUERY=<query-name>    : plots the results of the given query for boosted core"
-	@echo "  query QUERY=<query-name>              : runs 'queries-results' for both systems and plots the results for a given query"
+	@echo "  query QUERY=<query-name>              : runs queries and plots results for a given query"
 	@echo "  all-queries                           : runs 'query' command for all queries"
 
 down:
@@ -33,6 +36,7 @@ up:
 clean:
 	docker exec -it $$(docker ps -qf "name=solr") solr delete -c $(CORE_SIMPLE) || true
 	docker exec -it $$(docker ps -qf "name=solr") solr delete -c $(CORE_BOOSTED) || true
+	docker exec -it $$(docker ps -qf "name=solr") solr delete -c $(CORE_SEMANTIC) || true
 	sleep 2
 
 setup-cores:
@@ -41,6 +45,21 @@ setup-cores:
 	sleep 2
 	curl -X POST -H 'Content-type:application/json' --data-binary @$(SCHEMA_DIR)/simple_schema.json "http://localhost:8983/solr/$(CORE_SIMPLE)/schema"
 	curl -X POST -H 'Content-type:application/json' --data-binary @$(SCHEMA_DIR)/boosted_schema.json "http://localhost:8983/solr/$(CORE_BOOSTED)/schema"
+
+setup-semantic:
+	docker exec -it $$(docker ps -qf "name=solr") solr create_core -c $(CORE_SEMANTIC) -d /opt/solr/server/solr/configsets/_default
+	curl -X POST -H 'Content-type:application/json' --data-binary @$(SCHEMA_DIR)/semantic_schema.json "http://localhost:8983/solr/$(CORE_SEMANTIC)/schema"
+	docker cp $(SCHEMA_DIR)/synonyms.txt pri-solr-1:/var/solr/data/$(CORE_SEMANTIC)/conf/synonyms.txt
+
+process-semantic:
+	cat $(DATA_DIR)/ign_processed.json | python3 $(SCRIPTS_DIR)/get_embeddings.py > $(DATA_DIR)/ign_semantic.json
+	python3 $(SCRIPTS_DIR)/chunk_indexer.py
+
+copy-synonyms:
+	docker cp docker/solr/conf/synonyms.txt pri-solr-1:/tmp/synonyms.txt
+	docker exec pri-solr-1 cp /tmp/synonyms.txt /var/solr/data/ign_boosted/conf/synonyms.txt
+	docker exec pri-solr-1 chown solr:solr /var/solr/data/ign_boosted/conf/synonyms.txt
+	curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=ign_boosted"
 
 index-data:
 	curl -X POST -H 'Content-type:application/json' --data-binary "@$(DATA_DIR)/ign_processed.json" "http://localhost:8983/solr/$(CORE_SIMPLE)/update?commit=true"

@@ -1,9 +1,11 @@
 {
   "params": {
-      "defType": "edismax",
-      "q": "control gameplay",
-      "qf": "Title^2.0 Content^1.0",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
+    "defType": "edismax",
+    "q": "Content:(controls responsive tight precise fluid gameplay handling)^4 OR Content:(gameplay movement physics)^2 OR Title:(controls gameplay)^3",
+    "qf": "Content^3 Title^2 Subtitle",
+    "pf": "Content^10",
+    "mm": "2<70%",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content"
   }
 }

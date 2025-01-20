@@ -2,126 +2,92 @@
 
 import argparse
 import sys
-
+import json
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.metrics import auc
 
+def calculate_metrics(precision, recall):
+    """Calculate MAP, AUC, and AVP"""
+    map_score = np.mean([p for p, r in zip(precision, recall)])
+    auc_score = auc(recall, precision)
+    avp = np.sum(precision) / len(precision) if len(precision) > 0 else 0
+    return map_score, auc_score, avp
 
-def main(qrels_file: str, output_file: str):
-    """
-    Read predicted document IDs from stdin in TREC format and qrels (ground truth IDs) from a file,
-    Plot precision-recall curve and save it to a .PNG file.
-
-    Arguments:
-        qrels_file -- Path to the qrels file containing ground truth document IDs in TREC format.
-        output_file -- Name of the output PNG file where the precision-recall curve will be saved.
-    """
-
-    # Read qrels (ground truth) from the specified file in TREC format
-    with open(qrels_file, "r") as f:
-        y_true = {
-            line.strip().split()[2] for line in f
-        }  # Use a set for fast lookup of relevant document IDs
-    print(f"Debug: Qrels IDs: {y_true}", file=sys.stderr)
-
-    # Read predicted document IDs from stdin (TREC format: assume the third column contains the doc_id)
-    y_pred = [
-        line.strip().split()[2] for line in sys.stdin
-    ]  # Extract document IDs from TREC format
-    print(f"Debug: Prediction IDs: {y_pred}", file=sys.stderr)
-
-    # Check for matches
-    matches = set(y_pred) & set(y_true)
-    print(f"Debug: Matching IDs: {matches}", file=sys.stderr)
-
-    # Edge case: Handle empty inputs
-    if not y_pred or not y_true:
-        print("Error: No predictions or qrels found. Please provide valid input.")
-        sys.exit(1)
-
-    # Calculate precision, recall, and keep track of relevant ranks for MAP calculation
+def main(solr_response_str: str, relevance_file: str, output_file: str):
+    # Read relevance judgments
+    relevant_docs = {}
+    with open(relevance_file, 'r') as f:
+        for line in f:
+            doc_id, relevance = line.strip().split('\t')
+            relevant_docs[doc_id] = int(relevance)
+    
+    # Parse Solr results from string
+    results = json.loads(solr_response_str)
+    retrieved_docs = [doc['id'] for doc in results['response']['docs']]
+    
+    # Calculate metrics
     precision = []
     recall = []
-    relevant_ranks = []  # To hold precision values at ranks where relevant documents are retrieved
     relevant_count = 0
-    relevant_docs = []
-
-    for i in range(1, len(y_pred) + 1):
-        # Check how many predicted documents so far are relevant
-        if y_pred[i - 1] in y_true:
+    total_relevant = sum(1 for rel in relevant_docs.values() if rel == 1)
+    
+    for i, doc_id in enumerate(retrieved_docs, 1):
+        if doc_id in relevant_docs and relevant_docs[doc_id] == 1:
             relevant_count += 1
-            relevant_ranks.append(relevant_count / i)  # Precision at this rank (relevant document)
-            relevant_docs.append(i - 1)
-
-        # Precision: relevant docs so far / total docs retrieved so far
+        
         precision.append(relevant_count / i)
-
-        # Recall: relevant docs so far / total relevant docs in qrels
-        recall.append(relevant_count / len(y_true))
-
-    # Handle case where no relevant documents were found
-    if not relevant_docs:
-        print("Warning: No relevant documents found in the results.")
-        avp_score = 0
-    else:
-        # Compute AVP (Average Precision)
-        avp_score = sum(map(lambda idx: precision[idx], relevant_docs)) / len(relevant_docs)
-
-    # Compute Mean Average Precision (MAP) as the mean of precision values for relevant documents
-    map_score = np.sum(relevant_ranks) / len(y_true) if relevant_ranks else 0
-
-    # Compute the 11-point interpolated precision-recall curve
-    recall_levels = np.linspace(0.0, 1.0, 11)
-    interpolated_precision = [
-        max([p for p, r in zip(precision, recall) if r >= r_level], default=0)
-        for r_level in recall_levels
-    ]
-
-    # Compute the Area Under Curve (AUC) for the precision-recall curve
-    auc_score = np.trapz(interpolated_precision, recall_levels)
-
-    # Plot the 11-point interpolated precision-recall curve
-    precisions_at_n = ""
-    for n in (5, 10, 15, 20):
-        if n <= len(precision):
-            precisions_at_n += f"P@{n}:{precision[n - 1]:.2f}, "
-    plt.plot(
-        recall_levels,
-        interpolated_precision,
-        drawstyle="steps-post",
-        label=f"AVP: {avp_score:.3f}, MAP: {map_score:.3f}, AUC: {auc_score:.3f}",
-        linewidth=1,
-    )
-    plt.figtext(0.5, 0.01, precisions_at_n, wrap=True, horizontalalignment='center', fontsize=6)
-
-    # Customize plot appearance
-    plt.xlabel("Recall")
-    plt.ylabel("Precision")
-    plt.xlim(0, 1.2)
-    plt.ylim(0, 1.2)
-    plt.legend(loc="lower left", prop={"size": 10})
-
-    # Keep the title as "Precision-Recall Curve"
-    plt.title("Precision-Recall Curve")
-
-    # Save the plot to the specified output PNG file
-    plt.savefig(output_file, format="png", dpi=300)
-    print(f"Precision-Recall plot saved to {output_file}")
-
+        recall.append(relevant_count / total_relevant if total_relevant > 0 else 0)
+    
+    # Calculate MAP, AUC, AVP
+    map_score, auc_score, avp = calculate_metrics(precision, recall)
+    
+    # Plot smooth PR curve
+    plt.figure(figsize=(10, 6))
+    
+    # Use interpolation for smoother curve
+    recall_points = np.linspace(0, 1, 100)
+    precision_interp = []
+    
+    for r in recall_points:
+        # Find precision values at recall >= r
+        prec_at_recall = [p for p, rec in zip(precision, recall) if rec >= r]
+        # Take the maximum precision (or 0 if none found)
+        precision_interp.append(max(prec_at_recall) if prec_at_recall else 0)
+    
+    plt.plot(recall_points, precision_interp, '-', label=f'MAP: {map_score:.3f}\nAUC: {auc_score:.3f}\nAVP: {avp:.3f}')
+    
+    # Calculate P@k values
+    p_at_k = {}
+    for k in [5, 10, 15, 20]:
+        if k <= len(precision):
+            p_at_k[k] = precision[k-1]
+    
+    # Add P@k values to plot
+    p_at_k_text = ", ".join([f"P@{k}:{v:.2f}" for k, v in p_at_k.items()])
+    plt.figtext(0.5, 0.01, p_at_k_text, wrap=True, horizontalalignment='center', fontsize=8)
+    
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.title('Precision-Recall Curve')
+    plt.grid(True)
+    plt.legend(loc='lower left')
+    plt.savefig(output_file, bbox_inches='tight', dpi=300)
+    
+    print(f"Metrics:")
+    print(f"MAP: {map_score:.3f}")
+    print(f"AUC: {auc_score:.3f}")
+    print(f"AVP: {avp:.3f}")
+    for k, v in p_at_k.items():
+        print(f"P@{k}: {v:.2f}")
 
 if __name__ == "__main__":
-    # Argument parser to handle the qrels file and output file as command-line arguments
-    parser = argparse.ArgumentParser(
-        description="Generate a Precision-Recall curve from Solr results (in TREC format) and qrels."
-    )
-    parser.add_argument(
-        "--qrels",
-        type=str,
-        required=True,
-        help="Path to the qrels file (ground truth document IDs in TREC format)",
-    )
-    parser.add_argument("--output", type=str, required=True, help="Path to the output PNG file")
+    parser = argparse.ArgumentParser(description="Generate Precision-Recall curve and metrics")
+    parser.add_argument('--relevance', required=True, help='File containing manual relevance judgments')
+    parser.add_argument('--output', required=True, help='Output PNG file path')
     args = parser.parse_args()
-
-    # Run the main function with the provided qrels file and output file
-    main(args.qrels, args.output)
+    
+    # Read JSON from stdin as string
+    solr_response = sys.stdin.read()
+    
+    main(solr_response, args.relevance, args.output)

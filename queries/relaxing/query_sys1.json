@@ -1,8 +1,8 @@
 {
   "params": {
-      "defType": "lucene",
-      "q": "Title:(relax* OR peaceful* OR calm* OR zen*) OR Content:(relax* OR peaceful* OR meditat* OR casual*)",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
+    "q": "Content:(relaxing peaceful casual calm soothing meditative cozy atmosphere peaceful)",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content",
+    "sort": "score desc"
   }
 }

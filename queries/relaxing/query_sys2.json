@@ -1,22 +1,11 @@
 {
   "params": {
-      "defType": "edismax",
-      "q": "{!boost b=recip(rord(Score),1,1000,1000)}(relaxing peaceful calm meditation zen)",
-      "qf": "Title^4.0 Content^2.0 Subtitle^1.0",
-      "pf": "\"relaxing game\"~2 \"peaceful experience\"~2 \"calm atmosphere\"~2",
-      "mm": "2",
-      "bf": [
-          "termfreq(Title,relaxing)^2",
-          "termfreq(Content,peaceful)^1.5"
-      ],
-      "bq": [
-          "Title:relaxing^4",
-          "Content:peaceful^2",
-          "Subtitle:calm^1"
-      ],
-      "sow": false,
-      "uf": "* _",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
+    "defType": "edismax",
+    "q": "(Content:(relaxing peaceful casual cozy atmosphere meditation)^4 OR Content:(exploration story adventure farming puzzle)^2 OR Title:(relaxing peaceful casual adventure)^3) OR Content:(charming pleasant gentle calm)",
+    "qf": "Content^4 Title^2 Subtitle",
+    "pf": "Content^8",
+    "mm": "1<50%",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content"
   }
 }

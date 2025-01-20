@@ -1,0 +1,410 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 233,
+    "params": {
+      "q": "{!knn f=vector topK=50}[0.07895715534687042, 0.02180972509086132, 0.010338007472455502, 0.013967785984277725, 0.05486784502863884, -0.011643575504422188, 0.06610167771577835, -0.04409584403038025, -0.016036270186305046, 0.0735364556312561, -0.05030597746372223, -0.03721819445490837, 0.014546147547662258, -0.07087036222219467, 0.06997977942228317, 0.02720053307712078, 0.06496305018663406, 0.018185406923294067, 0.01865178346633911, -0.00964126456528902, -0.09248211234807968, -0.01633487269282341, -0.010520205833017826, 0.04906840994954109, -0.05233479663729668, 0.04074561223387718, -0.004358409438282251, 0.06383943557739258, 0.01573612540960312, 0.013888420537114143, -0.014270382933318615, 0.05150908604264259, 0.060274455696344376, -0.014535389840602875, -0.04079115390777588, 0.07179027050733566, 0.019911061972379684, -0.0731656551361084, -0.02235286869108677, -0.03256012126803398, -0.08945256471633911, -0.011181826703250408, 0.029405001550912857, -0.03993656858801842, -0.06506701558828354, -0.017224133014678955, -0.09248512983322144, -0.08793023973703384, 0.009046574123203754, -0.025127897039055824, -0.07179772853851318, -0.029437774792313576, -0.05111857131123543, -0.01582183688879013, 0.027872556820511818, -0.043936800211668015, 0.03900151327252388, 0.0698307603597641, 0.0027014354709535837, 0.037202730774879456, 0.00676122447475791, 0.02792142704129219, -0.035846173763275146, 0.045482393354177475, 0.010369270108640194, 0.003856394672766328, -0.005589588545262814, 0.060744430869817734, -0.0020391130819916725, -0.1258607655763626, -0.04053862392902374, -0.054124947637319565, 0.06409511715173721, -0.10072971135377884, -0.03299008682370186, 0.0060436902567744255, -0.0427628792822361, -0.04936307296156883, -0.006299408618360758, -0.0033014235086739063, 0.05753089487552643, 0.023606711998581886, 0.0012943156762048602, 0.0011146821780130267, -0.04268290475010872, -0.0413462296128273, -0.009471431374549866, -0.0020225332118570805, 0.09113124012947083, 0.04890359193086624, -0.006302621215581894, 0.014577294699847698, 0.03548194095492363, 0.019680388271808624, 0.0012439519632607698, 0.018326088786125183, 0.0025688870809972286, -0.02188928984105587, -0.05297674611210823, -0.01023473497480154, -0.04017867520451546, 0.04044599086046219, -0.005342385265976191, 0.026486577466130257, 0.032965287566185, 0.0404401496052742, -0.04373369365930557, -0.01272537186741829, -0.0030404082499444485, 0.019436556845903397, -0.17608873546123505, -0.023333070799708366, -0.061514176428318024, 0.029619969427585602, 0.04817626625299454, 0.01220452506095171, -0.027279533445835114, 0.03323636204004288, 0.05448880046606064, 0.061836905777454376, 0.14506898820400238, 0.01486051082611084, -0.0008972373907454312, 0.005334601271897554, 0.10260243713855743, 0.04513372853398323, -0.014546859078109264, 3.776719718476019e-33, 0.03443167731165886, -0.0035929065197706223, 0.027823973447084427, 0.07424989342689514, 0.023962318897247314, -0.025760449469089508, -0.004219634924083948, -0.04572826996445656, -0.04520939290523529, 0.05652548372745514, 0.00463504483923316, 0.011753475293517113, -0.02362236939370632, 0.04042026028037071, 0.049135852605104446, -0.12571507692337036, -0.06550712138414383, 0.0020403920207172632, 0.0011833185562863946, 0.02348020300269127, -0.04608619585633278, -0.021579500287771225, 0.04111245647072792, 0.026042750105261803, 0.011757838539779186, 0.06217329949140549, -0.008873687125742435, 0.006031538359820843, 0.00857512466609478, 0.007049390580505133, -0.032400667667388916, -0.08368759602308273, -0.08718687295913696, -0.0880596712231636, 0.022278396412730217, 0.04171692952513695, -0.052633363753557205, -0.01310714427381754, 0.024039778858423233, 0.043473973870277405, -0.040075212717056274, 0.004257814027369022, -0.02927338145673275, 0.04137604311108589, 0.01633751206099987, 0.02947717346251011, -0.025522505864501, -0.06421054154634476, -0.0985017716884613, 0.004099678248167038, -0.059579916298389435, 0.031093072146177292, 0.02432064153254032, -0.03352511301636696, -0.10465042293071747, -0.06786219775676727, 0.08367065340280533, -0.06448811292648315, -0.10263541340827942, 0.0021260096691548824, 0.013086562044918537, -0.04695313423871994, 0.021968308836221695, -0.1602775603532791, 0.03139009326696396, 0.0171809084713459, 0.048139095306396484, 0.023678189143538475, 0.010925228707492352, 0.0394107960164547, 0.01295793242752552, 0.07126830518245697, 0.07020238786935806, 0.005676817148923874, -0.029210904613137245, -0.026149142533540726, 0.014966901391744614, -0.032310593873262405, -0.022399190813302994, -0.061786726117134094, 0.022378209978342056, 0.034545302391052246, -0.1417182981967926, 0.11879236251115799, -0.010316609404981136, -0.10478563606739044, -0.03974919766187668, 0.04733246937394142, -0.13326497375965118, 0.017764970660209656, -0.07540521770715714, -0.016077186912298203, 0.08743398636579514, 0.032847773283720016, -0.06499844044446945, -4.228154732255887e-33, 0.003366949036717415, -0.11541613191366196, -0.12298876792192459, 0.025849707424640656, 0.037645164877176285, 0.02973031811416149, -0.09027722477912903, -0.024024050682783127, 0.04172763600945473, 0.09764345735311508, -0.030996324494481087, 0.03528202325105667, 0.012010297738015652, 0.01249189767986536, -0.05203302577137947, -0.05047314614057541, 0.0575336292386055, 0.0017068349989131093, -0.026355082169175148, 0.053279805928468704, 0.0694364532828331, 0.02267475239932537, -0.05147526413202286, -0.06560873240232468, 0.06465982645750046, 0.04782607778906822, -0.06118055060505867, -0.014288976788520813, -0.007656703237444162, 0.07904870063066483, 0.05383671820163727, 0.03502776473760605, 0.0482495054602623, -0.005157792009413242, 0.029184304177761078, 0.011043340899050236, 0.0058127716183662415, -0.018936067819595337, -0.09718228131532669, -0.01325826346874237, 0.1009400263428688, 0.02651898004114628, -0.022039465606212616, 0.0651693195104599, 0.011815031059086323, 0.1432579904794693, -0.01965269446372986, -0.035195816308259964, -0.09385989606380463, 0.03870385140180588, 0.09491204470396042, -0.003669972764328122, -0.07326172292232513, -0.05156775936484337, -0.013919011689722538, -0.04275179281830788, -0.09835010021924973, -0.04352427273988724, -0.008780354633927345, -0.021550273522734642, 0.044754862785339355, 0.05818361043930054, -0.05357290431857109, 0.08450104296207428, -0.033081118017435074, 0.036266013979911804, -0.03777080029249191, -0.037728048861026764, -0.024913348257541656, -0.05927129462361336, -0.011717883870005608, 0.07812348008155823, -0.060157231986522675, 0.04650545492768288, -0.08334404230117798, 0.0346221998333931, 0.05286711826920509, -0.07032270729541779, 0.03016800619661808, -0.006174616515636444, 0.06990277767181396, -0.007532099727541208, 0.012075439095497131, 0.040207814425230026, -0.045907966792583466, 0.0614597350358963, 0.016997354105114937, 0.0226275771856308, -0.03770865127444267, -0.0643172562122345, 0.0356893464922905, 0.04995160549879074, -0.017845394089818, 0.055245738476514816, 0.002071357797831297, -3.3339418337163806e-08, 0.023582445457577705, -0.11772266775369644, 0.007039994467049837, -0.02415751852095127, 0.0021765667479485273, -0.02325475588440895, 0.06245967745780945, -0.003702740650624037, -0.013709723018109798, 0.09530221670866013, 0.019261853769421577, -0.018870538100600243, 0.028479402884840965, -0.0029189467895776033, 0.05231769382953644, 0.04063406214118004, 0.07178059220314026, 0.025633154436945915, -0.05496815964579582, 0.05613838508725166, 0.09542282670736313, 0.013201219029724598, -0.06941135972738266, -0.055927157402038574, -0.011334538459777832, -0.052631162106990814, -0.048391442745923996, -0.05214100331068039, 0.06547955423593521, 0.050706274807453156, 0.08775652199983597, 0.008262683637440205, 0.0005440068198367953, -0.012911581434309483, 0.018629180267453194, 0.01727396622300148, 0.04881225898861885, -0.04428195580840111, -0.013180088251829147, 0.037837062031030655, -0.12434513121843338, 0.028114784508943558, -0.08767765015363693, -0.04728718847036362, -0.056692760437726974, -0.001970397075638175, 0.01578240841627121, -0.040995314717292786, -0.03715449944138527, 0.01775297336280346, 0.020503517240285873, 0.008650456555187702, 0.005161786451935768, -0.02469465881586075, 0.03873470798134804, 0.04151256009936333, 0.006840221118181944, 0.04542913660407066, 0.07149349898099899, 0.002729510422796011, 0.011893518269062042, 0.07939515262842178, -0.01962399296462536, 0.045571014285087585]",
+      "fl": "id,parent_id,Title,Content,Score,paragraph_num,score",
+      "rows": "30",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 50,
+    "start": 0,
+    "maxScore": 0.7805567,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "a71e48a1e364c2c1b9c4e6dc3d4f86ee_16",
+        "parent_id": [
+          "a71e48a1e364c2c1b9c4e6dc3d4f86ee"
+        ],
+        "Title": "Mineko's Night Market Review",
+        "Score": 5.0,
+        "Content": "If you max out a quest line with a character, nothing comes of it. They might say hello if you go and talk to them after, but the conclusions are pretty anticlimactic. The best slice-of-life games to get cozy with These games have everything: farming, fishing, decorating, and sometimes, even dating.",
+        "paragraph_num": [
+          16
+        ],
+        "score": 0.7805567
+      },
+      {
+        "id": "a71e48a1e364c2c1b9c4e6dc3d4f86ee_24",
+        "parent_id": [
+          "a71e48a1e364c2c1b9c4e6dc3d4f86ee"
+        ],
+        "Title": "Mineko's Night Market Review",
+        "Score": 5.0,
+        "Content": "Mineko's Night Market Review Screenshots 10 Images It also feels like you\u2019re just\u2026 doing stuff. I mean, you are, but the act of doing in video games has to have some kind of end result. This is especially important when it comes to labor in a cozy slice-of-life sim like this one.",
+        "paragraph_num": [
+          24
+        ],
+        "score": 0.77695453
+      },
+      {
+        "id": "7291bada67a2f7fd3a6c15f9f8c57e6d_0",
+        "parent_id": [
+          "7291bada67a2f7fd3a6c15f9f8c57e6d"
+        ],
+        "Title": "Rust Review",
+        "Score": 7.0,
+        "Content": "Rust is a griefer\u2019s paradise. There\u2019s nothing quite like finding a guy sleeping in a forest and looting him before he wakes up, or camping outside another player\u2019s fort and killing her when she opens the door. For those who enjoy deadly games of cat and mouse, Rust might just be the best survival game out there.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7623192
+      },
+      {
+        "id": "426ac9ba439c1a47f28bffe8b60c2484_24",
+        "parent_id": [
+          "426ac9ba439c1a47f28bffe8b60c2484"
+        ],
+        "Title": "Nightingale Early Access Review",
+        "Score": 6.0,
+        "Content": "Everyone can have one NPC following to help in combat or carry things, similar to how companions worked in Skyrim, so getting a group of people together quickly forms a small army, which is good fun. Justin's Favorite Survival Crafting Games If just staying alive is game enough, these are some of the best things to play. See All Minecraft 4JStudios No Man's Sky Hello Games Once Human NetEase The Long Dark Hinterland Studio Ark: Ultimate Survivor Edition Studio Wildcard Terraria Engine Software Sons of the Forest Endnight Games 7 Days to Die Iron Galaxy Studios Subnautica Panic Button Don't Starve Together Klei Entertainment It\u2019s also really nice to build together.",
+        "paragraph_num": [
+          24
+        ],
+        "score": 0.76034546
+      },
+      {
+        "id": "6f9dc215ecfdb0e35925c75f91ae02e9_1",
+        "parent_id": [
+          "6f9dc215ecfdb0e35925c75f91ae02e9"
+        ],
+        "Title": "Below Review",
+        "Score": 6.9,
+        "Content": "Talk about killing the mood. Almost all of my biggest frustrations with Below come back to it not seeming able to decide if it wants to be a moody, deliberate dungeon crawler with satisfying combat or a punishing survival-action game that never lets you relax. It's at its best when it keeps that first goal in mind, wowing me with cool, subterranean vistas and enticing me with hard-to-find secret rooms full of useful rewards.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.7565173
+      },
+      {
+        "id": "7291bada67a2f7fd3a6c15f9f8c57e6d_15",
+        "parent_id": [
+          "7291bada67a2f7fd3a6c15f9f8c57e6d"
+        ],
+        "Title": "Rust Review",
+        "Score": 7.0,
+        "Content": "\u201c All of that happens while contending with hostile players, which adds a constant element of danger. There can be over 400 people on a single server, and they\u2019re all potentially dangerous. Like the once-popular zombie survival game DayZ, it\u2019s best to approach other people with a distrustful eye.",
+        "paragraph_num": [
+          15
+        ],
+        "score": 0.7534039
+      },
+      {
+        "id": "a71e48a1e364c2c1b9c4e6dc3d4f86ee_9",
+        "parent_id": [
+          "a71e48a1e364c2c1b9c4e6dc3d4f86ee"
+        ],
+        "Title": "Mineko's Night Market Review",
+        "Score": 5.0,
+        "Content": "And since it can be many hours until you\u2019re able to complete these quests, you\u2019ll spend a long time not getting to know any of them. The best part of cozy slice-of-life sims is: Farming Building relationships Decorating my home Fishing minigames Other - tell us in the comments Answer See Results There are a couple of exceptions to this rule. One is Bobo, a little boy who will be a companion of sorts while you\u2019re going through the main story.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.7502023
+      },
+      {
+        "id": "848925366f65ff08f92d62a81cfc5788_13",
+        "parent_id": [
+          "848925366f65ff08f92d62a81cfc5788"
+        ],
+        "Title": "PlayerUnknown's Battlegrounds Review",
+        "Score": 9.5,
+        "Content": "The use of sound to build tension and alert you to nearby enemies is one of the ways PUBG forces you to stay attentive and tactical rather than treating every round like a fast-paced shooter \u00e0 la Call of Duty or Battlefield. Play long enough, and you can learn the subtleties that tip off when another player has been in a place before you \u2014 an open door or an unusually dense or sparse pile of mismatched loot are telltale signs you should watch your back. All these layers merge to build a shooter that\u2019s invested in creating smart, nuanced survival and understands how even the smallest moments of your story build up to create the larger adventure.",
+        "paragraph_num": [
+          13
+        ],
+        "score": 0.7500031
+      },
+      {
+        "id": "016b362e0c652e507ef83daee6dbe57f_8",
+        "parent_id": [
+          "016b362e0c652e507ef83daee6dbe57f"
+        ],
+        "Title": "Devotion Review",
+        "Score": 8.2,
+        "Content": "From poems and love letters to depressing diary entries, there is a surprising amount of exposition delivered through items in the game world. For all the clever ways it keeps you engaged with Devotion\u2019s environmental storytelling, emotional flashbacks, and powerful anecdotes, the actual mechanical act of playing is relatively unimpressive and boring. You basically just walk into a room, inspect anything that has a dot on it in your UI, and move on.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.7497407
+      },
+      {
+        "id": "ca56bb96a60189262df0f7d093e31dd3_8",
+        "parent_id": [
+          "ca56bb96a60189262df0f7d093e31dd3"
+        ],
+        "Title": "Next Life Review",
+        "Score": 4.5,
+        "Content": "The first of these, on the top of a huge crane, also introduces you to one of the more interesting, if a little frustrating, aspects of the experience: mini-games. Mastering your fear of heights by rolling 2-D marbles through a maze is one thing, but I think my favorite is the CPR mini-game that occurs later on, only because of its adorable icons. You block the lightening from entering an electrocuted mans heart, while allowing the blood drops to flow through.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.7485142
+      },
+      {
+        "id": "ad0fe99fc750d70adae4706bbf2338cd_31",
+        "parent_id": [
+          "ad0fe99fc750d70adae4706bbf2338cd"
+        ],
+        "Title": "Celeste Review",
+        "Score": 10.0,
+        "Content": "The strength of Celeste\u2019s story and the honesty with which it tells it transforms this game from simply being one of the best platformers I\u2019ve played this decade into one of the most important ones as well. It effortlessly sneaks hard conversations about emotional and psychological health - important conversations that games don\u2019t often have - into a game that\u2019s still a phenomenal amount of fun without them.",
+        "paragraph_num": [
+          31
+        ],
+        "score": 0.7484321
+      },
+      {
+        "id": "b1c535a75804c2639a3fbe3fe17b28e8_11",
+        "parent_id": [
+          "b1c535a75804c2639a3fbe3fe17b28e8"
+        ],
+        "Title": "Stardew Valley: The Board Game Review",
+        "Score": 7.0,
+        "Content": "While the Stardew Valley video game has a reputation as a chill activity, the board game is quite demanding. \u201c If you\u2019d prefer to play a more relaxed session then Stardew Valley: The Board Game has you covered with some less challenging difficulty sessions. But from the point of view of the average cooperative board game, this is good stuff.",
+        "paragraph_num": [
+          11
+        ],
+        "score": 0.745936
+      },
+      {
+        "id": "68834753c609697ea0fdc210cbfd6d45_19",
+        "parent_id": [
+          "68834753c609697ea0fdc210cbfd6d45"
+        ],
+        "Title": "American Idol",
+        "Score": 4.0,
+        "Content": "Other than that I could play it again or with a friend but there are many other similar games in the genre that deserve much more attention. Graphics A cel-shaded character shimmies on stage to the music as symbols move on the screen and occasionally sparks fly and that's about it. There are only four different locations in the main game and I did at least five rounds of singing on the same TV studio stage.",
+        "paragraph_num": [
+          19
+        ],
+        "score": 0.7449868
+      },
+      {
+        "id": "65a7915c3fd781c69609f65fc6b36d71_19",
+        "parent_id": [
+          "65a7915c3fd781c69609f65fc6b36d71"
+        ],
+        "Title": "Sons of the Forest Review",
+        "Score": 9.0,
+        "Content": "It's more something you can do if you enjoy it, and I personally prefer more of a nomad playstyle. But it's nice that they've fleshed it out for everyone who mainly plays Sons of the Forest to build cool stuff. Len's Top 10 Survival Crafting Games I've reviewed a lot of these!",
+        "paragraph_num": [
+          19
+        ],
+        "score": 0.7446213
+      },
+      {
+        "id": "18cd1f5200a889ba42c0a7d0d9359f72_0",
+        "parent_id": [
+          "18cd1f5200a889ba42c0a7d0d9359f72"
+        ],
+        "Title": "Wreckateer Review",
+        "Score": 6.5,
+        "Content": "On the surface, simplicity and accessibility seem to be the common denominators defining casual gaming's best -- really, what makes go-to games great is their mastery of instant tension and speedy release. Few things are more stimulating in games than the sensation of not knowing whether you'll succeed or fail. An excellent title gives players of any skill the control -- and a splash of luck -- to complete any task.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7440063
+      },
+      {
+        "id": "1e5072290d2282ac9f87719111d7d787_10",
+        "parent_id": [
+          "1e5072290d2282ac9f87719111d7d787"
+        ],
+        "Title": "Little Kitty, Big City Review",
+        "Score": 7.0,
+        "Content": "Favorite Games with Playable Pets All the best games where you take care of or play as pet friends. See All Stray BlueTwelve Studio Nintendogs: Lab & Friends Nintendo EAD Yakuza 6: The Song of Life RGG Studio Cat Quest The GentleBros Animal Shelter Simulator Games Incubator Hello Goodboy Rolling Glory Jam Cat Cafe Manager Roost Games Mother 3 Nintendo Where it can grate on my patience, unfortunately, is in the actual act of reaching these goals. Climbing up various buildings through a patchwork path of air conditioners, pipes, and vents can occasionally feel outright frustrating due to imprecise jumping and camera controls.",
+        "paragraph_num": [
+          10
+        ],
+        "score": 0.7437671
+      },
+      {
+        "id": "7291bada67a2f7fd3a6c15f9f8c57e6d_4",
+        "parent_id": [
+          "7291bada67a2f7fd3a6c15f9f8c57e6d"
+        ],
+        "Title": "Rust Review",
+        "Score": 7.0,
+        "Content": "Buildings are often a nice, rusty red, which lets them pop from the green world around them. The desert and arctic biomes are enjoyable as well, though their environmental hazards mean that they can be difficult to explore without the right gear. You find yourself here armed with nothing but a rock and a torch.",
+        "paragraph_num": [
+          4
+        ],
+        "score": 0.74338883
+      },
+      {
+        "id": "e6e065d21fcbeda06d3c33afc15da3bc_1",
+        "parent_id": [
+          "e6e065d21fcbeda06d3c33afc15da3bc"
+        ],
+        "Title": "Games Explosion! Review",
+        "Score": 4.0,
+        "Content": "But nearly every decision made on the part of the developer, from controls to menus, music and graphics falls flat, sucking all the fun out of these normally enjoyable game designs. The first challenge the title provides is actually finding each game. The menus are very confusing for a collection aimed at casual gamers.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.7430365
+      },
+      {
+        "id": "848925366f65ff08f92d62a81cfc5788_8",
+        "parent_id": [
+          "848925366f65ff08f92d62a81cfc5788"
+        ],
+        "Title": "PlayerUnknown's Battlegrounds Review",
+        "Score": 9.5,
+        "Content": "The incentives to stay on the move no matter your chosen pace forces ever more dangerous encounters with increasingly skilled (or lucky) survivors, condensing the action and ending a match after around 20 minutes, before it can get bogged down by campers or other distractions. Action isn\u2019t hard to find if you\u2019re looking for it, and impossible to avoid for long when you\u2019re not, but PUBG manages to put enough space between encounters to keep those quiet, tense moments of cautious exploration intact.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.7425922
+      },
+      {
+        "id": "1882ca17630704b77ba92c055ef6403f_12",
+        "parent_id": [
+          "1882ca17630704b77ba92c055ef6403f"
+        ],
+        "Title": "Grounded Review",
+        "Score": 9.0,
+        "Content": "TieGuyTravis' Favorite Survival Games If you're interested in building, exploring, and refilling your hunger meter before dying, here are TieGuyTravis' recommendations for the best survival games you should play! See All 1 Minecraft 4JStudios 2 Grounded Obsidian Entertainment 3 Palworld Pocketpair 4 Valheim Iron Gate AB 5 Subnautica Panic Button 6 No Man's Sky Hello Games 7 Terraria Engine Software 8 State of Decay 2 Undead Labs 9 Ark: Survival Evolved Abstraction Games 10 Darkwood Acid Wizard Studios When you aren\u2019t building your micro utopia, you\u2019ll venture out into the hazards of the comely backyard in search of adventure and supplies to bring back to your fort.",
+        "paragraph_num": [
+          12
+        ],
+        "score": 0.7405461
+      },
+      {
+        "id": "a71e48a1e364c2c1b9c4e6dc3d4f86ee_40",
+        "parent_id": [
+          "a71e48a1e364c2c1b9c4e6dc3d4f86ee"
+        ],
+        "Title": "Mineko's Night Market Review",
+        "Score": 5.0,
+        "Content": "Most of the areas just have their one resource, some cats to pet, and maybe a body of water for fishing. Regardless, any change is good. There is so little of it that any time something different occurred, I was ecstatic.",
+        "paragraph_num": [
+          40
+        ],
+        "score": 0.73880434
+      },
+      {
+        "id": "9d41d98003786968b6634dc636985694_5",
+        "parent_id": [
+          "9d41d98003786968b6634dc636985694"
+        ],
+        "Title": "Guilty Gear Strive: The Board Game Review",
+        "Score": 8.0,
+        "Content": "This strategy game is just as much about accurately reading what your opponent is going to do and responding to it as it is about trying to strategize and best use the moves in your character\u2019s toolkit to poke holes in their game -- just like in a video game. I appreciate the juggling of spacing, trying to keep yourself out of harm's way while just close enough so that you can hit them or hitting them with a weak but fast attack, preventing them from hitting me. It actually does feel like a fighting game -- just played with cards instead of a controller or fightstick.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.73641765
+      },
+      {
+        "id": "f544d9819b6d369d084a8fd89f56c2c2_3",
+        "parent_id": [
+          "f544d9819b6d369d084a8fd89f56c2c2"
+        ],
+        "Title": "Fortnite Battle Royale Review",
+        "Score": 9.6,
+        "Content": "Developed by Epic Games, Fortnite was originally conceived as a third-person, co-op, survival game where teams of players could mine resources and build structures to hold off hordes of undead enemies. That version, now a standalone game called Fortnite Save the World, still exists, but it\u2019s not great . But as the battle royale genre started to gain popularity early in 2017, Epic adapted its survival game\u2019s basic systems into something new: Fortnite Battle Royale, a separate, free-to-play game that feels like the perfect home for Save the World\u2019s wayward mechanics.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7360835
+      },
+      {
+        "id": "7b0bb03907e7b80671f5534a831bee83_5",
+        "parent_id": [
+          "7b0bb03907e7b80671f5534a831bee83"
+        ],
+        "Title": "Clubhouse Games Express: Strategy Pack Review",
+        "Score": 5.7,
+        "Content": "Family Favorites is obviously geared towards multiple players. The games support anywhere from two to eight players and are definitely more fun with more people. In contrast the strategy games are mostly one or two player only, and the computers offer a significant challenge to make the game worth playing by yourself.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.7348765
+      },
+      {
+        "id": "7291bada67a2f7fd3a6c15f9f8c57e6d_3",
+        "parent_id": [
+          "7291bada67a2f7fd3a6c15f9f8c57e6d"
+        ],
+        "Title": "Rust Review",
+        "Score": 7.0,
+        "Content": "Plenty of survival games go for a grim, faded look, but Rust\u2019s colors pop. The sky is a vibrant blue that I could stare at for hours. The vegetation feels lush and inviting, like it would be fun to wander through the grass barefoot.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7346085
+      },
+      {
+        "id": "f0d93967acbebe5e7f9b7d3e912993ea_27",
+        "parent_id": [
+          "f0d93967acbebe5e7f9b7d3e912993ea"
+        ],
+        "Title": "My Time at Sandrock Review",
+        "Score": 8.0,
+        "Content": "Some of these pop up during special holiday events, but there are also one-off games to play at almost any time at the local game center. My favorite was a simple whack-a-mole with various difficulty settings that could be played with NPCs or solo. Another great one requires you to find constellations in a star-filled night sky based on NPC requests.",
+        "paragraph_num": [
+          27
+        ],
+        "score": 0.7341323
+      },
+      {
+        "id": "54545e2f70cc944391e767b3f268e874_2",
+        "parent_id": [
+          "54545e2f70cc944391e767b3f268e874"
+        ],
+        "Title": "Game & Wario Review",
+        "Score": 5.1,
+        "Content": "The best of the lot is Gamer, which is a brief work of genius. You're a kid playing Game Boy in bed, hiding the console under the covers whenever you hear your mum coming to check on you. On the gamepad you're playing classic quick-fire Wario Ware madness, switching every five seconds between poking a virtual nose, flicking a tiny dancing dude off a spinning record and loads more mad quick-fire scenarios.",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.7339746
+      },
+      {
+        "id": "a71e48a1e364c2c1b9c4e6dc3d4f86ee_0",
+        "parent_id": [
+          "a71e48a1e364c2c1b9c4e6dc3d4f86ee"
+        ],
+        "Title": "Mineko's Night Market Review",
+        "Score": 5.0,
+        "Content": "Disclosure: Humble Bundle is owned by Ziff Davis, the parent company of IGN. Humble Bundle and IGN operate completely independently, and no special consideration is given to Humble Bundle products for coverage. When you install a cozy life sim with crafting, farming, fishing, or other tasks, you can expect that you\u2019ll have to do some work.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7338523
+      },
+      {
+        "id": "3dd784fe4ccde3844555dd1b5c08a998_5",
+        "parent_id": [
+          "3dd784fe4ccde3844555dd1b5c08a998"
+        ],
+        "Title": "Rare Replay Review",
+        "Score": 9.0,
+        "Content": "Blast Corps, for instance is an insane action-puzzler where you have to destroy everything in the path of a nuclear warhead being driven through a variety of settings. If the nuke comes into contact with a single thing, the whole world explodes, lending a really great sense of tension to each stage. On the complete opposite side of the tension scale are the two Viva Pinata games, which are about as calming as games can be.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.7320923
+      },
+      {
+        "id": "4aeebf3af5579923f78db6e911636785_0",
+        "parent_id": [
+          "4aeebf3af5579923f78db6e911636785"
+        ],
+        "Title": "Puzzle Quest 2 Review",
+        "Score": 9.0,
+        "Content": "Bejeweled may be one of the most popular games in the world, but that success probably can't be attributed to \"core gamers,\" or whatever you want to call the people that eat, sleep, and obsess over videogames. A very simple match-three game, Bejeweled epitomizes the online diversion that you play for a few minutes to kill some time. It's good fun, for sure, but it's not something you can really sink your teeth into.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.73165256
+      }
+    ]
+  }
+}

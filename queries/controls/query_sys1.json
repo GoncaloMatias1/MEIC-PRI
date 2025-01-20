@@ -1,7 +1,8 @@
 {
   "params": {
-      "q": "Title:(*control* *gameplay*) OR Content:(*control* *gameplay*) OR Subtitle:(*control* *gameplay*) OR Content:(*precision* *responsive* *tight*)",
-      "rows": 100,
-      "fl": "id,Title,Content,Score"
+    "q": "Content:(controls good tight precise responsive fluid excellent smooth)",
+    "rows": 30,
+    "fl": "id,Title,Score,Subtitle,Content",
+    "sort": "score desc"
   }
 }

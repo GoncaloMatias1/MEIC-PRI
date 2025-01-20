@@ -1,0 +1,410 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 144,
+    "params": {
+      "q": "{!knn f=vector topK=50}[0.04297138750553131, -0.021839629858732224, -0.010368751361966133, -0.05134934186935425, -0.08319750428199768, 0.013597480021417141, 0.019895240664482117, 0.06590469181537628, 0.01646476238965988, 0.0921749472618103, 0.03177231550216675, 0.006413356866687536, -0.0036426647566258907, -0.03589099273085594, 0.015398908406496048, -0.026463231071829796, 0.08065780997276306, 0.10055141150951385, 0.0012968878727406263, 0.014509801752865314, -0.02805827185511589, 0.01712483912706375, -0.003058331087231636, -0.005650973878800869, -0.18110549449920654, 0.010898309759795666, -0.037233758717775345, 0.013674291782081127, 0.0029101602267473936, -0.10798295587301254, -0.014926861971616745, -0.00805083941668272, 0.03213014826178551, -0.040897563099861145, -0.13245758414268494, 0.008093247190117836, 0.009073889814317226, -0.060070015490055084, -0.07369786500930786, -0.0497916042804718, -0.10177046805620193, -0.01763412356376648, 0.048333004117012024, 0.012792692519724369, 0.032907817512750626, 0.05331994220614433, -0.03202773258090019, 0.04167967662215233, -0.00948344636708498, -0.007079806178808212, -0.03726813569664955, -0.02017083391547203, 0.10486967861652374, -0.04317225515842438, 0.059990327805280685, 0.02924168109893799, 0.03126678243279457, 0.06544271111488342, 0.05088146775960922, -0.016492770984768867, 0.0050506205298006535, 0.01029272936284542, -0.05230698734521866, 0.015677882358431816, 0.009108365513384342, 0.05880702659487724, 0.02070920355618, -0.05107269436120987, -0.02160867676138878, -0.050510987639427185, -0.013869252055883408, -0.02329936809837818, -0.0024666457902640104, -0.02884320542216301, 0.07854900509119034, -0.061227865517139435, -0.14008864760398865, 0.0019519154448062181, -0.006970553658902645, 0.12646684050559998, 0.09635825455188751, -0.02413906902074814, -0.09964150935411453, -0.01139405369758606, -0.04229944571852684, -0.0278237946331501, 0.012058395892381668, 0.06334409862756729, 0.09897148609161377, 0.03678177297115326, -0.020182514563202858, -0.0077215526252985, 0.07532186806201935, -0.038130488246679306, -0.06514031440019608, -0.02573157288134098, -2.0779500118806027e-05, -0.10274214297533035, -0.049074217677116394, 0.010075545869767666, 0.056618597358465195, 0.029375556856393814, -0.006915269419550896, 0.053206488490104675, -0.005561958532780409, 0.03860703483223915, 0.010288218036293983, 0.053504668176174164, -0.024515269324183464, 0.0030296454206109047, -0.037174858152866364, -0.09247646480798721, -0.12244468927383423, 0.10130786150693893, 0.0636700689792633, -0.03284703567624092, 0.012619220651686192, -0.003739265026524663, 0.016306722536683083, -0.011054682545363903, 0.015796393156051636, -0.03306468576192856, -0.0997350737452507, -0.015483636409044266, 0.10937432944774628, 0.04846053197979927, -0.011382891796529293, 2.7143262913020668e-33, -0.05699151009321213, 0.030061133205890656, 0.021257836371660233, 0.014509182423353195, -0.0402161180973053, -0.02669191174209118, 0.004460654687136412, 0.025309760123491287, 0.028728283941745758, 0.06798596680164337, -0.005585003644227982, -0.030439043417572975, -0.05194394662976265, 0.051688797771930695, 0.06161988526582718, -0.019417045637965202, -0.011770888231694698, 0.08969354629516602, -0.0740741640329361, 0.015175126492977142, 0.03988059237599373, 0.01827293261885643, 0.01754801534116268, -0.0560939647257328, 0.027570951730012894, 0.03705737739801407, -0.03911539912223816, 0.07394175976514816, -0.0566558800637722, -0.03193805366754532, -0.059591613709926605, -0.04640597105026245, 6.996111187618226e-05, -0.0748538225889206, 0.021172234788537025, 0.011746536940336227, 0.032833874225616455, -0.02921781688928604, 0.007160106673836708, 0.025011414662003517, -0.050057314336299896, 0.011756734922528267, -0.01085541769862175, 0.02024778351187706, -0.024733243510127068, -0.061595022678375244, -0.018889356404542923, -0.026302659884095192, -0.09849239140748978, -0.026114003732800484, -0.004916854668408632, 0.10166878998279572, 0.008360801264643669, -0.05299551412463188, 0.02797137387096882, -0.07077055424451828, 0.04265178367495537, -0.006252915132790804, -0.08926272392272949, 0.07278738170862198, 0.060277193784713745, -0.09620453417301178, -0.012477193959057331, 0.004355970770120621, 0.031303584575653076, 0.09296543896198273, 0.009878385812044144, 0.03485323488712311, 0.03558342903852463, 0.017338827252388, -0.031213270500302315, -0.016992732882499695, 0.07632417231798172, -0.01577063836157322, -0.030592840164899826, -0.00709608243778348, -0.0017379773780703545, -0.07546192407608032, -0.027240142226219177, 0.017483295872807503, 0.006260426715016365, 0.026227235794067383, -0.050986941903829575, 0.07419109344482422, 0.008273166604340076, -0.10374953597784042, -0.034292545169591904, 0.021183736622333527, -0.08017374575138092, -0.012395894154906273, -0.07928778231143951, -0.009008283726871014, -0.02466784231364727, -0.005780606064945459, 0.015714362263679504, -2.8226682995394954e-33, -0.01949259825050831, -0.06269226968288422, 0.03689137473702431, 0.04874696210026741, -0.009964816272258759, 0.061531201004981995, 0.019055770710110664, 0.0568404346704483, 0.05320107191801071, 0.005816414952278137, -0.016834869980812073, 0.07232165336608887, -0.03711225837469101, -0.00035558169474825263, -0.026525728404521942, 0.052646342664957047, -0.02178354375064373, -0.03172896057367325, 0.08354151993989944, 0.004030825104564428, 0.09113521873950958, -0.019260436296463013, 0.008511746302247047, 0.006380963604897261, 0.021080562844872475, -0.0042286887764930725, -0.02271396294236183, 0.06491803377866745, 0.019752759486436844, 0.0544406995177269, -0.04317297041416168, 0.009192640893161297, 0.08189637213945389, 0.019535521045327187, 0.003711360041052103, -0.0624716617166996, 0.01832694374024868, 0.04350464418530464, -0.012911622412502766, 0.03157759830355644, 0.06770334392786026, -0.011139166541397572, -0.052863579243421555, 0.057467781007289886, 0.04684985801577568, 0.011292901821434498, 0.0007534904289059341, -0.020531149581074715, 0.004265996161848307, 0.032714005559682846, 0.004482888616621494, 0.013457809574902058, -0.056650541722774506, -0.06068893522024155, -0.06443089246749878, -0.006631320808082819, -0.024357950314879417, 0.005215686745941639, 0.011546558700501919, 0.0012658332707360387, 0.0037443286273628473, -0.005420193541795015, -0.09357387572526932, -0.008581350557506084, 0.09155011177062988, 0.13172097504138947, 0.06700354814529419, -0.010121738538146019, 0.1198660135269165, -0.03118584118783474, 0.027755007147789, -0.008181310258805752, 0.09561768919229507, -0.04234063997864723, 0.02556975558400154, -0.008306344039738178, -0.0396404042840004, -0.05585411190986633, 0.019322125241160393, 0.06587331742048264, 0.05128203704953194, 0.027487950399518013, 0.029106611385941505, 0.06166621297597885, -0.02005486749112606, 0.09262361377477646, -0.06578110158443451, 0.025517897680401802, 0.014242109842598438, -0.011258167214691639, 0.07848013192415237, 0.12518084049224854, 0.12357548624277115, -0.03101830929517746, -0.006978153716772795, -1.8479658692172052e-08, -0.03456193581223488, 0.05008579418063164, 0.03347601741552353, 0.021907325834035873, -0.04242126643657684, 0.06018329784274101, 0.019521068781614304, -0.10589446127414703, -0.02345793880522251, -0.015356406569480896, -0.015398270450532436, -0.014401719905436039, 0.12802280485630035, -0.05784117430448532, 0.10575860738754272, 0.038908861577510834, -0.03022342175245285, 0.09066881984472275, -0.09777973592281342, -0.011319955810904503, 0.09431503713130951, 0.04738066717982292, 0.01612820290029049, -0.04179228097200394, -0.049813784658908844, -0.03132478520274162, -0.12503457069396973, 0.05885307118296623, 0.00805552490055561, 0.0028655834030359983, 0.05391164496541023, -0.0560123585164547, -0.0018862762954086065, -0.01587950624525547, 0.04288865253329277, -0.0422423854470253, 0.01173911802470684, -0.01733337715268135, 0.05742260441184044, -0.05057670548558235, -0.07870204001665115, -0.010806262493133545, -0.11391062289476395, 0.005251291207969189, -0.06354882568120956, -0.011795307509601116, 0.024494489654898643, -0.03458305448293686, -0.009397701360285282, -0.01746268756687641, -0.010983566753566265, 0.08132980018854141, -0.07969385385513306, 0.01406105887144804, 0.052042409777641296, 0.030964253470301628, -0.02591479755938053, -0.05673050880432129, -0.08984584361314774, -0.02324637956917286, 0.023281609639525414, 0.08252384513616562, -0.0352882482111454, -0.02285056561231613]",
+      "fl": "id,parent_id,Title,Content,Score,paragraph_num,score",
+      "rows": "30",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 50,
+    "start": 0,
+    "maxScore": 0.78472984,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "c5e374c359939f26b1b94a46ac2473ea_12",
+        "parent_id": [
+          "c5e374c359939f26b1b94a46ac2473ea"
+        ],
+        "Title": "Wii Play Review",
+        "Score": 5.5,
+        "Content": "Most of the offerings are fun when the controls are as responsive as they should be, but sometimes control issues interfere with the experience. In Laser Hockey, you can't seem to add power without missing the ball with the paddle; in Billiards, your gestures may not be recognized. These deficiencies scratch away at what would otherwise be a very simple, but nevertheless polished presentation.",
+        "paragraph_num": [
+          12
+        ],
+        "score": 0.78472984
+      },
+      {
+        "id": "77fb1515a4a089c2b03f3bb02bd9aac6_11",
+        "parent_id": [
+          "77fb1515a4a089c2b03f3bb02bd9aac6"
+        ],
+        "Title": "Apex Legends Mobile Review",
+        "Score": 8.0,
+        "Content": "000/250 Ask While adjusting to playing with touch controls isn\u2019t awful, it definitely feels a bit cramped and difficult to use the full potential of Apex\u2019s movement. You can rearrange your screen controls as you want, setting your virtual thumbsticks, crouch, jump, fire, and ADS buttons however you like. This setup is pretty nice, but because Apex is so much about movement mechanics, all of your buttons need to be kind of close together so you can quickly press one after the other for the proper combos.",
+        "paragraph_num": [
+          11
+        ],
+        "score": 0.7640471
+      },
+      {
+        "id": "6fefae2031cadb49388f407384ac5b81_0",
+        "parent_id": [
+          "6fefae2031cadb49388f407384ac5b81"
+        ],
+        "Title": "New Play Control! Mario Power Tennis Review",
+        "Score": 5.8,
+        "Content": "With the huge success of Wii thus far, and the ease of bringing over GameCube titles as \"Wii-makes\" to the system, Nintendo has embraced the idea of gameplay over graphics, and has begun its New Play Control franchise, which specifically focuses on bumping up old, great Cube titles to Wii, and adding in revamped motion and IR control where applicable. The concept has already seen some pretty impressive results in Japan, with Metroid Prime hitting the Wii, now complemented by impressive Corruption-inspired IR control for aiming Samus around.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7592062
+      },
+      {
+        "id": "6fefae2031cadb49388f407384ac5b81_8",
+        "parent_id": [
+          "6fefae2031cadb49388f407384ac5b81"
+        ],
+        "Title": "New Play Control! Mario Power Tennis Review",
+        "Score": 5.8,
+        "Content": "I've had the competition completely out of position, with an entire half a court open for an easy baseline hit, and then sent it right back over to them. Most of what's here works more than it doesn't, but its far from reliable. If it wasn't for the unreliable control, Mario Power Tennis would be a great choice.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.75865376
+      },
+      {
+        "id": "c758ce6dda58f09aba2e6f4f67a4e943_14",
+        "parent_id": [
+          "c758ce6dda58f09aba2e6f4f67a4e943"
+        ],
+        "Title": "Wii Sports Resort AU Review",
+        "Score": 6.5,
+        "Content": "Yes, we're talking about Swordplay. The control feels good in the sense that your movements correspond to responsive action onscreen, but the gameplay relies on high speed waggling and luck far more than skill, and the control isn't actually 1:1, which means it's less intuitive than it could be. So how does it work?",
+        "paragraph_num": [
+          14
+        ],
+        "score": 0.7580497
+      },
+      {
+        "id": "95ec2c5fab28a57603abe38c52503d96_6",
+        "parent_id": [
+          "95ec2c5fab28a57603abe38c52503d96"
+        ],
+        "Title": "Monkey Hero",
+        "Score": 3.0,
+        "Content": "While it's easily overcome by mere seconds of playing, it still could have been tweaked until it was completely seamless. And where do I begin with the control? While it's completely fine with the normal directional pad, the analog is absolutely terrible!",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.7569734
+      },
+      {
+        "id": "de5c5fee3f1fe7bee7d8b494f5fc0a10_5",
+        "parent_id": [
+          "de5c5fee3f1fe7bee7d8b494f5fc0a10"
+        ],
+        "Title": "FIFA 10 Review",
+        "Score": 6.5,
+        "Content": "The accelerometer controls seemed a bit sluggish to me. Players have the option to adjust the sensitivity of the tilt controls to find something a bit better suited to their taste, but I still stuck with the analog pad on the virtual controller as it just felt more responsive. The bigger issue with the controls is that they lack any real depth.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.75350976
+      },
+      {
+        "id": "178944708c7c1d456509ab4bc9c07ba0_0",
+        "parent_id": [
+          "178944708c7c1d456509ab4bc9c07ba0"
+        ],
+        "Title": "Rapala Tournament Fishing",
+        "Score": 3.0,
+        "Content": "When it comes to the Wii controller, there are simply a few things the system is designed to do, and a few things it isn't. For instance, one look at the controller was all it took for Ubisoft to dive into Red Steel, a game that may not have hit all the marks, but definitely has the right idea as to how the controller should enable the user to interact with games like never before by staging motion-controlled swordfights and the manipulation of in-level objects with the shake of the nunchuk. The Wii Sports compilation is another solid example, as simple motions such as swinging a racket or bat, or rolling a bowling ball down a virtual lane is instantly immersive and seems tailor-fit for the system.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.75145745
+      },
+      {
+        "id": "76a6808c03dc605b14a8d63d6256f08f_17",
+        "parent_id": [
+          "76a6808c03dc605b14a8d63d6256f08f"
+        ],
+        "Title": "Muscle Car 2",
+        "Score": 1.5,
+        "Content": "But play, play is the worst. It's possible to use analog control, but please don't . Not only is the game incapable of binding anything to anything (no control configuration and all), analog devices have a nasty tendency to over steer...all the time.",
+        "paragraph_num": [
+          17
+        ],
+        "score": 0.7512077
+      },
+      {
+        "id": "901cee68ed336fad2d64852fb85cc46d_6",
+        "parent_id": [
+          "901cee68ed336fad2d64852fb85cc46d"
+        ],
+        "Title": "Fracked Review",
+        "Score": 7.0,
+        "Content": "When you have to climb, reload, or use your hands, everything feels nicely tactile. \u201c Despite the Move controllers' lack of analog sticks, you have full freedom of movement. The controls work exceptionally well, all things considered, especially if you're familiar with games like Skyrim VR that use a similar control scheme.",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.7509317
+      },
+      {
+        "id": "ca26ef53746d40b05872b79b3ecb6c51_8",
+        "parent_id": [
+          "ca26ef53746d40b05872b79b3ecb6c51"
+        ],
+        "Title": "Tournament of Legends Review",
+        "Score": 5.0,
+        "Content": "Both interruptions of play enable unnecessary and occasionally broken mini-games that will power-up your character. Tournament of Legends may focus on remote and nunchuk motions for fighting, but these mini-games really show just how wonky and unresponsive the accelerometers can get: even though I can see that the game recognizes an up/down drumming motion with close to a hundred percent accuracy, I can never get the game to see when I give the controls a specific, quick upwards thrust on the nunchuk with a downward thrust on the remote during a taunt -- it fails 90 percent of the time.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.7503357
+      },
+      {
+        "id": "bd33ce7ee848e8bbe417a83ef1b125b5_9",
+        "parent_id": [
+          "bd33ce7ee848e8bbe417a83ef1b125b5"
+        ],
+        "Title": "Deus Ex: The Fall Review",
+        "Score": 8.2,
+        "Content": "The touch-to-move (or virtual stick, if you prefer) controls are fine for exploration but make aiming and combat very awkward. Enemy AI also seems non-existent. I witnessed more than one foe stand motionless while I repeatedly pumped pistol rounds into his chest.",
+        "paragraph_num": [
+          9
+        ],
+        "score": 0.7497027
+      },
+      {
+        "id": "af768c4272d16eabcc0a0e27e4dcb63c_10",
+        "parent_id": [
+          "af768c4272d16eabcc0a0e27e4dcb63c"
+        ],
+        "Title": "Virtua Tennis 4: World Tour Edition Review",
+        "Score": 7.5,
+        "Content": "The main game's touch controls allow you to swipe for shots and move your player around the court, but I found it to be slower and less responsive than the button controls. I kept switching back to the normal control scheme and eventually just never went back to touch controls. It's a good try, but when the game gets intense towards the end you need the precision of the normal control scheme.",
+        "paragraph_num": [
+          10
+        ],
+        "score": 0.749471
+      },
+      {
+        "id": "4e05c46caf2e77b2e078c5d7032d5c40_5",
+        "parent_id": [
+          "4e05c46caf2e77b2e078c5d7032d5c40"
+        ],
+        "Title": "Tom Clancy's Ghost Recon Advanced Warfighter",
+        "Score": 3.7,
+        "Content": "In other words, the controls usually limit you to up, down, left, right and any of the diagonals in-between. Movement and aiming simply feel downright awkward. It's amazing that a full-priced game like this would have this sort of problem in this day and age.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.74844587
+      },
+      {
+        "id": "ff4b3ab94cb52b593ff5c280514e50f4_16",
+        "parent_id": [
+          "ff4b3ab94cb52b593ff5c280514e50f4"
+        ],
+        "Title": "Mario Tennis Aces Review",
+        "Score": 7.5,
+        "Content": "Despite the fact the JoyCon has a more sensitive gyro sensor than the Wiimote, I found Swing mode to be too inconsistent in terms of differentiating between a flat shot and a slice, or even a forehand and a backhand. As a result, it felt like a far more unreliable and frustrating alternative to button-based inputs \u2013 somewhat flying in the face of its more accessible, \u2018family friendly\u2019 intentions.",
+        "paragraph_num": [
+          16
+        ],
+        "score": 0.74785244
+      },
+      {
+        "id": "768947044347062fdad661599df52a22_7",
+        "parent_id": [
+          "768947044347062fdad661599df52a22"
+        ],
+        "Title": "Space Hulk: Tactics Review",
+        "Score": 7.5,
+        "Content": "I\u2019d much prefer to be using a mouse and keyboard in this type of game, but it seems really apparent Space Hulk: Tactics was designed for a gamepad and had some sub-par mouse controls slapped on after the fact. I had to choose between trying to play it like a PC strategy game and having my clicks often not register or trigger something unintended, or pick up my Xbox controller and deal with the hassle of, for instance, having to use the buttons to manually cycle through all of my units instead of simply clicking to select them.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.74674094
+      },
+      {
+        "id": "38b2e15b4434ae1d394a679db67ef483_2",
+        "parent_id": [
+          "38b2e15b4434ae1d394a679db67ef483"
+        ],
+        "Title": "NBA 2K20 Review",
+        "Score": 7.8,
+        "Content": "A redesigned \u201c2KU\u201d, NBA 2K20\u2019s optional tutorial mode, is particularly helpful and doesn\u2019t require more than an hour to get through. Thoughtfully, an on-screen controller mimics the movement of the desired skill, making it plenty easy to imitate. Once I successfully learned a skill, like eurostepping toward the basket, I could move on at whatever pace I felt comfortable.",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.746356
+      },
+      {
+        "id": "9f597027e540dd646ba3c7070893c168_7",
+        "parent_id": [
+          "9f597027e540dd646ba3c7070893c168"
+        ],
+        "Title": "Monster Hunter: World for PC Review",
+        "Score": 9.5,
+        "Content": "PC\u2019s other major addition is keyboard and mouse play. While this works far better than I\u2019d assumed it would, and feels like something of a novelty, I\u2019d still recommend a controller. Monster Hunter\u2019s combat requires pinpoint timing at the best of times, and using its more complex weapons can feel like more of a dance across a keyboard than it perhaps should.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.7447652
+      },
+      {
+        "id": "ba2bf9f193ec9303643312b0d3744424_1",
+        "parent_id": [
+          "ba2bf9f193ec9303643312b0d3744424"
+        ],
+        "Title": "Red Faction: Guerrilla Re-Mars-tered Review",
+        "Score": 8.0,
+        "Content": "The controls themselves are, by default, a bit clunky since the Switch's Joy-Cons are far from ideal when looking for precision aim during a firefight. However, adjusting the sensitivity or enabling the gyroscopic motion controls can provide a viable enough workaround for this, though your best experience will likely be on the Pro Controller. The Nintendo Switch version of what is arguably Red Faction's best series entry is a viable way to get into its destructible world if - by some tragic circumstance - you've already missed out on it for the last decade.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.7444765
+      },
+      {
+        "id": "ed856a5af775a660d5520a966bce3422_21",
+        "parent_id": [
+          "ed856a5af775a660d5520a966bce3422"
+        ],
+        "Title": "LittleBigPlanet: Game of the Year Edition Review",
+        "Score": 9.5,
+        "Content": "Player acceleration (and perhaps deceleration) isn't as quick as it could be, which means that keeping your Sackboy alive between two electrified bars while the ground below you shifts around can be a little tricky. Likewise, in-air direction change can be a little iffy at times with you sometimes having more or less inertia than it looks and feels like you do, making your character occasionally over or under-respond to what you want him to do. As I said though, my gripes with the control mechanics are relatively small ones.",
+        "paragraph_num": [
+          21
+        ],
+        "score": 0.7441704
+      },
+      {
+        "id": "c5e374c359939f26b1b94a46ac2473ea_7",
+        "parent_id": [
+          "c5e374c359939f26b1b94a46ac2473ea"
+        ],
+        "Title": "Wii Play Review",
+        "Score": 5.5,
+        "Content": "Meanwhile, it's got very catchy music that changes dynamically as you score points against the CPU-controlled opponent. You can move your paddle around on your side of the screen and even tilt the remote to add angle to your shots. It works well\u2026 most of the time.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.7440152
+      },
+      {
+        "id": "3f69e7910ba2946a64f740522eb9eed1_6",
+        "parent_id": [
+          "3f69e7910ba2946a64f740522eb9eed1"
+        ],
+        "Title": "War Thunder Review",
+        "Score": 7.2,
+        "Content": "The PlayStation 4 version uses these standardized controls, with a single stick handling all movement of your aircraft. I found the system was less effective on PS4 due to the lack of precision a mouse and keyboard offer. It wasn\u2019t until I dug into the menus and altered how the joysticks controlled my aircraft that I began to feel like I could fly with the same precision as the PC version, but it's doable.",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.7437787
+      },
+      {
+        "id": "2a21d8ce42cb51ed6cccad296deb65a7_3",
+        "parent_id": [
+          "2a21d8ce42cb51ed6cccad296deb65a7"
+        ],
+        "Title": "The Fighter Within Review",
+        "Score": 2.7,
+        "Content": "But your first, and most formidable opponent will be the Kinect-driven menus, which make even the basic act of scrolling through and selecting things an exercise in frustration. Confirming your choices requires that you hold a floaty, twitchy cursor over what you want, push in towards the screen, and then pull back, all without accidentally leaving the boundaries of what you're trying to press, because if you do, that resets the whole process. It's a borderline-broken system that left me with little choice but to keep a controller nearby at all times.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7429441
+      },
+      {
+        "id": "b2eb9ce7a801295ab2aa0af49d197d87_13",
+        "parent_id": [
+          "b2eb9ce7a801295ab2aa0af49d197d87"
+        ],
+        "Title": "Arcade1Up Mortal Kombat Arcade Cabinet Review",
+        "Score": 8.9,
+        "Content": "The bat top joysticks are square gated, making them ideal for use in fighters like the three Mortal Kombat games. The buttons don't have the crispness of professional set up, but they feel roughly equal to the buttons on my Mad Catz fight stick. For normal play, I found the controls responsive, with an authentic feel.",
+        "paragraph_num": [
+          13
+        ],
+        "score": 0.74276924
+      },
+      {
+        "id": "c5e374c359939f26b1b94a46ac2473ea_8",
+        "parent_id": [
+          "c5e374c359939f26b1b94a46ac2473ea"
+        ],
+        "Title": "Wii Play Review",
+        "Score": 5.5,
+        "Content": "However, the control is not consistent and if you try for grand movements - adding extra power to a return, for instance - you may completely miss the ball or accidentally send it ricocheting backward into your goal. Meanwhile, the computer AI is ridiculously forgiving; we averaged scores of 10-0 against the opponent before the brief matches came to an abrupt end. You simply volley the ball back and forth in Table Tennis.",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.7427684
+      },
+      {
+        "id": "507c24e722923cc3a57ea346253f39a1_5",
+        "parent_id": [
+          "507c24e722923cc3a57ea346253f39a1"
+        ],
+        "Title": "Samurai Shodown Anthology Review",
+        "Score": 4.8,
+        "Content": "Gamers should know by know that these sorts of games require precise button inputs and that just can't happen when the game is sputtering along, attempting to keep up with itself. These issues are made even worse when trying some Ad Hoc multiplayer, which I thought was simply unplayable. 2D fighters are all about making precision choices, and that's just not possible on the PSP version.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.74192715
+      },
+      {
+        "id": "155c399fdc501b3b9844687d69dd3de1_12",
+        "parent_id": [
+          "155c399fdc501b3b9844687d69dd3de1"
+        ],
+        "Title": "Sonic & the Black Knight Review",
+        "Score": 3.9,
+        "Content": "The title does not consider vertical or horizontal motion, so you can just waggle the controller mindlessly and win. It's one of the worst control choices I've had to endure for any Wii game, not only because your movements actually have noticeable lag before they are translated on-screen, but because you battle so many enemies throughout any given level that you arm is sure to be sore by the time you're done. You encounter the occasional boss in fights that are supposed to be epic, but the ensuing battles are over in seconds -- all you have to do is shake continuously and you'll lay waste to your enemies before they are done with their opening dialogs.",
+        "paragraph_num": [
+          12
+        ],
+        "score": 0.7416871
+      },
+      {
+        "id": "47b6fc426dd782729864ec4fb9520aae_11",
+        "parent_id": [
+          "47b6fc426dd782729864ec4fb9520aae"
+        ],
+        "Title": "Foosball 2012 Review",
+        "Score": 5.5,
+        "Content": "The thing is, there aren't a ton of folks with a Move controller, and using one to play the game competently can be almost as hard as playing on a real life table. While it makes the Move experience more authentic and rewarding in the long run, playing locally or online against someone using a Dual Shock or a Vita is straight suicide. The automated systems that accompany the standard controller make it too easy for beginners to go wild on their analogs, scoring goals faster than even the most skilled pro player, and you can't filter opponents by control type.",
+        "paragraph_num": [
+          11
+        ],
+        "score": 0.7414702
+      },
+      {
+        "id": "ba0eb7ac2d4a6d7aa49b8a2e7c06acdb_3",
+        "parent_id": [
+          "ba0eb7ac2d4a6d7aa49b8a2e7c06acdb"
+        ],
+        "Title": "Tony Hawk's Proving Ground Review [Wii Version]",
+        "Score": 4.0,
+        "Content": "imageUrl=http%3A%2F%2Fwiimedia.ign.com%2Fwii%2Fimage%2Farticle%2F829%2F829662%2Ftony-hawks-proving-ground-20071023045157818-000.jpg&caption=Same+old+Tony... While the other versions of the game feature the signature and spot-on control scheme, the Wii version of the title uses the Wii Remote and Nunchuck exclusively. Unfortunately, their implementation is pretty terrible and all but the most basic control functions are extremely hit-or-miss with regards to precision.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.74121404
+      },
+      {
+        "id": "47b6fc426dd782729864ec4fb9520aae_3",
+        "parent_id": [
+          "47b6fc426dd782729864ec4fb9520aae"
+        ],
+        "Title": "Foosball 2012 Review",
+        "Score": 5.5,
+        "Content": "Foosball 2012 valiantly attempts to make these mechanics accessible with what are essentially a series of assist systems working in tandem, but ultimately they end up robbing you of any sense of control you might have had. Take ball movement as an example. Rather than actually control your foosmen, the left analog directs where you want the ball to move.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7408066
+      }
+    ]
+  }
+}

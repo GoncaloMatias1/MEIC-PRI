@@ -1,0 +1,410 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 83,
+    "params": {
+      "q": "{!knn f=vector topK=50}[0.022846942767500877, -0.009253887459635735, -0.014305398799479008, -0.0845455601811409, -0.044560760259628296, -0.027426565065979958, 0.025973523035645485, 0.023036006838083267, 0.043044574558734894, 0.0712161511182785, -0.048352546989917755, -0.03726131469011307, 0.034081246703863144, -0.05102139338850975, -0.010339553467929363, 0.018239473924040794, 0.1437433511018753, 0.0861765593290329, 0.04550505802035332, -0.06922601908445358, -0.00559494411572814, -0.024720435962080956, -0.003197429468855262, -0.006763943936675787, -0.0502423532307148, 0.054565005004405975, -0.025849375873804092, 0.03564852103590965, -0.02722936123609543, -0.08659622818231583, -0.03231720253825188, -0.01648263819515705, 0.07020766288042068, -0.05582094192504883, -0.0792616531252861, 0.04183740168809891, 0.030351806432008743, -0.09643901884555817, -0.07176624238491058, -0.06797738373279572, -0.13130781054496765, 0.02522822842001915, 0.02313586324453354, 0.0198898296803236, 0.021577782928943634, 0.002193308202549815, -0.024015765637159348, -0.0028379219584167004, -0.007809279952198267, -0.006799475755542517, -0.08477422595024109, -0.04777170717716217, 0.025822553783655167, -0.0900212898850441, 0.04208103567361832, 0.0721067488193512, 0.0036436354275792837, 0.0052926549687981606, -0.011210890486836433, -0.026641845703125, 0.01967938058078289, 0.014999409206211567, -0.041845064610242844, 0.018236832693219185, 0.042397599667310715, -0.00725192716345191, 0.09428040683269501, -0.005991481244564056, 0.0038562349509447813, -0.05456528067588806, -0.06759323179721832, 0.009485532529652119, -0.03080391138792038, -0.06583844870328903, -0.028637278825044632, 0.05187100172042847, -0.1171603798866272, -0.0428457036614418, -0.0377521775662899, 0.0008440521778538823, 0.1024082824587822, -0.0043422807939350605, -0.06215181201696396, 0.019429264590144157, -0.04770993813872337, -0.03578389808535576, -0.025738529860973358, 0.022995157167315483, 0.08521653711795807, 0.05655229836702347, -0.06432894617319107, 0.010575011372566223, 0.05497989058494568, -0.02978203445672989, -0.00017111505439970642, 0.004062653053551912, 0.035004664212465286, -0.1496562510728836, 0.0012751271715387702, 0.025775553658604622, 0.008605293929576874, -0.010993062518537045, 0.01950730010867119, 0.018828561529517174, 0.09017949551343918, 0.09507868438959122, 0.048607319593429565, 0.08308232575654984, -0.06945841759443283, 0.010095649398863316, -0.015516921877861023, -0.07227075099945068, -0.10776973515748978, 0.03539872542023659, 0.0725405290722847, 0.030468426644802094, 0.01561960019171238, 0.044298868626356125, 0.0059623150154948235, 0.015011883340775967, 0.06988434493541718, -0.08108296990394592, -0.05595817044377327, 0.04050833359360695, 0.10016663372516632, -0.017569903284311295, 0.0035834002774208784, 1.5760431325100204e-33, -0.05674317851662636, 0.07249387353658676, 0.08253921568393707, 0.009493512101471424, -0.0020164826419204473, -0.012236705049872398, 0.018771974369883537, -0.051858723163604736, -0.002185649937018752, 0.04026094451546669, -0.07157013565301895, 0.028399011120200157, -0.08102439343929291, 0.08809954673051834, 0.09239596873521805, -0.06119329482316971, -0.009974047541618347, 0.0803556963801384, -0.047363243997097015, 0.04810153692960739, -0.02216183952987194, 0.03348119929432869, 0.021789997816085815, -0.08731091022491455, -0.009407448582351208, 0.08651037514209747, -0.0650496631860733, 0.06734407693147659, 0.0009301559184677899, -0.031094374135136604, 0.0034052040427923203, -0.03339463099837303, -0.015960169956088066, -0.03282453119754791, 0.007669495418667793, 0.01687607169151306, 0.03597506135702133, -0.04813988879323006, 0.011659554205834866, 0.09751875698566437, -0.04545251280069351, 0.030486956238746643, -0.06612268835306168, -0.003649249905720353, -0.026360051706433296, 0.012460821308195591, 0.023052282631397247, -0.04957256466150284, -0.16416551172733307, 0.005355845205485821, -0.05650383234024048, 0.04512005299329758, 0.03478622063994408, -0.0032311026006937027, 0.00912726204842329, -0.06383176892995834, 0.06447446346282959, 0.012508159503340721, -0.0537225715816021, 0.0814293846487999, -0.007467417977750301, 0.016737166792154312, -0.012940526939928532, -0.015431405045092106, -0.03685260936617851, 0.043081220239400864, 0.06322072446346283, 0.030856505036354065, -0.026248043403029442, 0.03597644716501236, -0.04186107963323593, 0.030446115881204605, 0.02417491376399994, -0.052095383405685425, 0.042179979383945465, -0.026991667225956917, -0.03606663644313812, -0.023134876042604446, -0.051978252828121185, -0.02762380987405777, -0.04275812953710556, -0.025099925696849823, -0.07190495729446411, -0.018376117572188377, 0.05364678427577019, -0.021823618561029434, -0.01365081500262022, -0.025536712259054184, -0.09843835234642029, -0.02163422666490078, -0.12019678205251694, -0.020666172727942467, 0.0664268434047699, 0.012824246659874916, 0.03249724209308624, -1.4573787226689375e-33, -0.009183606132864952, -0.04620809480547905, 0.02238652855157852, 0.13441914319992065, -0.01918834261596203, 0.039284855127334595, -0.04617387428879738, 0.027300504967570305, 0.03917296230792999, 0.0021645582746714354, -0.015466701239347458, 0.10089842975139618, -0.0034122858196496964, -0.009266454726457596, -0.03759917989373207, -0.015391690656542778, 0.0302195493131876, -0.07772476226091385, -0.0510808490216732, -0.07297214865684509, 0.06426586210727692, 0.052002787590026855, 0.006106746848672628, -0.08691130578517914, -0.026243338361382484, 0.06934720277786255, -0.02965606190264225, -0.01558082364499569, 0.00410644244402647, 0.05079329013824463, 0.00534724909812212, 0.02078176662325859, 0.05597899481654167, 0.05958082899451256, -0.0005326696555130184, -0.018786150962114334, 0.1371338665485382, 0.027322443202137947, -0.07903348654508591, 0.05358980596065521, 0.0359220989048481, -0.03550674021244049, -0.04737163335084915, 0.0710035040974617, 0.0337158627808094, 0.07014381885528564, -0.015868252143263817, -0.03633343055844307, 0.01782597228884697, 0.025437330827116966, -0.014270452782511711, 0.024670157581567764, -0.03622020035982132, -0.041565120220184326, -0.07640443742275238, -0.09662048518657684, -0.05299977958202362, 0.02425791136920452, 0.0641215518116951, 0.011559979990124702, -0.0005608565988950431, -0.009645862504839897, -0.11529543250799179, -0.022591043263673782, 0.0863465890288353, 0.03898513317108154, 0.02911784127354622, -0.019086841493844986, 0.09968724846839905, -0.01392819732427597, 0.014272209256887436, -0.02184179238975048, 0.016765091568231583, 0.028437385335564613, 0.02904171496629715, 0.021569984033703804, 0.0024662038777023554, 0.012012984603643417, 0.03749633952975273, 0.04004347696900368, 0.014472013339400291, -0.0024449145421385765, 0.08798079192638397, 0.04034319892525673, 0.013554234988987446, 0.10898323357105255, -0.07496315240859985, 0.009623168967664242, 0.006689911242574453, -0.005498085170984268, 0.07573241740465164, 0.10784415900707245, 0.04334574565291405, 0.017358338460326195, -0.04854637756943703, -1.6338509212232566e-08, 0.01152256689965725, 0.01856253482401371, 0.04412860795855522, -0.025666097179055214, -0.005194768309593201, 0.029822707176208496, -0.018094776198267937, 0.03187200054526329, -0.0040193358436226845, 0.0010377105791121721, -0.004982093349099159, 0.00858384184539318, 0.06417776644229889, -0.03735208511352539, 0.09772009402513504, 0.04770839959383011, -0.010541035793721676, 0.05797281488776207, -0.06087149679660797, 0.04316728189587593, 0.0812162458896637, 0.03565312549471855, 0.03762439265847206, -0.07909119874238968, -0.09535498172044754, -0.04590792953968048, -0.07681532204151154, -0.01788271591067314, 0.02162119932472706, 0.08745838701725006, 0.11902984231710434, 0.002392928348854184, 0.040959350764751434, 0.0012790500186383724, 0.0659533143043518, -0.06869789212942123, -0.004598984960466623, 0.025320779532194138, 0.036013294011354446, -0.04757359251379967, -0.1139247715473175, 0.03349076583981514, -0.07785210013389587, -0.008864174596965313, 0.014067715033888817, 0.027634209021925926, 0.008491639979183674, -0.0585666298866272, -0.05234578251838684, -0.0423286110162735, -0.05364951863884926, 0.05079677328467369, -0.06584366410970688, 0.008989725261926651, 0.08630727976560593, -0.032593533396720886, 0.06258365511894226, 0.012636380270123482, 0.00016400341701228172, 0.015371023677289486, 0.049984559416770935, -0.026354234665632248, -0.012462628073990345, 0.00038264691829681396]",
+      "fl": "id,parent_id,Title,Content,Score,paragraph_num,score",
+      "rows": "30",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 50,
+    "start": 0,
+    "maxScore": 0.803687,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "5f3d8e3d10a835503420d40f22707e56_6",
+        "parent_id": [
+          "5f3d8e3d10a835503420d40f22707e56"
+        ],
+        "Title": "NHL Blades of Steel 2000",
+        "Score": 2.5,
+        "Content": "Graphics If the piss poor gameplay isn't enough to turn you off, then the sub par graphics will likely be the clincher. Blades of Steel 2000 is nowhere near its competitors in the area of graphics. In fact, the first generation PlayStation hockey games all had graphics that were many times superior to those in this game.",
+        "paragraph_num": [
+          6
+        ],
+        "score": 0.803687
+      },
+      {
+        "id": "cea1063dc99ce28b29c76bc33672d1d1_18",
+        "parent_id": [
+          "cea1063dc99ce28b29c76bc33672d1d1"
+        ],
+        "Title": "Tiger Woods PGA Tour 10 Review",
+        "Score": 9.0,
+        "Content": "You can define all sorts of different play styles, set your music, whether or not to feature your Mii online, etc. While the in-game graphics have not seen dramatic enhancements over last year's game -- I personally feel that Tiger's engine needs to be rebuilt from the ground-up for Wii to really push the system visually -- the visual presentation is still well done. Tiger animates realistically.",
+        "paragraph_num": [
+          18
+        ],
+        "score": 0.8003391
+      },
+      {
+        "id": "59e744d6fa396b357528bc8cf03e390d_1",
+        "parent_id": [
+          "59e744d6fa396b357528bc8cf03e390d"
+        ],
+        "Title": "Viewpoint",
+        "Score": 2.0,
+        "Content": "Sure, the graphics are nice, as far as these things go, but the control is incredibly slow. And, to confound things even more, the difficulty level has been set way too high. No one wants to play a tough game with awful control no matter how good it looks.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.7954364
+      },
+      {
+        "id": "538511894989f60b19e9ab96a9c14984_10",
+        "parent_id": [
+          "538511894989f60b19e9ab96a9c14984"
+        ],
+        "Title": "Atari 50: The Anniversary Celebration Review",
+        "Score": 9.0,
+        "Content": "And unlike the arcade games I mentioned above, some of these fare better in this format. I may be a stickler for getting classic arcade controls right, but I\u2019m not a huge fan of the Atari 2600 joystick \u2013 it stinks! I\u2019d rather play most of the console and PC games presented with smoothed-over controls mapped to modern D-pads and analog sticks.",
+        "paragraph_num": [
+          10
+        ],
+        "score": 0.79484236
+      },
+      {
+        "id": "0faef1694e29d156727e144845c1f059_14",
+        "parent_id": [
+          "0faef1694e29d156727e144845c1f059"
+        ],
+        "Title": "Smashing Drive",
+        "Score": 3.4,
+        "Content": "The original arcade hardware was about twice as powerful as the Nintendo 64, which explains why the nearly texture-less title looks like an N64 racer running at 60 frames per second. It's blurry, there's a lack of geometric complexity, and the particle effects are very outdated. A good example of these primitive graphics can be seen by gazing at the laughably monotone skies.",
+        "paragraph_num": [
+          14
+        ],
+        "score": 0.79483825
+      },
+      {
+        "id": "ca26ef53746d40b05872b79b3ecb6c51_11",
+        "parent_id": [
+          "ca26ef53746d40b05872b79b3ecb6c51"
+        ],
+        "Title": "Tournament of Legends Review",
+        "Score": 5.0,
+        "Content": "The game can't even fall upon the \"it looks good for a Wii\" excuse because, honestly, it doesn't. Tournament of Legends might have some decent character models and arenas, but the detail is completely lost in a mess of low resolution, standard definition texture work and oversaturated lighting effects. Adding to the weak appearance is a game engine that barely holds at 30 frames per second in a genre where 60 FPS is king.",
+        "paragraph_num": [
+          11
+        ],
+        "score": 0.791641
+      },
+      {
+        "id": "2b2aac61ae393337df74792e3aa2f1a1_3",
+        "parent_id": [
+          "2b2aac61ae393337df74792e3aa2f1a1"
+        ],
+        "Title": "Atari Legends, Vol. 1",
+        "Score": 4.5,
+        "Content": "Only one of these games is ported with any degree of fun -- and it's the former. Asteroids looks reasonably close to its original counterpart and the controls (thrusting and shooting -- hey now!) are fairly accurate. Centipede also looks the part, but the controls leave much to be desired.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7890661
+      },
+      {
+        "id": "1c56435cf70224317a51a18fbf8f6083_10",
+        "parent_id": [
+          "1c56435cf70224317a51a18fbf8f6083"
+        ],
+        "Title": "The Witcher 2: Assassins of Kings Review",
+        "Score": 9.0,
+        "Content": "Head over to IGN's review journal . The visuals, in particular, are consistently gorgeous. Though I experienced some performance issues on launch day, a driver update allowed smooth play on max settings with a GeForce GTX 580 card, and the game still looks great at lowered settings.",
+        "paragraph_num": [
+          10
+        ],
+        "score": 0.7877865
+      },
+      {
+        "id": "8e8df86c434462563d7edb8da6d12e54_10",
+        "parent_id": [
+          "8e8df86c434462563d7edb8da6d12e54"
+        ],
+        "Title": "Varmint Hunter",
+        "Score": 1.2,
+        "Content": "This is all of course assuming you can \"appreciate\" it without the plaguing bugs of blazing white lighting and the world unceremoniously clipping out from underneath you, dropping you into the endless void that is poor programming. But graphics don't make a game, silly. The game makes a game.",
+        "paragraph_num": [
+          10
+        ],
+        "score": 0.78659785
+      },
+      {
+        "id": "8b151c887956f489cfce92a95844b6b0_2",
+        "parent_id": [
+          "8b151c887956f489cfce92a95844b6b0"
+        ],
+        "Title": "Rise 2: Resurrection",
+        "Score": 2.0,
+        "Content": "There are loads of Special Moves and Termination Moves (where do you think they copied that from?) and you can even alter the color palette of your character! Whoopee! As far as the graphics go, let's just say they're not up to par with most PSX games.",
+        "paragraph_num": [
+          2
+        ],
+        "score": 0.7847955
+      },
+      {
+        "id": "b2c1c529842167dd85c742df2d0f65a6_26",
+        "parent_id": [
+          "b2c1c529842167dd85c742df2d0f65a6"
+        ],
+        "Title": "AtGames Legends Ultimate Review",
+        "Score": 8.0,
+        "Content": "They absolutely loved playing the classics and trying out the different games and control styles. It's a cool way to show them what arcades used to represent in an accurate form factor with accurate controls.",
+        "paragraph_num": [
+          26
+        ],
+        "score": 0.78360593
+      },
+      {
+        "id": "b557e8bfab4bcde014db05e8a27f0b7f_16",
+        "parent_id": [
+          "b557e8bfab4bcde014db05e8a27f0b7f"
+        ],
+        "Title": "Rayman Arena Review",
+        "Score": 3.8,
+        "Content": "What's most bothersome graphically about this game is that, quality-wise, this is almost identical to what we saw on the Dreamcast with Rayman 2 . As much as I've always enjoyed the visual style of the games, it would've been nice to see a boost in quality considering we've been looking at this same level of detail, albeit good, for several years now. Other than the above complaint, things look like they should.",
+        "paragraph_num": [
+          16
+        ],
+        "score": 0.78221035
+      },
+      {
+        "id": "a4f10e2320256cad12afd9ed13c27652_3",
+        "parent_id": [
+          "a4f10e2320256cad12afd9ed13c27652"
+        ],
+        "Title": "Texas Hold 'em Tournament Review",
+        "Score": 5.1,
+        "Content": "The game exclusively uses pointer controls to make selections and checking everyone's balance is as easy as moving the cursor over their heads. ...really? Those are your graphics?",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7795265
+      },
+      {
+        "id": "b2c1c529842167dd85c742df2d0f65a6_25",
+        "parent_id": [
+          "b2c1c529842167dd85c742df2d0f65a6"
+        ],
+        "Title": "AtGames Legends Ultimate Review",
+        "Score": 8.0,
+        "Content": "I didn't notice any perceptible lag in any of the controls, and every button-push registered instantly. Even the gritty feel of the trackball didn't have any effect on gameplay, it just feels unpleasant. What really surprised me was how much my kids were drawn to this beastly arcade machine.",
+        "paragraph_num": [
+          25
+        ],
+        "score": 0.7785468
+      },
+      {
+        "id": "52935f2de3c3e03efe2a271cea3c3a0f_7",
+        "parent_id": [
+          "52935f2de3c3e03efe2a271cea3c3a0f"
+        ],
+        "Title": "Summer Games II Review",
+        "Score": 4.5,
+        "Content": "Many of the Virtual Console's classics succeed still today in large part because of their instant accessibility that allows even the uninitiated to pick up and play them right away. But when a game like this one comes along, in no way catering to new players, I'm afraid most won't have the patience to get past the too-steep learning curve.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.7775207
+      },
+      {
+        "id": "ca82fee158cb45d5d0f9da1e7b6d3591_4",
+        "parent_id": [
+          "ca82fee158cb45d5d0f9da1e7b6d3591"
+        ],
+        "Title": "Asgard\u2019s Wrath 2 Review",
+        "Score": 10.0,
+        "Content": "It's true that Asgard\u2019s Wrath 2 might not look or perform as well as games running on high-end hardware, but it more than makes up for that deficit with its innovative ideas and incredibly fun gameplay, and pushes the limits on what\u2019s possible on its native device. In other words, this is the Tears of the Kingdom of the Meta Quest 3 . It transcends hardware limitations by just crushing it in every other area.",
+        "paragraph_num": [
+          4
+        ],
+        "score": 0.7769442
+      },
+      {
+        "id": "538511894989f60b19e9ab96a9c14984_19",
+        "parent_id": [
+          "538511894989f60b19e9ab96a9c14984"
+        ],
+        "Title": "Atari 50: The Anniversary Celebration Review",
+        "Score": 9.0,
+        "Content": "Of these my favorites are all arcade games, but they also lose the most in emulation. With few exceptions, Atari 2600 games are hard for me to get excited about anymore. I\u2019ve played them all, they are very simple \u2013 and if they aren\u2019t simple, they require manuals, all thankfully provided here.",
+        "paragraph_num": [
+          19
+        ],
+        "score": 0.77681494
+      },
+      {
+        "id": "26dda628474b965ff395e7bc2023cded_5",
+        "parent_id": [
+          "26dda628474b965ff395e7bc2023cded"
+        ],
+        "Title": "Intellivision Lives! Review",
+        "Score": 6.0,
+        "Content": "The emulation is pretty decent. I cannot complain about the recreations, which occupy the top screen and look quite sharp. The controls mercifully use the d-pad and buttons and do not entirely rely on a virtual recreation of the strange Intellivision disc-like controller on the lower DS screen, although it is indeed used for games with number pad functionality.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.7757635
+      },
+      {
+        "id": "bdf3f371c2f64c62a18160aefe161169_0",
+        "parent_id": [
+          "bdf3f371c2f64c62a18160aefe161169"
+        ],
+        "Title": "GT Pro Series Review",
+        "Score": 4.0,
+        "Content": "On a system that embraces creativity and innovation even more than the DS, Wii makes a statement to the entire industry by providing intriguing gameplay at all costs. Take, for example, a game like Wii Sports. It's a first-party Nintendo product, a pack-in, and it has an amazingly entertaining gameplay mechanic, though it delivers some of the most simplistic visuals we've seen on a home console in years.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7755021
+      },
+      {
+        "id": "6fefae2031cadb49388f407384ac5b81_0",
+        "parent_id": [
+          "6fefae2031cadb49388f407384ac5b81"
+        ],
+        "Title": "New Play Control! Mario Power Tennis Review",
+        "Score": 5.8,
+        "Content": "With the huge success of Wii thus far, and the ease of bringing over GameCube titles as \"Wii-makes\" to the system, Nintendo has embraced the idea of gameplay over graphics, and has begun its New Play Control franchise, which specifically focuses on bumping up old, great Cube titles to Wii, and adding in revamped motion and IR control where applicable. The concept has already seen some pretty impressive results in Japan, with Metroid Prime hitting the Wii, now complemented by impressive Corruption-inspired IR control for aiming Samus around.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.77545136
+      },
+      {
+        "id": "e6e065d21fcbeda06d3c33afc15da3bc_1",
+        "parent_id": [
+          "e6e065d21fcbeda06d3c33afc15da3bc"
+        ],
+        "Title": "Games Explosion! Review",
+        "Score": 4.0,
+        "Content": "But nearly every decision made on the part of the developer, from controls to menus, music and graphics falls flat, sucking all the fun out of these normally enjoyable game designs. The first challenge the title provides is actually finding each game. The menus are very confusing for a collection aimed at casual gamers.",
+        "paragraph_num": [
+          1
+        ],
+        "score": 0.77535814
+      },
+      {
+        "id": "5b97b37140a50c0ace4cd67f175754c6_7",
+        "parent_id": [
+          "5b97b37140a50c0ace4cd67f175754c6"
+        ],
+        "Title": "Mario Kart 8 Review",
+        "Score": 9.0,
+        "Content": "Three and four-player local competitive races halved the framerate to 30 fps, but it\u2019s an acceptable loss when the racing looks and plays this well. Mario Kart 8's graphics are some of the best I've seen in a game made by Nintendo. Each racer, kart combination, and track showcased expert art direction right down to the tiny treads on the tires.",
+        "paragraph_num": [
+          7
+        ],
+        "score": 0.7752204
+      },
+      {
+        "id": "b2c1c529842167dd85c742df2d0f65a6_5",
+        "parent_id": [
+          "b2c1c529842167dd85c742df2d0f65a6"
+        ],
+        "Title": "AtGames Legends Ultimate Review",
+        "Score": 8.0,
+        "Content": "I gotta say, playing these old arcade games, some of which I actually played in actual arcades as a wee lad, is awesome. Emulation is more than satisfactory for someone like me. I didn't notice any quirks that detracted from the experience.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.77483404
+      },
+      {
+        "id": "19e256b0c4c5d2c8593ff60783ce7d0f_36",
+        "parent_id": [
+          "19e256b0c4c5d2c8593ff60783ce7d0f"
+        ],
+        "Title": "Dragon\u2019s Dogma 2 Review",
+        "Score": 8.0,
+        "Content": "More than once have I taken big damage or even died because I was body-blocked by my foes, and that has never been a good way for a fight to end. Jarrett Green's Action RPG Atrium A very good list of very good action RPGS See All Dragon's Dogma Capcom Elden Ring FromSoftware The Legend of Zelda: Tears of the Kingdom Nintendo EPD Fallout: New Vegas Obsidian Entertainment Bloodborne FromSoftware Dark Souls II FromSoftware Monster Hunter World Capcom Nier Automata PlatinumGames Onimusha: Dawn of Dreams Capcom The Witcher 2: Assassins of Kings CD Projekt Red Even if I\u2019m not getting bullied out of the shot, as the numbers of the combatants picks up, you can watch the frame rate slowly diminish \u2013 not ideal for a game where success in combat can be so heavily dependent on timing your attacks, blocks, and dodges.",
+        "paragraph_num": [
+          36
+        ],
+        "score": 0.7744117
+      },
+      {
+        "id": "4c5b15c5bcc3794e3dd88cab7a7443f1_66",
+        "parent_id": [
+          "4c5b15c5bcc3794e3dd88cab7a7443f1"
+        ],
+        "Title": "Grand Theft Auto IV PS3 Review",
+        "Score": 10.0,
+        "Content": "Sure, there are framerate hitches here and there and (particularly on 360) there is some texture pop-in, but it actually runs better than I expected. That a game with great AI, an awesome physics engine and a detailed open world runs so well and with such short load times is a technical marvel. For that, I can forgive framerate issues and some noticeable aliasing.",
+        "paragraph_num": [
+          66
+        ],
+        "score": 0.77437896
+      },
+      {
+        "id": "ea2c0fb2baf280cd3210a3f9725eec21_8",
+        "parent_id": [
+          "ea2c0fb2baf280cd3210a3f9725eec21"
+        ],
+        "Title": "Driven Review",
+        "Score": 3.6,
+        "Content": "imageUrl=http%3A%2F%2Fcubemedia.ign.com%2Fcube%2Fimage%2Fdrivengcbevel1.jpg&caption=%3Ccenter%3E%3Csmall%3EYou%27d+think+racing+through+the+city+would+be+fun...but+it+isn%27t.%3C%2Fsmall%3E%3C%2Fcenter%3E The ideas are there, but they just didn't come together in the end to gel into a fun game. It should be noted that the controls are definitely improved over the PlayStation 2 problem, which were a huge problem, but Driven will very likely leave you feeling frustrated and bored. Graphics Driven comes to you via the all-new Blurr-O-VisionTM technology (please note our sarcasm).",
+        "paragraph_num": [
+          8
+        ],
+        "score": 0.77392834
+      },
+      {
+        "id": "178944708c7c1d456509ab4bc9c07ba0_0",
+        "parent_id": [
+          "178944708c7c1d456509ab4bc9c07ba0"
+        ],
+        "Title": "Rapala Tournament Fishing",
+        "Score": 3.0,
+        "Content": "When it comes to the Wii controller, there are simply a few things the system is designed to do, and a few things it isn't. For instance, one look at the controller was all it took for Ubisoft to dive into Red Steel, a game that may not have hit all the marks, but definitely has the right idea as to how the controller should enable the user to interact with games like never before by staging motion-controlled swordfights and the manipulation of in-level objects with the shake of the nunchuk. The Wii Sports compilation is another solid example, as simple motions such as swinging a racket or bat, or rolling a bowling ball down a virtual lane is instantly immersive and seems tailor-fit for the system.",
+        "paragraph_num": [
+          0
+        ],
+        "score": 0.7734827
+      },
+      {
+        "id": "a4adf299313e127dc9ab4821e9fe9625_20",
+        "parent_id": [
+          "a4adf299313e127dc9ab4821e9fe9625"
+        ],
+        "Title": "Mortal Shell Review",
+        "Score": 8.0,
+        "Content": "As a counterbalance, though, Mortal Shell runs ridiculously well, and I had no issues reaching 60 to 70fps at 1080p on a GTX 980 (yes, I\u2019m due for an upgrade when the new generation of GPUs comes out). The 15 Hardest Contemporary Games 16 Images Mortal Shell also encourages exploration of a different kind in its \"familiarity\" system. Essentially, the idea is that you can't identify an item until you use it, and using it more reveals additional effects.",
+        "paragraph_num": [
+          20
+        ],
+        "score": 0.772281
+      },
+      {
+        "id": "8f8a95549711938fb01a344012d74deb_3",
+        "parent_id": [
+          "8f8a95549711938fb01a344012d74deb"
+        ],
+        "Title": "Mortal Kombat Mythologies: Sub Zero",
+        "Score": 3.5,
+        "Content": "As it is, it1s like watching a mannequin being wheeled across a stage. The biggest problem with the game, and what ultimately makes it so frustrating, is the control. Let's face it, control is the singlemost important part of any game, and when you1ve got fighting and platform jumping to do, it1s doubly so.",
+        "paragraph_num": [
+          3
+        ],
+        "score": 0.7721
+      },
+      {
+        "id": "d8cc3d8db7db54b8480ef43f5a8e035a_5",
+        "parent_id": [
+          "d8cc3d8db7db54b8480ef43f5a8e035a"
+        ],
+        "Title": "Tony Hawk's Motion Review",
+        "Score": 4.5,
+        "Content": "If the final product's quality is any indication, it's more about selling based on the peripheral than delivering a real experience to use with it. Tony Hawk's Motion feels less like a game, and more like a demo. Hue would be the other half of that demo.",
+        "paragraph_num": [
+          5
+        ],
+        "score": 0.7719523
+      }
+    ]
+  }
+}
